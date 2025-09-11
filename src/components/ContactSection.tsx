@@ -32,7 +32,7 @@ const ContactSection = () => {
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Info */}
-          <div className="space-y-8 animate-fade-in">
+          <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="section-title text-left">
                 Get In Touch
@@ -103,8 +103,8 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-card border border-border rounded-2xl p-8 shadow-elegant animate-fade-in">
-            <h3 className="text-2xl font-bold text-gradient mb-6">Apply Now</h3>
+          <div className="bg-card border border-border rounded-lg p-8 shadow-elegant">
+            <h3 className="text-2xl font-bold text-foreground mb-6">Apply Now</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
@@ -200,7 +200,7 @@ const ContactSection = () => {
                 />
               </div>
 
-              <Button type="submit" className="w-full btn-hero group">
+              <Button type="submit" className="w-full btn-primary group">
                 Send Message
                 <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>

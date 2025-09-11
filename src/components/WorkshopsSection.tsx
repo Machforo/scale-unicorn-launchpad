@@ -71,10 +71,10 @@ const WorkshopsSection = () => {
   ];
 
   return (
-    <section id="workshops" className="py-20 bg-gradient-subtle">
+    <section id="workshops" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16">
           <h2 className="section-title">
             Proprietary Workshops
           </h2>
@@ -87,23 +87,22 @@ const WorkshopsSection = () => {
         {/* Workshops Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {workshops.map((workshop, index) => (
-            <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+            <div key={index}>
               <WorkshopCard {...workshop} />
             </div>
           ))}
         </div>
 
-        {/* CTA Section */}
         <div className="text-center mt-16">
-          <div className="bg-card border border-border rounded-2xl p-8 shadow-card max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-gradient mb-4">
+          <div className="bg-card border border-border rounded-lg p-8 shadow-card max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-foreground mb-4">
               Ready to Transform Your Startup?
             </h3>
             <p className="text-muted-foreground mb-6">
               Join thousands of entrepreneurs who have accelerated their growth with our proven methodologies.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-hero">
+              <button className="btn-primary">
                 Browse All Workshops
               </button>
               <button className="btn-secondary">

@@ -52,7 +52,7 @@ const Chatbot = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-elegant flex items-center justify-center transition-all duration-300 ${
-          isOpen ? "bg-destructive hover:bg-destructive/90" : "btn-hero animate-glow"
+          isOpen ? "bg-destructive hover:bg-destructive/90" : "bg-primary hover:bg-primary-light text-primary-foreground"
         }`}
       >
         {isOpen ? (
@@ -64,9 +64,9 @@ const Chatbot = () => {
 
       {/* Chatbot Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] h-96 bg-card border border-border rounded-2xl shadow-elegant animate-slide-in-right">
+        <div className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] h-96 bg-card border border-border rounded-lg shadow-elegant">
           {/* Header */}
-          <div className="flex items-center justify-between p-4 border-b border-border bg-primary text-primary-foreground rounded-t-2xl">
+          <div className="flex items-center justify-between p-4 border-b border-border bg-primary text-primary-foreground rounded-t-lg">
             <div className="flex items-center space-x-2">
               <MessageCircle className="h-5 w-5" />
               <span className="font-semibold">Be A Unicorn Assistant</span>

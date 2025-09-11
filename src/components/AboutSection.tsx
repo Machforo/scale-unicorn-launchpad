@@ -29,7 +29,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* About Content */}
-          <div className="space-y-8 animate-fade-in">
+          <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="section-title text-left">
                 About Be A Unicorn
@@ -41,8 +41,8 @@ const AboutSection = () => {
             </div>
 
             <div className="space-y-6">
-              <div className="bg-card border border-border rounded-xl p-6 shadow-card">
-                <h3 className="text-xl font-semibold text-gradient mb-3">Our Mission</h3>
+              <div className="bg-card border border-border rounded-lg p-6 shadow-card">
+                <h3 className="text-xl font-semibold text-foreground mb-3">Our Mission</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   To democratize startup success by providing world-class growth methodologies, 
                   expert mentorship, and proven strategies that enable every entrepreneur to build 
@@ -50,16 +50,16 @@ const AboutSection = () => {
                 </p>
               </div>
 
-              <div className="bg-card border border-border rounded-xl p-6 shadow-card">
-                <h3 className="text-xl font-semibold text-gradient mb-3">Our Vision</h3>
+              <div className="bg-card border border-border rounded-lg p-6 shadow-card">
+                <h3 className="text-xl font-semibold text-foreground mb-3">Our Vision</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   To create a thriving ecosystem of unicorn startups across India, fostering innovation, 
                   job creation, and economic growth while preserving founder equity and vision.
                 </p>
               </div>
 
-              <div className="bg-card border border-border rounded-xl p-6 shadow-card">
-                <h3 className="text-xl font-semibold text-gradient mb-3">What Makes Us Different</h3>
+              <div className="bg-card border border-border rounded-lg p-6 shadow-card">
+                <h3 className="text-xl font-semibold text-foreground mb-3">What Makes Us Different</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Unlike traditional accelerators that focus on equity dilution, we specialize in 
                   bootstrap growth strategies, franchise models, and proprietary methodologies 
@@ -69,16 +69,15 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Values Grid */}
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold text-gradient text-center lg:text-left">
+            <h3 className="text-3xl font-bold text-foreground text-center lg:text-left">
               Our Core Values
             </h3>
             <div className="grid sm:grid-cols-2 gap-6">
               {values.map((value, index) => (
                 <div 
                   key={index} 
-                  className="bg-card border border-border rounded-xl p-6 shadow-card hover:shadow-elegant transition-all duration-300 hover:-translate-y-1"
+                  className="bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-elegant transition-shadow duration-200"
                 >
                   <div className="flex items-center space-x-3 mb-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">

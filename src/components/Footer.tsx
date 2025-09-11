@@ -22,10 +22,10 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-2">
-              <Sparkles className="h-8 w-8 text-accent animate-glow" />
-              <span className="text-2xl font-bold">Be A Unicorn</span>
-            </div>
+          <div className="flex items-center space-x-2">
+            <Sparkles className="h-8 w-8 text-accent" />
+            <span className="text-2xl font-bold">Be A Unicorn</span>
+          </div>
             <p className="text-primary-foreground/80 leading-relaxed">
               India's premier startup growth accelerator helping entrepreneurs scale 15x 
               without diluting equity through proprietary methodologies and expert guidance.

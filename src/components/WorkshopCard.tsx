@@ -12,11 +12,11 @@ interface WorkshopCardProps {
 
 const WorkshopCard = ({ title, facilitator, duration, description, outcomes }: WorkshopCardProps) => {
   return (
-    <div className="workshop-card group">
+    <div className="workshop-card">
       {/* Workshop Header */}
       <div className="flex items-start justify-between mb-4">
         <div className="space-y-2">
-          <h3 className="text-xl font-bold text-foreground group-hover:text-gradient transition-colors">
+          <h3 className="text-xl font-bold text-foreground">
             {title}
           </h3>
           <div className="flex items-center space-x-4 text-sm text-muted-foreground">
@@ -54,9 +54,9 @@ const WorkshopCard = ({ title, facilitator, duration, description, outcomes }: W
       </div>
 
       {/* CTA Button */}
-      <Button className="w-full btn-secondary group-hover:btn-hero transition-all duration-300">
+      <Button className="w-full btn-primary">
         Register Now
-        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+        <ArrowRight className="ml-2 h-4 w-4" />
       </Button>
     </div>
   );

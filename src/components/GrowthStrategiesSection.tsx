@@ -41,10 +41,10 @@ const GrowthStrategiesSection = () => {
   ];
 
   return (
-    <section id="growth" className="py-20 bg-gradient-subtle">
+    <section id="growth" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16">
           <h2 className="section-title">
             Growth Strategies
           </h2>
@@ -59,8 +59,7 @@ const GrowthStrategiesSection = () => {
           {strategies.map((strategy, index) => (
             <div 
               key={index} 
-              className="bg-card border border-border rounded-xl p-6 shadow-card hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-elegant transition-shadow duration-200"
             >
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -86,8 +85,8 @@ const GrowthStrategiesSection = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-card border border-border rounded-2xl p-8 shadow-elegant text-center max-w-4xl mx-auto">
-          <h3 className="text-3xl font-bold text-gradient mb-4">
+        <div className="bg-card border border-border rounded-lg p-8 shadow-elegant text-center max-w-4xl mx-auto">
+          <h3 className="text-3xl font-bold text-foreground mb-4">
             Ready to Scale Your Startup?
           </h3>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
@@ -96,22 +95,22 @@ const GrowthStrategiesSection = () => {
           </p>
           
           <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="metrics-card text-center">
-              <div className="text-3xl font-bold text-gradient mb-2">500+</div>
+            <div className="metrics-card">
+              <div className="text-3xl font-bold text-foreground mb-2">500+</div>
               <div className="text-sm text-muted-foreground">Partner Network</div>
             </div>
-            <div className="metrics-card text-center">
-              <div className="text-3xl font-bold text-gradient mb-2">50+</div>
+            <div className="metrics-card">
+              <div className="text-3xl font-bold text-foreground mb-2">50+</div>
               <div className="text-sm text-muted-foreground">Cities Covered</div>
             </div>
-            <div className="metrics-card text-center">
-              <div className="text-3xl font-bold text-gradient mb-2">₹100M+</div>
+            <div className="metrics-card">
+              <div className="text-3xl font-bold text-foreground mb-2">₹100M+</div>
               <div className="text-sm text-muted-foreground">Revenue Generated</div>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-hero">
+            <button className="btn-primary">
               Download Strategy Guide
             </button>
             <button className="btn-secondary">

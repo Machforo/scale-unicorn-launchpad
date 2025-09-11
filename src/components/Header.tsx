@@ -14,13 +14,13 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
+    <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Sparkles className="h-8 w-8 text-primary animate-glow" />
-            <span className="text-2xl font-bold text-gradient">Be A Unicorn</span>
+            <Sparkles className="h-8 w-8 text-accent" />
+            <span className="text-2xl font-bold text-foreground">Be A Unicorn</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -29,7 +29,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
               >
                 {item.name}
               </a>
@@ -38,7 +38,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="btn-hero">
+            <Button className="btn-primary">
               Apply Now
             </Button>
           </div>
@@ -64,13 +64,13 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                  className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <Button className="btn-hero w-full mt-4">
+              <Button className="btn-primary w-full mt-4">
                 Apply Now
               </Button>
             </div>
