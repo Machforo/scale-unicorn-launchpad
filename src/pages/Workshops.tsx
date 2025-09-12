@@ -1,12 +1,12 @@
 import { useState } from "react";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import WorkshopCard from "@/components/WorkshopCard";
+import WorkshopRegistrationForm from "@/components/WorkshopRegistrationForm";
 import { Link } from "react-router-dom";
-import WorkshopCard from "./WorkshopCard";
-import WorkshopRegistrationForm from "./WorkshopRegistrationForm";
-import ConsultationForm from "./ConsultationForm";
 
-const WorkshopsSection = () => {
+const Workshops = () => {
   const [selectedWorkshop, setSelectedWorkshop] = useState<string | null>(null);
-  const [showConsultationForm, setShowConsultationForm] = useState(false);
 
   const workshops = [
     {
@@ -78,21 +78,26 @@ const WorkshopsSection = () => {
   ];
 
   return (
-    <>
-    <section id="workshops" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="section-title">
-            Proprietary Workshops
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Transform your startup journey with our expert-led workshops designed to accelerate growth, 
-            optimize operations, and unlock your full potential.
+    <div className="min-h-screen bg-background pt-20">
+      <div className="container mx-auto px-6 py-12">
+        <div className="flex items-center mb-8">
+          <Link to="/">
+            <Button variant="ghost" className="mr-4">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Home
+            </Button>
+          </Link>
+        </div>
+
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Our Workshops
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Choose from our expert-led workshops designed to accelerate your startup journey
           </p>
         </div>
 
-        {/* Workshops Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {workshops.map((workshop, index) => (
             <div key={index}>
@@ -103,45 +108,16 @@ const WorkshopsSection = () => {
             </div>
           ))}
         </div>
-
-        <div className="text-center mt-16">
-          <div className="bg-card border border-border rounded-lg p-8 shadow-card max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              Ready to Transform Your Startup?
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              Join thousands of entrepreneurs who have accelerated their growth with our proven methodologies.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/workshops">
-                <button className="btn-primary">
-                  Browse All Workshops
-                </button>
-              </Link>
-              <button 
-                className="btn-secondary"
-                onClick={() => setShowConsultationForm(true)}
-              >
-                Schedule a Consultation
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
-    </section>
 
-    {/* Forms */}
-    {selectedWorkshop && (
-      <WorkshopRegistrationForm
-        workshopTitle={selectedWorkshop}
-        onClose={() => setSelectedWorkshop(null)}
-      />
-    )}
-    {showConsultationForm && (
-      <ConsultationForm onClose={() => setShowConsultationForm(false)} />
-    )}
-    </>
+      {selectedWorkshop && (
+        <WorkshopRegistrationForm
+          workshopTitle={selectedWorkshop}
+          onClose={() => setSelectedWorkshop(null)}
+        />
+      )}
+    </div>
   );
 };
 
-export default WorkshopsSection;
+export default Workshops;

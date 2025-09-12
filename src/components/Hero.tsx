@@ -1,9 +1,17 @@
+import { useState } from "react";
 import { ArrowRight, TrendingUp, Users, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/professional-meeting.jpg";
+import WorkshopRegistrationForm from "./WorkshopRegistrationForm";
+import ConsultationForm from "./ConsultationForm";
+import IncubationForm from "./IncubationForm";
 
 const Hero = () => {
+  const [activeForm, setActiveForm] = useState<string | null>(null);
+
   return (
+    <>
     <section id="home" className="min-h-screen flex items-center pt-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -11,7 +19,7 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="hero-title">
-                Be A Unicorn
+                Idea2Unicorn
               </h1>
               <h2 className="text-2xl md:text-3xl text-muted-foreground leading-relaxed">
                 Helping Startups Scale <span className="accent-text">15x Without Diluting Equity</span>
@@ -25,11 +33,16 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="btn-primary group">
-                Join a Workshop
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button className="btn-secondary">
+              <Link to="/workshops">
+                <Button className="btn-primary group">
+                  Join a Workshop
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Button 
+                className="btn-secondary"
+                onClick={() => setActiveForm("incubation")}
+              >
                 Apply for Incubation
               </Button>
             </div>
@@ -65,7 +78,7 @@ const Hero = () => {
             <div className="relative rounded-lg overflow-hidden shadow-elegant">
               <img
                 src={heroImage}
-                alt="Be A Unicorn - Professional startup consultation and mentoring"
+                alt="Idea2Unicorn - Professional startup consultation and mentoring"
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -73,6 +86,15 @@ const Hero = () => {
         </div>
       </div>
     </section>
+
+    {/* Forms */}
+    {activeForm === "incubation" && (
+      <IncubationForm onClose={() => setActiveForm(null)} />
+    )}
+    {activeForm === "consultation" && (
+      <ConsultationForm onClose={() => setActiveForm(null)} />
+    )}
+    </>
   );
 };
 

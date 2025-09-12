@@ -20,7 +20,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Sparkles className="h-8 w-8 text-accent" />
-            <span className="text-2xl font-bold text-foreground">Be A Unicorn</span>
+            <span className="text-2xl font-bold text-foreground">Idea2Unicorn</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -38,7 +38,10 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="btn-primary">
+            <Button 
+              className="btn-primary"
+              onClick={() => window.location.href = "/workshops"}
+            >
               Apply Now
             </Button>
           </div>
@@ -70,7 +73,10 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <Button className="btn-primary w-full mt-4">
+              <Button 
+                className="btn-primary w-full mt-4"
+                onClick={() => window.location.href = "/workshops"}
+              >
                 Apply Now
               </Button>
             </div>

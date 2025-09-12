@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="space-y-6">
           <div className="flex items-center space-x-2">
             <Sparkles className="h-8 w-8 text-accent" />
-            <span className="text-2xl font-bold">Be A Unicorn</span>
+            <span className="text-2xl font-bold">Idea2Unicorn</span>
           </div>
             <p className="text-primary-foreground/80 leading-relaxed">
               India's premier startup growth accelerator helping entrepreneurs scale 15x 
@@ -81,7 +81,7 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-accent" />
-                <span className="text-primary-foreground/80 text-sm">hello@beaunicorn.com</span>
+                <span className="text-primary-foreground/80 text-sm">hello@idea2unicorn.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-accent" />
@@ -113,7 +113,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-primary-foreground/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-primary-foreground/60 text-sm">
-            © 2024 Be A Unicorn. All rights reserved.
+            © 2024 Idea2Unicorn. All rights reserved.
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">

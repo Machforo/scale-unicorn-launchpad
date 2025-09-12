@@ -8,9 +8,10 @@ interface WorkshopCardProps {
   description: string;
   outcomes: string[];
   image?: string;
+  onRegister?: () => void;
 }
 
-const WorkshopCard = ({ title, facilitator, duration, description, outcomes }: WorkshopCardProps) => {
+const WorkshopCard = ({ title, facilitator, duration, description, outcomes, onRegister }: WorkshopCardProps) => {
   return (
     <div className="workshop-card">
       {/* Workshop Header */}
@@ -54,7 +55,7 @@ const WorkshopCard = ({ title, facilitator, duration, description, outcomes }: W
       </div>
 
       {/* CTA Button */}
-      <Button className="w-full btn-primary">
+      <Button className="w-full btn-primary" onClick={onRegister}>
         Register Now
         <ArrowRight className="ml-2 h-4 w-4" />
       </Button>
