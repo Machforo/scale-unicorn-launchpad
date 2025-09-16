@@ -1,4 +1,6 @@
 import { Lightbulb, Users, TrendingUp, Award } from "lucide-react";
+import FounderJourneySection from "./FounderJourneySection";
+import SocialMediaIntegration from "./SocialMediaIntegration";
 
 const AboutSection = () => {
   const values = [
@@ -95,6 +97,12 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
+      
+      {/* Founder Journey Section */}
+      <FounderJourneySection />
+      
+      {/* Social Media Integration */}
+      <SocialMediaIntegration />
     </section>
   );
 };

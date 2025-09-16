@@ -8,6 +8,7 @@ import Workshops from "./pages/Workshops";
 import Services from "./pages/Services";
 import Domains from "./pages/Domains";
 import Resources from "./pages/Resources";
+import IntegrationDemo from "./pages/IntegrationDemo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/domains" element={<Domains />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/integration-demo" element={<IntegrationDemo />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

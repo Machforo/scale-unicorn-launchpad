@@ -1,6 +1,5 @@
-import { ArrowLeft, Users, TrendingUp, BookOpen } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Users, TrendingUp, BookOpen } from "lucide-react";
+import Header from "@/components/Header";
 
 const Services = () => {
   const services = [
@@ -40,16 +39,9 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background pt-20">
-      <div className="container mx-auto px-6 py-12">
-        <div className="flex items-center mb-8">
-          <Link to="/">
-            <Button variant="ghost" className="mr-4">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
-        </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <div className="container mx-auto px-6 py-12 pt-24">
 
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
