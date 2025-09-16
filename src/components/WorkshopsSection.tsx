@@ -37,10 +37,10 @@ const WorkshopsSection = () => {
       ]
     },
     {
-      title: "15X Growth Without Diluting Equity",
+      title: "Smart Growth Without Diluting Equity",
       facilitator: "Sam Kundu",
       duration: "3 Days",
-      description: "Revolutionary growth methodologies that preserve founder equity while achieving exponential scale. Perfect for startups ready to dominate their market.",
+      description: "Revolutionary growth methodologies that preserve founder equity while achieving exponential scale. Perfect for startups ready to dominate their market, after operational services/product offerings.",
       outcomes: [
         "Proprietary growth hacking techniques",
         "Bootstrap scaling strategies",

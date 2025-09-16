@@ -22,7 +22,7 @@ const Hero = () => {
                 Idea2Unicorn
               </h1>
               <h2 className="text-2xl md:text-3xl text-muted-foreground leading-relaxed">
-                Helping Startups Scale <span className="accent-text">15x Without Diluting Equity</span>
+                Helping Startups Scale with <span className="accent-text">Smart Growth, Zero Dilution</span>
               </h2>
             </div>
 
@@ -53,8 +53,8 @@ const Hero = () => {
                 <div className="flex items-center justify-center mb-2">
                   <TrendingUp className="h-6 w-6 text-accent" />
                 </div>
-                <div className="text-2xl font-bold text-foreground">15x</div>
-                <div className="text-sm text-muted-foreground">Growth Rate</div>
+                <div className="text-2xl font-bold text-foreground">Smart Growth</div>
+                <div className="text-sm text-muted-foreground">Zero Dilution</div>
               </div>
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2">

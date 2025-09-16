@@ -11,7 +11,7 @@ const Footer = () => {
   const workshops = [
     { name: "Dream Life Workshop", href: "#" },
     { name: "Crossing the Chasm", href: "#" },
-    { name: "15X Growth Strategy", href: "#" },
+    { name: "Smart Growth Strategy", href: "#" },
     { name: "Real Estate Growth", href: "#" },
     { name: "Unicorn Strategy", href: "#" },
   ];
@@ -27,8 +27,8 @@ const Footer = () => {
             <span className="text-2xl font-bold">Idea2Unicorn</span>
           </div>
             <p className="text-primary-foreground/80 leading-relaxed">
-              India's premier startup growth accelerator helping entrepreneurs scale 15x 
-              without diluting equity through proprietary methodologies and expert guidance.
+              India's premier startup growth accelerator helping entrepreneurs scale with 
+              smart growth strategies without diluting equity through proprietary methodologies and expert guidance.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">

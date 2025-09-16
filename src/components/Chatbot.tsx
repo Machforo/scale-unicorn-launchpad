@@ -31,13 +31,13 @@ const Chatbot = () => {
       let botResponse = "Thank you for your question! Our team will get back to you shortly with detailed information.";
       
       if (message.toLowerCase().includes("workshop")) {
-        botResponse = "We offer 5 specialized workshops including Dream Life Workshop, Crossing the Chasm Strategy, 15X Growth methodology, Real Estate Growth, and Unicorn Strategy. Each is led by expert facilitators with proven track records.";
+        botResponse = "We offer 5 specialized workshops including Dream Life Workshop, Crossing the Chasm Strategy, Smart Growth methodology, Real Estate Growth, and Unicorn Strategy. Each is led by expert facilitators with proven track records.";
       } else if (message.toLowerCase().includes("apply") || message.toLowerCase().includes("incubation")) {
         botResponse = "To apply for our incubation program, please fill out our contact form or email us at hello@beaunicorn.com. We'll schedule a consultation call to discuss your startup's needs.";
       } else if (message.toLowerCase().includes("growth") || message.toLowerCase().includes("strategy")) {
-        botResponse = "Our growth strategies focus on scaling without equity dilution through franchise models, channel partnerships, and India-specific market penetration tactics. We've helped 500+ startups achieve 15x growth.";
+        botResponse = "Our growth strategies focus on scaling without equity dilution through franchise models, channel partnerships, and India-specific market penetration tactics. We've helped 500+ startups achieve smart growth.";
       } else if (message.toLowerCase().includes("success") || message.toLowerCase().includes("rate")) {
-        botResponse = "We have a 93% success rate with our Dream Life Workshop participants achieving clarity about their direction. Overall, our startups see an average 15x growth within 24 months.";
+        botResponse = "We have a 93% success rate with our Dream Life Workshop participants achieving clarity about their direction. Overall, our startups see smart growth and zero dilution strategies within 24 months.";
       } else if (message.toLowerCase().includes("cost") || message.toLowerCase().includes("price")) {
         botResponse = "Workshop pricing varies by program. Please contact us for detailed pricing information and early bird discounts. We also offer group rates and scholarship opportunities.";
       }
