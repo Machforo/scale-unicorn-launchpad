@@ -1,4 +1,4 @@
-import { Users, TrendingUp, BookOpen } from "lucide-react";
+import { DollarSign, Users, TrendingUp, Target, Code, BarChart, FileText } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
@@ -6,40 +6,7 @@ import { Link } from "react-router-dom";
 const Services = () => {
 const services = [
     {
-      icon: Users,
-      title: "Coaching",
-      description: "One-on-one mentorship with industry veterans who have built and scaled successful companies.",
-      features: [
-        "Personal mentorship sessions",
-        "Strategic business guidance",
-        "Market validation support",
-        "Growth strategy development"
-      ]
-    },
-    {
-      icon: TrendingUp,
-      title: "Incubation",
-      description: "Comprehensive startup incubation program with full operational support and growth methodologies.",
-      features: [
-        "360° startup support",
-        "Franchise model implementation",
-        "Channel partnership strategies",
-        "Smart growth without dilution"
-      ]
-    },
-    {
-      icon: BookOpen,
-      title: "Workshops",
-      description: "Expert-led workshops covering all aspects of startup growth and personal development.",
-      features: [
-        "Dream Life Workshop",
-        "Crossing the Chasm Strategy",
-        "Smart Growth methodologies",
-        "Real Estate & Unicorn strategies"
-      ]
-    },
-    {
-      icon: TrendingUp,
+      icon: DollarSign,
       title: "Funding",
       description: "Pre-seed, Seed & Angel Funding solutions with our committed corpus and investor network.",
       features: [
@@ -72,7 +39,7 @@ const services = [
       ]
     },
     {
-      icon: Users,
+      icon: Target,
       title: "Business Strategy",
       description: "Comprehensive business strategy consulting using 10 proven methodologies including Blue Ocean Strategy.",
       features: [
@@ -83,7 +50,7 @@ const services = [
       ]
     },
     {
-      icon: TrendingUp,
+      icon: Code,
       title: "Digital Engineering",
       description: "Technology solutions and digital transformation services for modern startups and enterprises.",
       features: [
@@ -94,7 +61,7 @@ const services = [
       ]
     },
     {
-      icon: Users,
+      icon: BarChart,
       title: "CFA Service",
       description: "Financial analysis and investment advisory services with certified financial analysts.",
       features: [
@@ -105,7 +72,7 @@ const services = [
       ]
     },
     {
-      icon: BookOpen,
+      icon: FileText,
       title: "Patent",
       description: "Intellectual property protection and patent filing services for innovative startups and technologies.",
       features: [
@@ -118,9 +85,13 @@ const services = [
   ];
 
   const pathFor = (title: string) => {
-    if (title === "Coaching") return "/services/coaching";
-    if (title === "Incubation") return "/services/incubation";
-    if (title === "Workshops") return "/workshops";
+    if (title === "Funding") return "/services/funding";
+    if (title === "Management Consulting") return "/services/management-consulting";
+    if (title === "Incubator Manager") return "/services/incubator-manager";
+    if (title === "Business Strategy") return "/services/business-strategy";
+    if (title === "Digital Engineering") return "/services/digital-engineering";
+    if (title === "CFA Service") return "/services/cfa-service";
+    if (title === "Patent") return "/services/patent";
     return "#";
   };
 
@@ -138,7 +109,7 @@ const services = [
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <Link to={pathFor(service.title)} key={index} className="bg-card border border-border rounded-lg p-8 shadow-card hover:shadow-elegant transition-shadow duration-200 block">
               <div className="flex items-center mb-6">

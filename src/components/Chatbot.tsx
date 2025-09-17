@@ -52,7 +52,7 @@ const Chatbot = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-elegant flex items-center justify-center transition-all duration-300 ${
-          isOpen ? "bg-destructive hover:bg-destructive/90" : "bg-primary hover:bg-primary-light text-primary-foreground"
+          isOpen ? "bg-destructive hover:bg-destructive/90" : "bg-primary hover:bg-primary/90 text-primary-foreground"
         }`}
       >
         {isOpen ? (

@@ -12,6 +12,13 @@ import IntegrationDemo from "./pages/IntegrationDemo";
 import NotFound from "./pages/NotFound";
 import Coaching from "./pages/services/Coaching";
 import Incubation from "./pages/services/Incubation";
+import Funding from "./pages/services/Funding";
+import ManagementConsulting from "./pages/services/ManagementConsulting";
+import IncubatorManager from "./pages/services/IncubatorManager";
+import BusinessStrategy from "./pages/services/BusinessStrategy";
+import DigitalEngineering from "./pages/services/DigitalEngineering";
+import CFAService from "./pages/services/CFAService";
+import Patent from "./pages/services/Patent";
 import Education from "./pages/domains/Education";
 import RealEstate from "./pages/domains/RealEstate";
 import BFSIFintech from "./pages/domains/BFSIFintech";
@@ -30,8 +37,13 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/workshops" element={<Workshops />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/services/coaching" element={<Coaching />} />
-          <Route path="/services/incubation" element={<Incubation />} />
+          <Route path="/services/funding" element={<Funding />} />
+          <Route path="/services/management-consulting" element={<ManagementConsulting />} />
+          <Route path="/services/incubator-manager" element={<IncubatorManager />} />
+          <Route path="/services/business-strategy" element={<BusinessStrategy />} />
+          <Route path="/services/digital-engineering" element={<DigitalEngineering />} />
+          <Route path="/services/cfa-service" element={<CFAService />} />
+          <Route path="/services/patent" element={<Patent />} />
           <Route path="/domains" element={<Domains />} />
           <Route path="/domains/education" element={<Education />} />
           <Route path="/domains/real-estate" element={<RealEstate />} />

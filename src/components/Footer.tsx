@@ -31,13 +31,13 @@ const Footer = () => {
               smart growth strategies without diluting equity through proprietary methodologies and expert guidance.
             </p>
             <div className="flex space-x-4">
-              <a href="https://twitter.com/idea2unicorn" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
+              <a href="https://chat.whatsapp.com/IPUGHnx2IxpKlPpXMT28Dy" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
               <a href="https://www.linkedin.com/company/dream-life-creator-in-wellness/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://instagram.com/idea2unicorn" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
+              <a href="https://chat.whatsapp.com/HCJIIzJ7rLUEtpGLwZe8GB" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -64,13 +64,16 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Workshops</h3>
             <div className="space-y-3">
               {workshops.map((workshop, index) => (
-                <a
+                <button
                   key={index}
-                  href={workshop.href}
-                  className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+                  onClick={() => {
+                    const form = document.querySelector('#workshop-form');
+                    if (form) form.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm w-full text-left"
                 >
                   {workshop.name}
-                </a>
+                </button>
               ))}
             </div>
           </div>

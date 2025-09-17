@@ -2,9 +2,9 @@ import { ExternalLink, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sandippVijjImage from "@/assets/sandipp-vijj.png";
 import ansshavJainImage from "@/assets/ansshav-jain.png";
-import amardeepBajpaiImage from "@/assets/amardeep-bajpai.jpg";
-import samKunduImage from "@/assets/sam-kundu.jpg";
-import achalPaulImage from "@/assets/achal-paul.jpg";
+import amardeepBajpaiImage from "@/assets/amardeep-bajpai-new.jpg";
+import samKunduImage from "@/assets/sam-kundu-new.jpg";
+import achalPaulImage from "@/assets/achal-paul-new.jpg";
 
 const LeadershipTeam = () => {
   const founder = {
@@ -30,8 +30,8 @@ const LeadershipTeam = () => {
       role: "CIO & AI Expert",
       title: "Chief Information Officer",
       description: "Leading AI innovation and technology strategy",
-      image: "/placeholder.svg",
-      linkedin: "https://linkedin.com/in/sample"
+      image: "https://via.placeholder.com/150x150/6366f1/ffffff?text=DM",
+      linkedin: "https://linkedin.com"
     },
     {
       name: "Amardeep Bajpai",
@@ -46,8 +46,8 @@ const LeadershipTeam = () => {
       role: "eLearning Innovator",
       title: "IIMA",
       description: "Pioneering digital learning solutions and educational technology",
-      image: "/placeholder.svg",
-      linkedin: "https://linkedin.com/in/sample"
+      image: "https://via.placeholder.com/150x150/6366f1/ffffff?text=SN",
+      linkedin: "https://linkedin.com"
     },
     {
       name: "Sam Kundu",
@@ -62,24 +62,24 @@ const LeadershipTeam = () => {
       role: "CA & Startup Strategist",
       title: "Chartered Accountant",
       description: "Financial strategy and startup consulting expert",
-      image: "/placeholder.svg",
-      linkedin: "https://linkedin.com/in/sample"
+      image: "https://via.placeholder.com/150x150/6366f1/ffffff?text=RK",
+      linkedin: "https://linkedin.com"
     },
     {
       name: "Satyavir Yadav",
       role: "Educationist & Entrepreneur",
       title: "Education Expert",
       description: "Educational innovation and entrepreneurial development",
-      image: "/placeholder.svg",
-      linkedin: "https://linkedin.com/in/sample"
+      image: "https://via.placeholder.com/150x150/6366f1/ffffff?text=SY",
+      linkedin: "https://linkedin.com"
     },
     {
       name: "Chandra Patni",
       role: "Fintech Expert",
       title: "Financial Technology Specialist",
       description: "Leading fintech innovation and digital financial solutions",
-      image: "/placeholder.svg",
-      linkedin: "https://linkedin.com/in/sample"
+      image: "https://via.placeholder.com/150x150/6366f1/ffffff?text=CP",
+      linkedin: "https://linkedin.com"
     },
     {
       name: "Achal Paul",

@@ -27,7 +27,7 @@ const AboutSection = () => {
         </div>
 
         {/* Press Release Highlights */}
-        <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl p-8 mb-16">
+        <div className="bg-card border border-border rounded-lg p-8 mb-16 shadow-card">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-foreground mb-4">How to Create the Blueprint of a Unicorn in 15 Days?</h3>
             <p className="text-lg text-muted-foreground">
