@@ -1,5 +1,6 @@
 import { Users, TrendingUp, BookOpen } from "lucide-react";
 import Header from "@/components/Header";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -38,6 +39,12 @@ const Services = () => {
     }
   ];
 
+  const pathFor = (title: string) => {
+    if (title === "Coaching") return "/services/coaching";
+    if (title === "Incubation") return "/services/incubation";
+    return "/workshops";
+  }; 
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -54,7 +61,7 @@ const Services = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-card border border-border rounded-lg p-8 shadow-card">
+            <Link to={pathFor(service.title)} key={index} className="bg-card border border-border rounded-lg p-8 shadow-card hover:shadow-elegant transition-shadow duration-200 block">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
                   <service.icon className="h-6 w-6 text-primary" />
@@ -74,7 +81,7 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

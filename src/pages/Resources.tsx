@@ -71,8 +71,10 @@ const Resources = () => {
                 {category.resources.map((resource, idx) => (
                   <li key={idx} className="flex items-center justify-between p-3 bg-muted/20 rounded-lg">
                     <span className="text-sm font-medium text-foreground">{resource}</span>
-                    <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80">
-                      Download
+                    <Button asChild variant="ghost" size="sm" className="text-primary hover:text-primary/80">
+                      <a href="/assets/sample-brochure.pdf" download>
+                        Download
+                      </a>
                     </Button>
                   </li>
                 ))}

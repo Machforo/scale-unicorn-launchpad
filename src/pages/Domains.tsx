@@ -1,5 +1,6 @@
 import { GraduationCap, Building, CreditCard, Phone, ShoppingCart } from "lucide-react";
 import Header from "@/components/Header";
+import { Link } from "react-router-dom";
 
 const Domains = () => {
   const domains = [
@@ -60,6 +61,23 @@ const Domains = () => {
     }
   ];
 
+  const pathFor = (title: string) => {
+    switch (title) {
+      case "Education":
+        return "/domains/education";
+      case "Real Estate":
+        return "/domains/real-estate";
+      case "BFSI/Fintech":
+        return "/domains/bfsi-fintech";
+      case "Telecom":
+        return "/domains/telecom";
+      case "Retail":
+        return "/domains/retail";
+      default:
+        return "/domains";
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -76,7 +94,7 @@ const Domains = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {domains.map((domain, index) => (
-            <div key={index} className="bg-card border border-border rounded-lg p-8 shadow-card hover:shadow-elegant transition-shadow duration-200">
+            <Link to={pathFor(domain.title)} key={index} className="bg-card border border-border rounded-lg p-8 shadow-card hover:shadow-elegant transition-shadow duration-200 block">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
                   <domain.icon className="h-6 w-6 text-primary" />
@@ -99,7 +117,7 @@ const Domains = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

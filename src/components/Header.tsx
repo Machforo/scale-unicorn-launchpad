@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navigation = [
     { name: "Home", href: "#home" },
@@ -14,37 +17,53 @@ const Header = () => {
     { name: "Contact", href: "#contact" },
   ];
 
+  const handleNavClick = (href: string) => {
+    if (href.startsWith("#")) {
+      const section = href.slice(1);
+      navigate("/", { state: { scrollTo: section } });
+    } else {
+      navigate(href);
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <Sparkles className="h-8 w-8 text-accent" />
             <span className="text-2xl font-bold text-foreground">Idea2Unicorn</span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
+                onClick={() => handleNavClick(item.href)}
                 className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button 
-              className="btn-primary"
-              onClick={() => window.location.href = "/workshops"}
-            >
-              Apply Now
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button className="btn-primary">Apply</Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => navigate("/workshops")}>
+                  Apply to a Workshop
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => navigate("/services/incubation")}>
+                  Apply for Incubation
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Mobile Menu Button */}
@@ -65,20 +84,26 @@ const Header = () => {
           <div className="md:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
-                  className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => handleNavClick(item.href)}
+                  className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium text-left"
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
               <Button 
                 className="btn-primary w-full mt-4"
-                onClick={() => window.location.href = "/workshops"}
+                onClick={() => navigate("/workshops")}
               >
-                Apply Now
+                Apply to a Workshop
+              </Button>
+              <Button 
+                variant="secondary"
+                className="w-full"
+                onClick={() => navigate("/services/incubation")}
+              >
+                Apply for Incubation
               </Button>
             </div>
           </div>
