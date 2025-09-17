@@ -1,4 +1,4 @@
-import { Sparkles, Mail, Phone, MapPin, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Sparkles, Mail, MessageCircle, MapPin, Twitter, Linkedin, Instagram } from "lucide-react";
 
 const Footer = () => {
   const quickLinks = [
@@ -31,13 +31,13 @@ const Footer = () => {
               smart growth strategies without diluting equity through proprietary methodologies and expert guidance.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
+              <a href="https://twitter.com/idea2unicorn" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
+              <a href="https://www.linkedin.com/company/dream-life-creator-in-wellness/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
+              <a href="https://instagram.com/idea2unicorn" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -81,15 +81,15 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-accent" />
-                <span className="text-primary-foreground/80 text-sm">hello@idea2unicorn.com</span>
+                <span className="text-primary-foreground/80 text-sm">Sandipp@idea2unicorn.ai</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-accent" />
-                <span className="text-primary-foreground/80 text-sm">+91 9876543210</span>
+                <MessageCircle className="h-5 w-5 text-green-500" />
+                <span className="text-primary-foreground/80 text-sm">Sandipp Vijj</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-accent" />
-                <span className="text-primary-foreground/80 text-sm">Mumbai, Delhi, Bangalore</span>
+                <span className="text-primary-foreground/80 text-sm">9809, #203 Walnut st, Dallas, TX 75243, USA</span>
               </div>
             </div>
 

@@ -2,7 +2,7 @@ import { ExternalLink, Youtube, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const SocialMediaIntegration = () => {
-  // Mock data - In actual implementation, this would come from APIs
+  // Sample YouTube and LinkedIn data - Replace with real API calls
   const youtubePosts = [
     {
       id: 1,
@@ -10,7 +10,8 @@ const SocialMediaIntegration = () => {
       thumbnail: "/placeholder.svg",
       views: "12K views",
       duration: "15:24",
-      publishedAt: "2 days ago"
+      publishedAt: "2 days ago",
+      link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
       id: 2,
@@ -18,7 +19,8 @@ const SocialMediaIntegration = () => {
       thumbnail: "/placeholder.svg", 
       views: "8.5K views",
       duration: "12:18",
-      publishedAt: "1 week ago"
+      publishedAt: "1 week ago",
+      link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
       id: 3,
@@ -26,7 +28,8 @@ const SocialMediaIntegration = () => {
       thumbnail: "/placeholder.svg",
       views: "15K views", 
       duration: "18:45",
-      publishedAt: "2 weeks ago"
+      publishedAt: "2 weeks ago",
+      link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     }
   ];
 
@@ -35,19 +38,22 @@ const SocialMediaIntegration = () => {
       id: 1,
       content: "Excellence in Startup & Corporate Leadership requires a unique blend of vision, resilience, and strategic thinking. After 7+ business failures and recovery from deep debt, I've learned that true leadership is about transforming challenges into opportunities for systemic change.",
       engagement: "245 likes • 32 comments",
-      publishedAt: "3 hours ago"
+      publishedAt: "3 hours ago",
+      link: "https://www.linkedin.com/company/dream-life-creator-in-wellness/"
     },
     {
       id: 2, 
       content: "The future of social entrepreneurship lies in tech-forward, systems-level solutions. Our Metaverse SkillTech University and Blockchain SkillsBank represent a paradigm shift in how we approach skill development and employment creation.",
       engagement: "189 likes • 28 comments",
-      publishedAt: "1 day ago"
+      publishedAt: "1 day ago",
+      link: "https://www.linkedin.com/company/dream-life-creator-in-wellness/"
     },
     {
       id: 3,
       content: "Smart Growth, Zero Dilution - this isn't just a methodology, it's a revolution. We've helped 500+ startups achieve exponential growth while preserving founder equity. The key is understanding that growth doesn't require giving up control.",
       engagement: "312 likes • 45 comments", 
-      publishedAt: "3 days ago"
+      publishedAt: "3 days ago",
+      link: "https://www.linkedin.com/company/dream-life-creator-in-wellness/"
     }
   ];
 
@@ -90,8 +96,10 @@ const SocialMediaIntegration = () => {
                         <p>{post.publishedAt}</p>
                       </div>
                     </div>
-                    <Button variant="ghost" size="sm" className="self-start">
-                      <ExternalLink className="h-4 w-4" />
+                    <Button variant="ghost" size="sm" className="self-start" asChild>
+                      <a href={post.link} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -99,9 +107,11 @@ const SocialMediaIntegration = () => {
             </div>
 
             <div className="mt-6 text-center">
-              <Button variant="outline" className="w-full">
-                <Youtube className="h-4 w-4 mr-2" />
-                View All Videos
+              <Button variant="outline" className="w-full" asChild>
+                <a href="https://www.youtube.com/c/SampleInvestingChannel" target="_blank" rel="noopener noreferrer">
+                  <Youtube className="h-4 w-4 mr-2" />
+                  View All Videos
+                </a>
               </Button>
             </div>
           </div>
@@ -124,9 +134,11 @@ const SocialMediaIntegration = () => {
                     <span>{post.publishedAt}</span>
                   </div>
                   <div className="mt-4 pt-4 border-t border-border">
-                    <Button variant="ghost" size="sm" className="w-full">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      View on LinkedIn
+                    <Button variant="ghost" size="sm" className="w-full" asChild>
+                      <a href={post.link} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        View on LinkedIn
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -134,9 +146,11 @@ const SocialMediaIntegration = () => {
             </div>
 
             <div className="mt-6 text-center">
-              <Button variant="outline" className="w-full">
-                <Linkedin className="h-4 w-4 mr-2" />
-                Follow on LinkedIn
+              <Button variant="outline" className="w-full" asChild>
+                <a href="https://www.linkedin.com/company/dream-life-creator-in-wellness/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-4 w-4 mr-2" />
+                  Follow on LinkedIn
+                </a>
               </Button>
             </div>
           </div>
@@ -152,9 +166,11 @@ const SocialMediaIntegration = () => {
               Connect with us on LinkedIn to stay updated with the latest insights, strategies, 
               and thought leadership content from our team.
             </p>
-            <Button className="btn-primary">
-              <Linkedin className="h-4 w-4 mr-2" />
-              Visit LinkedIn Company Page
+            <Button className="btn-primary" asChild>
+              <a href="https://www.linkedin.com/company/dream-life-creator-in-wellness/" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="h-4 w-4 mr-2" />
+                Visit LinkedIn Company Page
+              </a>
             </Button>
           </div>
         </div>

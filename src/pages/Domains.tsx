@@ -1,5 +1,6 @@
 import { GraduationCap, Building, CreditCard, Phone, ShoppingCart } from "lucide-react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 
 const Domains = () => {
@@ -121,6 +122,7 @@ const Domains = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

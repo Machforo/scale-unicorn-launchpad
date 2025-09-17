@@ -137,7 +137,7 @@ const FounderJourneySection = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-foreground mb-4">Ansshav's Innovation</h4>
+                <h4 className="text-lg font-semibold text-foreground mb-4">Company's Innovation</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center text-primary">
                     <div className="w-2 h-2 bg-primary rounded-full mr-3" />

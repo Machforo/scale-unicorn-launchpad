@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
+import { Mail, MessageCircle, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -51,27 +51,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-foreground">Email Us</div>
-                  <div className="text-muted-foreground">hello@beaunicorn.com</div>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
-                  <Phone className="h-6 w-6 text-secondary" />
-                </div>
-                <div>
-                  <div className="font-semibold text-foreground">Call Us</div>
-                  <div className="text-muted-foreground">+91 9876543210</div>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                  <MapPin className="h-6 w-6 text-accent" />
-                </div>
-                <div>
-                  <div className="font-semibold text-foreground">Visit Us</div>
-                  <div className="text-muted-foreground">Mumbai, Delhi, Bangalore</div>
+                  <div className="text-muted-foreground">Sandipp@idea2unicorn.ai</div>
                 </div>
               </div>
 
@@ -81,7 +61,17 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-foreground">WhatsApp</div>
-                  <div className="text-muted-foreground">+91 9876543210</div>
+                  <div className="text-muted-foreground">Sandipp Vijj</div>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                  <MapPin className="h-6 w-6 text-accent" />
+                </div>
+                <div>
+                  <div className="font-semibold text-foreground">Visit Us</div>
+                  <div className="text-muted-foreground">9809, #203 Walnut st, Dallas, TX 75243, USA</div>
                 </div>
               </div>
             </div>
@@ -141,14 +131,15 @@ const ContactSection = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
-                    Phone Number
+                    Phone Number *
                   </label>
                   <Input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+91 9876543210"
+                    placeholder="Enter your phone number"
+                    required
                     className="w-full"
                   />
                 </div>
