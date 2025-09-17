@@ -1,8 +1,12 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import IncubationForm from "@/components/IncubationForm";
 
 const Incubation = () => {
+  const [showIncubationForm, setShowIncubationForm] = useState(false);
+
   return (
+    <>
     <div className="min-h-screen bg-background">
       <Header />
       <div className="container mx-auto px-6 py-12 pt-24">
@@ -36,10 +40,20 @@ const Incubation = () => {
         <section className="bg-card border border-border rounded-lg p-6 shadow-card">
           <h2 className="text-2xl font-bold text-foreground mb-4">Apply for Incubation</h2>
           <p className="text-muted-foreground mb-6">Tell us about your startup and goals.</p>
-<IncubationForm onClose={() => {}} />
+          <button 
+            onClick={() => setShowIncubationForm(true)}
+            className="btn-primary"
+          >
+            Apply for Incubation
+          </button>
         </section>
       </div>
     </div>
+    
+    {showIncubationForm && (
+      <IncubationForm onClose={() => setShowIncubationForm(false)} />
+    )}
+    </>
   );
 };
 

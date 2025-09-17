@@ -20,10 +20,10 @@ All colors MUST be HSL for proper theming.
     --popover: 0 0% 100%;
     --popover-foreground: 224 15% 15%;
     
-    /* Brand Colors - Professional Blue */
-    --primary: 220 100% 35%;
+    /* Brand Colors - Professional Purple */
+    --primary: 270 95% 40%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 220 85% 50%;
+    --primary-light: 270 80% 55%;
     
     /* Professional Gray Secondary */
     --secondary: 220 14% 96%;
@@ -42,7 +42,7 @@ All colors MUST be HSL for proper theming.
     --destructive-foreground: 0 0% 100%;
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 220 100% 35%;
+    --ring: 270 95% 40%;
     
     /* Professional Shadows */
     --shadow-card: 0 2px 8px -1px hsl(224 15% 15% / 0.08);
@@ -75,10 +75,10 @@ All colors MUST be HSL for proper theming.
     --popover: 224 15% 8%;
     --popover-foreground: 0 0% 98%;
     
-    /* Brand Colors - Professional for dark */
-    --primary: 220 100% 60%;
+    /* Brand Colors - Professional Purple for dark */
+    --primary: 270 90% 65%;
     --primary-foreground: 224 15% 4%;
-    --primary-light: 220 90% 70%;
+    --primary-light: 270 85% 75%;
     
     /* Professional Gray Secondary */
     --secondary: 224 15% 15%;
@@ -97,7 +97,7 @@ All colors MUST be HSL for proper theming.
     --destructive-foreground: 0 0% 98%;
     --border: 224 15% 20%;
     --input: 224 15% 20%;
-    --ring: 220 100% 60%;
+    --ring: 270 90% 65%;
 
     /* Sidebar for dark mode */
     --sidebar-background: 240 5.9% 10%;

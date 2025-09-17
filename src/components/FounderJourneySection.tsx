@@ -69,7 +69,7 @@ const FounderJourneySection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Ansshav Jain's Journey
+            The Founders' Journey
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             From corporate success through entrepreneurial failures to revolutionary social entrepreneurship - 
