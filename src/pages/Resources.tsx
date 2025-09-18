@@ -6,9 +6,9 @@ import Footer from "@/components/Footer";
 const Resources = () => {
   const books = [
     {
-      title: "Bhagavadgeetha As it is",
+      title: "Bhagavad Gita As It Is",
       author: "A.C.Bhakthivedantha Swamy Prabhupada",
-      link: "https://www.amazon.in/Bhagvad-Gita-As-It-Is/dp/8189999729"
+      link: "https://www.amazon.com/Bhagavad-Gita-Original-English-As/dp/B07MDTX8BR/ref=sr_1_1?crid=YUWQID07I4YZ&dib=eyJ2IjoiMSJ9.jtqlx-tib5EJfQBY7KeozuFQIfJnrMBb7tPftwpvHrbnRWxQORHjivYESwH0baGIL-tpWBl9xvRqKZsFoNOxUZqYZXnoOV3zaNjSOr2ZLzx2TSGR99UbGflbHWSuk1FyAFxJgOUAZljKsVWsWyv2KaUtZWOAnBCqz2kvw-azsqIyvI4yDqhZzim1IFIMG64kCszK2g8nNPGIiLIS2EP1irpg1zRq13jhH4wIJXLdUoc.rJfCjl_TrQXYC5o7cgLfr5oi4nz5f30jO_aud6f55ts&dib_tag=se&keywords=bhagavad+gita+as+it+is&qid=1758194560&sprefix=bhagwad+gita+as+%2Caps%2C422&sr=8-1"
     },
     {
       title: "John C Maxwell Attitude 101",

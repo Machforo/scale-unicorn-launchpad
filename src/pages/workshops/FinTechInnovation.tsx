@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Clock, Users, Target, Award, CheckCircle, Calendar, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
-import PaymentModal from "@/components/PaymentModal";
+
 import chandraPatniImage from "@/assets/chandra-patni.jpg";
 
 const FinTechInnovation = () => {
@@ -188,11 +188,6 @@ const FinTechInnovation = () => {
         </div>
       </div>
 
-      <PaymentModal 
-        isOpen={showPaymentModal}
-        onClose={() => setShowPaymentModal(false)}
-        workshopTitle="FinTech Innovation Workshop"
-      />
     </div>
   );
 };

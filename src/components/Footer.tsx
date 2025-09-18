@@ -1,4 +1,8 @@
 import { Sparkles, Mail, MessageCircle, MapPin, Twitter, Linkedin, Instagram } from "lucide-react";
+import ganeshaSmal from "@/assets/ganesha-small.jpg";
+import lotusDeitySmall from "@/assets/lotus-deity-small.jpg";
+import decorativeOrnamentSmall from "@/assets/decorative-ornament-small.jpg";
+import traditionalDeitySmall from "@/assets/traditional-deity-small.jpg";
 
 const Footer = () => {
   const quickLinks = [
@@ -114,20 +118,30 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-primary-foreground/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-primary-foreground/60 text-sm">
-            © 2024 Idea2Unicorn. All rights reserved.
+        <div className="border-t border-primary-foreground/20 mt-12 pt-8">
+          {/* Decorative spiritual images */}
+          <div className="flex items-center justify-center space-x-6 mb-6 opacity-60">
+            <img src={ganeshaSmal} alt="Ganesha" className="w-8 h-8 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src={lotusDeitySmall} alt="Lotus Deity" className="w-8 h-8 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src={decorativeOrnamentSmall} alt="Decorative Ornament" className="w-8 h-8 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src={traditionalDeitySmall} alt="Traditional Deity" className="w-8 h-8 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
           </div>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
-              Terms of Service
-            </a>
-            <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
-              Cookie Policy
-            </a>
+          
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="text-primary-foreground/60 text-sm">
+              © 2024 Idea2Unicorn. All rights reserved.
+            </div>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
+                Terms of Service
+              </a>
+              <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
+                Cookie Policy
+              </a>
+            </div>
           </div>
         </div>
       </div>
