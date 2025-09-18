@@ -108,58 +108,6 @@ const FounderJourneySection = () => {
           </div>
         </div>
 
-        {/* Vision Comparison */}
-        <div className="mb-20">
-          <div className="bg-card border border-border rounded-lg p-8 shadow-card">
-            <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
-              Redefining Social Entrepreneurship
-            </h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="text-lg font-semibold text-foreground mb-4">Traditional Approach</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center text-muted-foreground">
-                    <div className="w-2 h-2 bg-muted-foreground/50 rounded-full mr-3" />
-                    Low-tech, grassroots solutions
-                  </li>
-                  <li className="flex items-center text-muted-foreground">
-                    <div className="w-2 h-2 bg-muted-foreground/50 rounded-full mr-3" />
-                    Direct service delivery focus
-                  </li>
-                  <li className="flex items-center text-muted-foreground">
-                    <div className="w-2 h-2 bg-muted-foreground/50 rounded-full mr-3" />
-                    Grant and donation dependent
-                  </li>
-                  <li className="flex items-center text-muted-foreground">
-                    <div className="w-2 h-2 bg-muted-foreground/50 rounded-full mr-3" />
-                    Specific issue focused
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-foreground mb-4">Company's Innovation</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center text-primary">
-                    <div className="w-2 h-2 bg-primary rounded-full mr-3" />
-                    Tech-forward, systems-level thinking
-                  </li>
-                  <li className="flex items-center text-primary">
-                    <div className="w-2 h-2 bg-primary rounded-full mr-3" />
-                    Ecosystem building approach
-                  </li>
-                  <li className="flex items-center text-primary">
-                    <div className="w-2 h-2 bg-primary rounded-full mr-3" />
-                    Self-sustaining business models
-                  </li>
-                  <li className="flex items-center text-primary">
-                    <div className="w-2 h-2 bg-primary rounded-full mr-3" />
-                    Macroeconomic transformation
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Impact Goals */}
         <div>
