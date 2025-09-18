@@ -19,6 +19,8 @@ const ContactSection = () => {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const { toast } = useToast();
 
+  console.log("ContactSection rendered", { showPaymentModal }); // Debug log
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
