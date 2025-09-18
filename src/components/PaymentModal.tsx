@@ -35,7 +35,13 @@ const PaymentModal = ({ isOpen, onClose, workshopTitle, servicePriceINR, service
       "General Consultation": { inr: 3000, usd: 36 }
     };
 
-    const pricing = workshopPricing[workshopTitle || "General Consultation"];
+    // Get pricing with fallback to General Consultation
+    const pricing = workshopPricing[workshopTitle || ""] || workshopPricing["General Consultation"];
+    
+    if (!pricing) {
+      return currency === 'INR' ? '₹3,000' : '$36';
+    }
+    
     return currency === 'INR' ? `₹${pricing.inr.toLocaleString()}` : `$${pricing.usd.toLocaleString()}`;
   };
 
