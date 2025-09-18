@@ -49,21 +49,21 @@ const Header = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button className="btn-primary">Apply</Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => navigate("/workshops")}>
-                  Apply to a Workshop
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => navigate("/services/incubation")}>
-                  Apply for Incubation
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Button 
+              variant="outline" 
+              onClick={() => navigate("/for-investors")}
+              className="btn-secondary"
+            >
+              For Investors
+            </Button>
+            <Button 
+              onClick={() => navigate("/for-startups")}
+              className="btn-primary"
+            >
+              For Startups
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -93,17 +93,17 @@ const Header = () => {
                 </button>
               ))}
               <Button 
-                className="btn-primary w-full mt-4"
-                onClick={() => navigate("/workshops")}
+                variant="outline"
+                className="w-full mt-4"
+                onClick={() => navigate("/for-investors")}
               >
-                Apply to a Workshop
+                For Investors
               </Button>
               <Button 
-                variant="secondary"
-                className="w-full"
-                onClick={() => navigate("/services/incubation")}
+                className="btn-primary w-full"
+                onClick={() => navigate("/for-startups")}
               >
-                Apply for Incubation
+                For Startups
               </Button>
             </div>
           </div>

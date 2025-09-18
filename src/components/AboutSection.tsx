@@ -26,42 +26,30 @@ const AboutSection = () => {
           </p>
         </div>
 
-        {/* Press Release Highlights */}
-        <div className="bg-gradient-to-br from-muted/20 to-muted/10 border border-border rounded-xl p-12 mb-16 shadow-xl">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-foreground mb-6">How to Create the Blueprint of a Unicorn in 15 Days?</h3>
-            <p className="text-xl text-muted-foreground">
-              Pre-seed, Seed & Angel Funding available with comprehensive 360° services
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            {highlights.map((highlight, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-primary mb-3">{highlight.number}</div>
-                <div className="text-base text-muted-foreground">{highlight.label}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* Purpose Section */}
-          <div className="bg-card border border-border rounded-lg p-8 mt-8">
-            <h4 className="text-xl font-semibold text-foreground mb-4 text-center">
-              ✨ Purpose of Our Community
-            </h4>
-            <div className="space-y-3 text-muted-foreground">
-              <p className="text-center font-medium">You were born with the Potential:</p>
-              <ul className="list-disc list-inside space-y-1 max-w-2xl mx-auto">
-                <li>You were born with goodness and trust</li>
-                <li>You were born with ideals and dreams</li>
-                <li>You were born with greatness</li>
-                <li>You were born with wings</li>
-                <li>You were not meant for crawling, so don't</li>
-                <li>You have wings — learn to use them and fly 🦋</li>
-              </ul>
-              <p className="mt-4 font-medium text-center">
-                This community exists to help you conceptualize, design, and scale your unicorns with structured mentorship, proven frameworks, and global networks.
-              </p>
+        {/* Stats Section with Background Color from Image */}
+        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8 mb-16">
+          <h3 className="text-3xl font-bold text-center text-gray-800 mb-8">
+            How to Create the Blueprint of a Unicorn in 15 Days?
+          </h3>
+          <p className="text-center text-gray-600 mb-8">
+            Pre-seed, Seed & Angel Funding available with comprehensive 360° services
+          </p>
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">$1M</div>
+              <p className="text-gray-600">Possible valuation in 4 weeks</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">360°</div>
+              <p className="text-gray-600">Complete services available</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">7</div>
+              <p className="text-gray-600">Incubator partnerships including IIM Calcutta</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">₹75L</div>
+              <p className="text-gray-600">Corpus already committed</p>
             </div>
           </div>
         </div>

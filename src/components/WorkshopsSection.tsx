@@ -1,146 +1,112 @@
-import { useState } from "react";
+import { Calendar, Clock, Users, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import WorkshopCard from "./WorkshopCard";
-import WorkshopRegistrationForm from "./WorkshopRegistrationForm";
-import ConsultationForm from "./ConsultationForm";
 
 const WorkshopsSection = () => {
-  const [selectedWorkshop, setSelectedWorkshop] = useState<string | null>(null);
-  const [showConsultationForm, setShowConsultationForm] = useState(false);
-
   const workshops = [
     {
+      id: "conceptualize-unicorn",
       title: "Conceptualize Your Unicorn",
       facilitator: "Sandipp Vijj",
       duration: "4 Sessions",
-      description: "Master the art of unicorn visualization through Sandipp's proven methodology based on 10 books including Bhagavad Gita, Blue Ocean Strategy, and Good to Great.",
-      outcomes: [
-        "Session 1: Concept of Visualization explained by Sandipp",
-        "Session 2: Participant draws their dream life",
-        "Session 3: Present your vision to Sandipp",
-        "Session 4: Vision improvement and refinement",
-        "Access to 10-book methodology framework",
-        "Personal mentorship from Sandipp Vijj"
-      ]
+      description: "Transform your vision into a billion-dollar business blueprint using proven methodologies and Sandipp's unique visualization techniques.",
+      route: "/workshops/conceptualize-unicorn"
     },
     {
-      title: "Crossing the Chasm Strategy",
-      facilitator: "Sandipp Vijj",
-      duration: "1 Day",
-      description: "Navigate the critical transition from early adopters to mainstream market. Learn proven strategies to scale your startup across the innovation chasm.",
-      outcomes: [
-        "Market segmentation and targeting mastery",
-        "Product positioning for mainstream adoption",
-        "Customer acquisition strategy optimization",
-        "Risk mitigation during scaling phases",
-        "Revenue model refinement"
-      ]
+      id: "funding-mastery",
+      title: "Funding Mastery Workshop", 
+      facilitator: "Industry Experts",
+      duration: "3 Sessions",
+      description: "Navigate the funding landscape from pre-seed to Series A with expert guidance and real-world case studies.",
+      route: "/workshops/funding-mastery"
     },
     {
-      title: "Smart Growth Without Diluting Equity",
-      facilitator: "Sam Kundu",
-      duration: "3 Days",
-      description: "Revolutionary growth methodologies that preserve founder equity while achieving exponential scale. Perfect for startups ready to dominate their market, after operational services/product offerings.",
-      outcomes: [
-        "Proprietary growth hacking techniques",
-        "Bootstrap scaling strategies",
-        "Revenue multiplication without external funding",
-        "Operational efficiency optimization",
-        "Market expansion frameworks"
-      ]
+      id: "digital-transformation",
+      title: "Digital Transformation",
+      facilitator: "Tech Leaders", 
+      duration: "5 Sessions",
+      description: "Leverage cutting-edge technology to scale your business and reach global markets efficiently.",
+      route: "/workshops/digital-transformation"
     },
     {
-      title: "Real Estate Compounded Growth Strategy",
-      facilitator: "Mr Satyavir Yadav",
-      duration: "2 Days",
-      description: "Master the art of real estate investment with compound growth principles. Build generational wealth through strategic property investments.",
-      outcomes: [
-        "Market analysis and opportunity identification",
-        "Financing strategies and leverage optimization",
-        "Portfolio diversification techniques",
-        "Risk management in real estate",
-        "Passive income generation methods"
-      ]
-    },
-    {
-      title: "Strategy to Become a Unicorn",
-      facilitator: "Mr Jain",
-      duration: "4 Days",
-      description: "The ultimate masterclass on building billion-dollar companies. Learn the insider strategies used by unicorn founders and investors.",
-      outcomes: [
-        "Unicorn business model design",
-        "Investor attraction and pitch perfection",
-        "Scaling culture and team building",
-        "Market disruption strategies",
-        "Exit strategy planning"
-      ]
+      id: "leadership-excellence",
+      title: "Leadership Excellence",
+      facilitator: "Leadership Experts",
+      duration: "4 Sessions", 
+      description: "Develop exceptional leadership skills to build and manage high-performing teams in startup environments.",
+      route: "/workshops/leadership-excellence"
     }
   ];
 
   return (
-    <>
-    <section id="workshops" className="py-20 bg-muted/30">
+    <section className="py-20 bg-muted/30" id="workshops">
       <div className="container mx-auto px-6">
-        {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="section-title">
+          <h2 className="text-4xl font-bold text-foreground mb-6">
             Proprietary Workshops
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Transform your startup journey with our expert-led workshops designed to accelerate growth, 
-            optimize operations, and unlock your full potential.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Exclusive, hands-on workshops designed to accelerate your entrepreneurial journey
           </p>
         </div>
 
-        {/* Workshops Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {workshops.map((workshop, index) => (
-            <div key={index}>
-              <WorkshopCard 
-                {...workshop} 
-                onRegister={() => setSelectedWorkshop(workshop.title)}
-              />
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {workshops.map((workshop) => (
+            <div key={workshop.id} className="bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-lg transition-all duration-200">
+              <div className="flex items-center mb-4">
+                <Calendar className="h-5 w-5 text-primary mr-2" />
+                <span className="text-sm text-muted-foreground">{workshop.duration}</span>
+              </div>
+              
+              <h3 className="text-xl font-bold text-foreground mb-2">{workshop.title}</h3>
+              <p className="text-sm text-muted-foreground mb-3">Facilitator: {workshop.facilitator}</p>
+              <p className="text-muted-foreground mb-6 text-sm leading-relaxed">{workshop.description}</p>
+              
+              <Link to={workshop.route}>
+                <Button className="w-full btn-primary group">
+                  Learn More & Register
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <div className="bg-card border border-border rounded-lg p-8 shadow-card max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              Ready to Transform Your Startup?
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              Join thousands of entrepreneurs who have accelerated their growth with our proven methodologies.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/workshops">
-                <button className="btn-primary">
-                  Browse All Workshops
-                </button>
-              </Link>
-              <button 
-                className="btn-secondary"
-                onClick={() => setShowConsultationForm(true)}
-              >
-                Schedule a Consultation
-              </button>
+        {/* Workshop Stats */}
+        <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 border border-primary/20">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="flex items-center justify-center mb-3">
+                <Users className="h-8 w-8 text-primary" />
+              </div>
+              <div className="text-3xl font-bold text-foreground mb-2">500+</div>
+              <div className="text-muted-foreground">Entrepreneurs Trained</div>
+            </div>
+            <div>
+              <div className="flex items-center justify-center mb-3">
+                <Clock className="h-8 w-8 text-primary" />
+              </div>
+              <div className="text-3xl font-bold text-foreground mb-2">85%</div>
+              <div className="text-muted-foreground">Success Rate</div>
+            </div>
+            <div>
+              <div className="flex items-center justify-center mb-3">
+                <Calendar className="h-8 w-8 text-primary" />
+              </div>
+              <div className="text-3xl font-bold text-foreground mb-2">₹250Cr+</div>
+              <div className="text-muted-foreground">Funding Raised</div>
+            </div>
+            <div>
+              <div className="flex items-center justify-center mb-3">
+                <ArrowRight className="h-8 w-8 text-primary" />
+              </div>
+              <div className="text-3xl font-bold text-foreground mb-2">100+</div>
+              <div className="text-muted-foreground">Workshops Conducted</div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    {/* Forms */}
-    {selectedWorkshop && (
-      <WorkshopRegistrationForm
-        workshopTitle={selectedWorkshop}
-        onClose={() => setSelectedWorkshop(null)}
-      />
-    )}
-    {showConsultationForm && (
-      <ConsultationForm onClose={() => setShowConsultationForm(false)} />
-    )}
-    </>
   );
 };
 

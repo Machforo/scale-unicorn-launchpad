@@ -1,9 +1,10 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
+import SandippMethodology from "@/components/SandippMethodology";
 import WorkshopsSection from "@/components/WorkshopsSection";
-import WorkshopDetails from "@/components/WorkshopDetails";
 import GrowthStrategiesSection from "@/components/GrowthStrategiesSection";
+import FounderJourneySection from "@/components/FounderJourneySection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
@@ -31,8 +32,9 @@ const Index = () => {
       <main>
         <Hero />
         <AboutSection />
+        <SandippMethodology />
         <WorkshopsSection />
-        <WorkshopDetails />
+        <FounderJourneySection />
         <GrowthStrategiesSection />
         <ContactSection />
       </main>
