@@ -3,6 +3,8 @@ import { Mail, MessageCircle, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+import PaymentModal from "./PaymentModal";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -13,11 +15,20 @@ const ContactSection = () => {
     interest: "",
     message: ""
   });
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
     console.log("Form submitted:", formData);
+    
+    toast({
+      title: "Application Submitted!",
+      description: "Thank you for your interest. Payment details are displayed below.",
+    });
+    
+    setShowPaymentModal(true);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -70,8 +81,18 @@ const ContactSection = () => {
                   <MapPin className="h-6 w-6 text-accent" />
                 </div>
                 <div>
-                  <div className="font-semibold text-foreground">Visit Us</div>
+                  <div className="font-semibold text-foreground">Visit Us - USA</div>
                   <div className="text-muted-foreground">9809, #203 Walnut st, Dallas, TX 75243, USA</div>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                  <MapPin className="h-6 w-6 text-accent" />
+                </div>
+                <div>
+                  <div className="font-semibold text-foreground">Visit Us - India</div>
+                  <div className="text-muted-foreground">BPA – 085, Belvedere Park, DLF III Sector 25 A Gurugram, Haryana Cyber City</div>
                 </div>
               </div>
             </div>
@@ -199,6 +220,14 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
+
+      <PaymentModal 
+        isOpen={showPaymentModal}
+        onClose={() => setShowPaymentModal(false)}
+        workshopTitle={formData.interest === 'workshop' ? 'Workshop Registration' : 
+                     formData.interest === 'incubation' ? 'Incubation Program' : 
+                     'Consultation'}
+      />
     </section>
   );
 };

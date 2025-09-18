@@ -1,8 +1,25 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Clock, Users, Target, Award, CheckCircle, Calendar, CreditCard, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
+import PaymentModal from "@/components/PaymentModal";
 
 const DigitalTransformation = () => {
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const { toast } = useToast();
+
+  const handleRegister = () => {
+    toast({
+      title: "Registration Started!",
+      description: "Please complete the payment process below.",
+    });
+    setShowPaymentModal(true);
+  };
+
+  const handleContact = () => {
+    window.location.href = "mailto:support@idea2unicorn.ai?subject=Digital Transformation Workshop Inquiry";
+  };
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
@@ -156,11 +173,11 @@ const DigitalTransformation = () => {
               Join this transformative workshop and lead your organization into the digital future
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8">
+              <Button size="lg" className="text-lg px-8" onClick={handleRegister}>
                 <Calendar className="mr-2 h-5 w-5" />
                 Register Now
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
+              <Button variant="outline" size="lg" className="text-lg px-8" onClick={handleContact}>
                 <Phone className="mr-2 h-5 w-5" />
                 Contact Us
               </Button>
@@ -168,6 +185,12 @@ const DigitalTransformation = () => {
           </div>
         </div>
       </div>
+
+      <PaymentModal 
+        isOpen={showPaymentModal}
+        onClose={() => setShowPaymentModal(false)}
+        workshopTitle="Digital Transformation Workshop"
+      />
     </div>
   );
 };

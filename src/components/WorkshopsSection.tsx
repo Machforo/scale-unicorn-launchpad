@@ -8,8 +8,8 @@ const WorkshopsSection = () => {
       id: "conceptualize-unicorn",
       title: "Conceptualize Your Unicorn",
       facilitator: "Sandipp Vijj",
-      duration: "4 Sessions",
-      description: "Transform your vision into a billion-dollar business blueprint using proven methodologies and Sandipp's unique visualization techniques.",
+      duration: "10 Sessions",
+      description: "Transform your startup idea into a structured unicorn blueprint using our proven 10-book methodology framework.",
       route: "/workshops/conceptualize-unicorn"
     },
     {
@@ -17,15 +17,15 @@ const WorkshopsSection = () => {
       title: "Funding Mastery Workshop", 
       facilitator: "Sandipp Vijj",
       duration: "4 Sessions",
-      description: "Master the art of raising capital and securing funding for your startup at every stage.",
+      description: "Master the art of raising capital and securing funding for your startup with proven strategies and investor insights.",
       route: "/workshops/funding-mastery"
     },
     {
       id: "digital-transformation",
       title: "Digital Transformation",
-      facilitator: "Sandipp Vijj", 
+      facilitator: "Dinesh Makhija & Amardeep Bajpai", 
       duration: "4 Sessions",
-      description: "Transform your business with cutting-edge digital strategies and technologies.",
+      description: "Transform your business with cutting-edge digital strategies, AI integration, and technology implementation.",
       route: "/workshops/digital-transformation"
     },
     {
@@ -33,8 +33,26 @@ const WorkshopsSection = () => {
       title: "Leadership Excellence",
       facilitator: "Sandipp Vijj",
       duration: "4 Sessions", 
-      description: "Develop exceptional leadership skills and build high-performing teams.",
+      description: "Develop exceptional leadership skills, build high-performing teams, and create lasting organizational impact.",
       route: "/workshops/leadership-excellence"
+    },
+    {
+      id: "franchising-mastery",
+      title: "Franchising Mastery",
+      facilitator: "Sam Kundu",
+      duration: "4 Sessions", 
+      description: "Learn from the 'Franchising King' how to build scalable franchise models and expand your business globally.",
+      route: "#",
+      comingSoon: true
+    },
+    {
+      id: "fintech-innovation",
+      title: "FinTech Innovation Workshop",
+      facilitator: "Chandra Patni",
+      duration: "4 Sessions", 
+      description: "Navigate the FinTech landscape, understand regulatory requirements, and build innovative financial solutions.",
+      route: "#",
+      comingSoon: true
     }
   ];
 
@@ -50,7 +68,7 @@ const WorkshopsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {workshops.map((workshop) => (
             <div key={workshop.id} className="bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-lg transition-all duration-200">
               <div className="flex items-center mb-4">
@@ -62,12 +80,18 @@ const WorkshopsSection = () => {
               <p className="text-sm text-muted-foreground mb-3">Facilitator: {workshop.facilitator}</p>
               <p className="text-muted-foreground mb-6 text-sm leading-relaxed">{workshop.description}</p>
               
-              <Link to={workshop.route}>
-                <Button className="w-full btn-primary group">
-                  Learn More & Register
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              {workshop.comingSoon ? (
+                <Button disabled className="w-full">
+                  Coming Soon
                 </Button>
-              </Link>
+              ) : (
+                <Link to={workshop.route}>
+                  <Button className="w-full btn-primary group">
+                    Learn More & Register
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+              )}
             </div>
           ))}
         </div>

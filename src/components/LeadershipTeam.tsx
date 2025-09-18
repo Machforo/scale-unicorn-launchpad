@@ -21,75 +21,93 @@ const LeadershipTeam = () => {
     linkedin: "https://www.linkedin.com/in/sandeepvij"
   };
 
-  const principlePartners = [
+  const principalPartners = [
     {
-      name: "Ansshav Jain",
-      role: "Serial Entrepreneur",
-      title: "Founder of Bringleverse UK & India, DYU NFT $1B Fund",
-      description: "Senior corporate professional for 2 decades, Serial entrepreneur for 10+ years",
-      image: ansshavJainImage,
-      linkedin: "https://lnkd.in/gawRP7sU"
+      name: "Chandra Patni",
+      role: "Fintech Expert",
+      title: "Financial Technology Specialist", 
+      expertise: "Fintech",
+      description: "Leading fintech innovation and digital financial solutions",
+      image: chandraPatniImage,
+      linkedin: "https://www.linkedin.com/in/chandrapatni/"
     },
     {
       name: "Dinesh Makhija",
-      role: "CIO & AI Expert",
+      role: "AI Expert",
       title: "Chief Information Officer",
+      expertise: "AI",
       description: "Leading AI innovation and technology strategy",
       image: dineshMakhijaImage,
       linkedin: "https://linkedin.com"
     },
     {
       name: "Amardeep Bajpai",
-      role: "Digital Marketing Expert",
+      role: "AI Expert",
       title: "IIMA | 3 Unicorns Creator",
-      description: "Digital Marketing Expert, credited with building 3 unicorns",
+      expertise: "AI",
+      description: "Digital Marketing Expert, credited with building 3 unicorns, AI innovation specialist",
       image: amardeepBajpaiImage,
       linkedin: "https://www.linkedin.com/in/amardeepbajpai/"
     },
     {
       name: "Sameer Nigam",
-      role: "eLearning Innovator",
+      role: "eLearning & EdTech Expert",
       title: "IIMA",
+      expertise: "eLearning, EdTech",
       description: "Pioneering digital learning solutions and educational technology",
       image: sameerNigamImage,
       linkedin: "https://www.linkedin.com/in/sameernigam/"
     },
     {
+      name: "Sandipp Vijj",
+      role: "Retail & Visioning Expert",
+      title: "CEO and Founder",
+      expertise: "Retail, Visioning, Crossing the Chasm",
+      description: "Expert in retail strategies, business visioning, and market crossing methodologies",
+      image: sandippVijjImage,
+      linkedin: "https://www.linkedin.com/in/sandeepvij"
+    },
+    {
+      name: "Ansshav Jain",
+      role: "Visioning Expert",
+      title: "Founder of Bringleverse UK & India, DYU NFT $1B Fund",
+      expertise: "Visioning",
+      description: "Senior corporate professional for 2 decades, Serial entrepreneur for 10+ years, specializing in business visioning",
+      image: ansshavJainImage,
+      linkedin: "https://lnkd.in/gawRP7sU"
+    },
+    {
       name: "Sam Kundu",
-      role: '"Franchising King"',
-      title: "Franchise Expert",
+      role: "Franchising Expert",
+      title: '"Franchising King"',
+      expertise: "Franchising",
       description: "Leading franchise model development and business expansion",
       image: samKunduImage,
       linkedin: "https://www.linkedin.com/in/samirankundu/"
     },
     {
+      name: "Satyavir Yadav",
+      role: "Education & Real Estate Expert",
+      title: "Education & Real Estate Specialist",
+      expertise: "Education, Real Estate",
+      description: "Educational innovation, entrepreneurial development, and real estate expertise",
+      image: satyavirYadavImage,
+      linkedin: "https://linkedin.com"
+    },
+    {
       name: "Rajiv Kapahi",
       role: "CA & Startup Strategist",
       title: "Chartered Accountant",
+      expertise: "Financial Strategy",
       description: "Financial strategy and startup consulting expert",
       image: rajivKapahiImage,
       linkedin: "https://www.linkedin.com/in/rajiv-p-kapahi/"
     },
     {
-      name: "Satyavir Yadav",
-      role: "Educationist & Entrepreneur",
-      title: "Education Expert",
-      description: "Educational innovation and entrepreneurial development",
-      image: satyavirYadavImage,
-      linkedin: "https://linkedin.com"
-    },
-    {
-      name: "Chandra Patni",
-      role: "Fintech Expert",
-      title: "Financial Technology Specialist",
-      description: "Leading fintech innovation and digital financial solutions",
-      image: chandraPatniImage,
-      linkedin: "https://www.linkedin.com/in/chandrapatni/"
-    },
-    {
       name: "Achal Paul",
       role: "Communication Expert",
       title: "Founder Director, BUZZ Communications",
+      expertise: "Strategic Communication",
       description: "Strategic communication and brand development expert",
       image: achalPaulImage,
       linkedin: "https://www.linkedin.com/in/achal-paul-8a2385b/"
@@ -109,6 +127,11 @@ const LeadershipTeam = () => {
         
         <h4 className="text-lg font-semibold text-foreground mb-1">{person.name}</h4>
         <div className="text-sm font-medium text-primary mb-1">{person.role}</div>
+        {person.expertise && (
+          <div className="text-xs bg-accent/20 text-accent-foreground px-2 py-1 rounded-full mb-2">
+            {person.expertise}
+          </div>
+        )}
         <div className="text-sm text-muted-foreground mb-3">{person.title}</div>
         
         <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-3">
@@ -148,13 +171,13 @@ const LeadershipTeam = () => {
           </div>
         </div>
 
-        {/* Principle Partners */}
+        {/* Principal Partners */}
         <div>
           <h3 className="text-3xl font-bold text-foreground text-center mb-12">
-            Principle Partners & Expert Network
+            Principal Partners & Domain Experts
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {principlePartners.map((partner, index) => (
+            {principalPartners.map((partner, index) => (
               <PersonCard key={index} person={partner} />
             ))}
           </div>
