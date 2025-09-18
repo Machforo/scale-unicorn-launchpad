@@ -23,6 +23,8 @@ import ConceptualizeUnicorn from "./pages/workshops/ConceptualizeUnicorn";
 import FundingMastery from "./pages/workshops/FundingMastery";
 import DigitalTransformation from "./pages/workshops/DigitalTransformation";
 import LeadershipExcellence from "./pages/workshops/LeadershipExcellence";
+import FranchisingMastery from "./pages/workshops/FranchisingMastery";
+import FinTechInnovation from "./pages/workshops/FinTechInnovation";
 import ForInvestors from "./pages/ForInvestors";
 import ForStartups from "./pages/ForStartups";
 import Education from "./pages/domains/Education";
@@ -54,6 +56,8 @@ const App = () => (
         <Route path="/workshops/funding-mastery" element={<FundingMastery />} />
         <Route path="/workshops/digital-transformation" element={<DigitalTransformation />} />
         <Route path="/workshops/leadership-excellence" element={<LeadershipExcellence />} />
+        <Route path="/workshops/franchising-mastery" element={<FranchisingMastery />} />
+        <Route path="/workshops/fintech-innovation" element={<FinTechInnovation />} />
         <Route path="/for-investors" element={<ForInvestors />} />
         <Route path="/for-startups" element={<ForStartups />} />
         <Route path="/domains" element={<Domains />} />

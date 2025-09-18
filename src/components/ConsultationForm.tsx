@@ -6,12 +6,14 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import PaymentModal from "@/components/PaymentModal";
 
 interface ConsultationFormProps {
   onClose: () => void;
 }
 
 const ConsultationForm = ({ onClose }: ConsultationFormProps) => {
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -28,10 +30,10 @@ const ConsultationForm = ({ onClose }: ConsultationFormProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Consultation Scheduled!",
-      description: "Thank you for scheduling a consultation. Our team will contact you within 24 hours to confirm the details.",
+      title: "Form Submitted!",
+      description: "Please proceed with payment to complete your consultation booking.",
     });
-    onClose();
+    setShowPaymentModal(true);
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -168,6 +170,15 @@ const ConsultationForm = ({ onClose }: ConsultationFormProps) => {
           </div>
         </form>
       </div>
+
+      <PaymentModal 
+        isOpen={showPaymentModal}
+        onClose={() => {
+          setShowPaymentModal(false);
+          onClose();
+        }}
+        workshopTitle="Consultation Session"
+      />
     </div>
   );
 };

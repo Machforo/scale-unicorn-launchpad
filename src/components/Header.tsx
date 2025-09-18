@@ -2,11 +2,12 @@ import { useState } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const navigation = [
     { name: "Home", href: "#home" },
@@ -52,15 +53,16 @@ const Header = () => {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <Button 
-              variant="outline" 
+              variant={location.pathname === "/for-investors" ? "default" : "outline"}
               onClick={() => navigate("/for-investors")}
-              className="btn-secondary"
+              className={location.pathname === "/for-investors" ? "btn-primary" : "btn-secondary"}
             >
               For Investors
             </Button>
             <Button 
+              variant={location.pathname === "/for-startups" ? "default" : "outline"}
               onClick={() => navigate("/for-startups")}
-              className="btn-primary"
+              className={location.pathname === "/for-startups" ? "btn-primary" : "btn-secondary"}
             >
               For Startups
             </Button>
@@ -93,14 +95,15 @@ const Header = () => {
                 </button>
               ))}
               <Button 
-                variant="outline"
-                className="w-full mt-4"
+                variant={location.pathname === "/for-investors" ? "default" : "outline"}
+                className={`w-full mt-4 ${location.pathname === "/for-investors" ? "btn-primary" : "btn-secondary"}`}
                 onClick={() => navigate("/for-investors")}
               >
                 For Investors
               </Button>
               <Button 
-                className="btn-primary w-full"
+                variant={location.pathname === "/for-startups" ? "default" : "outline"}
+                className={`w-full ${location.pathname === "/for-startups" ? "btn-primary" : "btn-secondary"}`}
                 onClick={() => navigate("/for-startups")}
               >
                 For Startups

@@ -42,8 +42,7 @@ const WorkshopsSection = () => {
       facilitator: "Sam Kundu",
       duration: "4 Sessions", 
       description: "Learn from the 'Franchising King' how to build scalable franchise models and expand your business globally.",
-      route: "#",
-      comingSoon: true
+      route: "/workshops/franchising-mastery"
     },
     {
       id: "fintech-innovation",
@@ -51,8 +50,7 @@ const WorkshopsSection = () => {
       facilitator: "Chandra Patni",
       duration: "4 Sessions", 
       description: "Navigate the FinTech landscape, understand regulatory requirements, and build innovative financial solutions.",
-      route: "#",
-      comingSoon: true
+      route: "/workshops/fintech-innovation"
     }
   ];
 
@@ -80,18 +78,12 @@ const WorkshopsSection = () => {
               <p className="text-sm text-muted-foreground mb-3">Facilitator: {workshop.facilitator}</p>
               <p className="text-muted-foreground mb-6 text-sm leading-relaxed">{workshop.description}</p>
               
-              {workshop.comingSoon ? (
-                <Button disabled className="w-full">
-                  Coming Soon
+              <Link to={workshop.route}>
+                <Button className="w-full btn-primary group">
+                  Learn More & Register
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
-              ) : (
-                <Link to={workshop.route}>
-                  <Button className="w-full btn-primary group">
-                    Learn More & Register
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-              )}
+              </Link>
             </div>
           ))}
         </div>

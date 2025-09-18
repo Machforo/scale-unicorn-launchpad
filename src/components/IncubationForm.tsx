@@ -6,12 +6,14 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import PaymentModal from "@/components/PaymentModal";
 
 interface IncubationFormProps {
   onClose: () => void;
 }
 
 const IncubationForm = ({ onClose }: IncubationFormProps) => {
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [formData, setFormData] = useState({
     founderName: "",
     email: "",
@@ -36,9 +38,9 @@ const IncubationForm = ({ onClose }: IncubationFormProps) => {
     e.preventDefault();
     toast({
       title: "Application Submitted!",
-      description: "Thank you for applying for incubation. Our team will review your application and get back to you within 5-7 business days.",
+      description: "Please proceed with payment to complete your incubation application.",
     });
-    onClose();
+    setShowPaymentModal(true);
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -247,6 +249,15 @@ const IncubationForm = ({ onClose }: IncubationFormProps) => {
           </div>
         </form>
       </div>
+
+      <PaymentModal 
+        isOpen={showPaymentModal}
+        onClose={() => {
+          setShowPaymentModal(false);
+          onClose();
+        }}
+        workshopTitle="Incubation Program"
+      />
     </div>
   );
 };

@@ -128,8 +128,8 @@ const LeadershipTeam = () => {
         <h4 className="text-lg font-semibold text-foreground mb-1">{person.name}</h4>
         <div className="text-sm font-medium text-primary mb-1">{person.role}</div>
         {person.expertise && (
-          <div className="text-xs bg-accent/20 text-accent-foreground px-2 py-1 rounded-full mb-2">
-            {person.expertise}
+          <div className="text-xs bg-accent/20 text-accent-foreground px-2 py-1 rounded-full mb-2 font-bold">
+            <strong>{person.expertise}</strong>
           </div>
         )}
         <div className="text-sm text-muted-foreground mb-3">{person.title}</div>

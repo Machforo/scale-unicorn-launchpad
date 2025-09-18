@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import PaymentModal from "@/components/PaymentModal";
 
 interface WorkshopRegistrationFormProps {
   workshopTitle: string;
@@ -13,6 +14,7 @@ interface WorkshopRegistrationFormProps {
 }
 
 const WorkshopRegistrationForm = ({ workshopTitle, onClose }: WorkshopRegistrationFormProps) => {
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,12 +28,11 @@ const WorkshopRegistrationForm = ({ workshopTitle, onClose }: WorkshopRegistrati
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
     toast({
-      title: "Registration Successful!",
-      description: `Thank you for registering for ${workshopTitle}. We'll contact you soon with further details.`,
+      title: "Registration Submitted!",
+      description: `Please proceed with payment to complete your registration for ${workshopTitle}.`,
     });
-    onClose();
+    setShowPaymentModal(true);
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -144,6 +145,15 @@ const WorkshopRegistrationForm = ({ workshopTitle, onClose }: WorkshopRegistrati
           </div>
         </form>
       </div>
+
+      <PaymentModal 
+        isOpen={showPaymentModal}
+        onClose={() => {
+          setShowPaymentModal(false);
+          onClose();
+        }}
+        workshopTitle={workshopTitle}
+      />
     </div>
   );
 };
