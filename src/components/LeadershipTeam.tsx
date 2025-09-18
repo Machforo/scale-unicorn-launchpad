@@ -5,6 +5,11 @@ import ansshavJainImage from "@/assets/ansshav-jain.png";
 import amardeepBajpaiImage from "@/assets/amardeep-bajpai-new.jpg";
 import samKunduImage from "@/assets/sam-kundu-new.jpg";
 import achalPaulImage from "@/assets/achal-paul-new.jpg";
+import rajivKapahiImage from "@/assets/rajiv-khapi.jpg";
+import sameerNigamImage from "@/assets/sameer-nigam.jpg";
+import chandraPatniImage from "@/assets/chandra-patni.jpg";
+import dineshMakhijaImage from "@/assets/dinesh-makhija.jpg";
+import satyavirYadavImage from "@/assets/satyavir-yadav.jpg";
 
 const LeadershipTeam = () => {
   const founder = {
@@ -30,7 +35,7 @@ const LeadershipTeam = () => {
       role: "CIO & AI Expert",
       title: "Chief Information Officer",
       description: "Leading AI innovation and technology strategy",
-      image: "https://via.placeholder.com/150x150/6366f1/ffffff?text=DM",
+      image: dineshMakhijaImage,
       linkedin: "https://linkedin.com"
     },
     {
@@ -46,8 +51,8 @@ const LeadershipTeam = () => {
       role: "eLearning Innovator",
       title: "IIMA",
       description: "Pioneering digital learning solutions and educational technology",
-      image: "https://via.placeholder.com/150x150/6366f1/ffffff?text=SN",
-      linkedin: "https://linkedin.com"
+      image: sameerNigamImage,
+      linkedin: "https://www.linkedin.com/in/sameernigam/"
     },
     {
       name: "Sam Kundu",
@@ -62,15 +67,15 @@ const LeadershipTeam = () => {
       role: "CA & Startup Strategist",
       title: "Chartered Accountant",
       description: "Financial strategy and startup consulting expert",
-      image: "https://via.placeholder.com/150x150/6366f1/ffffff?text=RK",
-      linkedin: "https://linkedin.com"
+      image: rajivKapahiImage,
+      linkedin: "https://www.linkedin.com/in/rajiv-p-kapahi/"
     },
     {
       name: "Satyavir Yadav",
       role: "Educationist & Entrepreneur",
       title: "Education Expert",
       description: "Educational innovation and entrepreneurial development",
-      image: "https://via.placeholder.com/150x150/6366f1/ffffff?text=SY",
+      image: satyavirYadavImage,
       linkedin: "https://linkedin.com"
     },
     {
@@ -78,8 +83,8 @@ const LeadershipTeam = () => {
       role: "Fintech Expert",
       title: "Financial Technology Specialist",
       description: "Leading fintech innovation and digital financial solutions",
-      image: "https://via.placeholder.com/150x150/6366f1/ffffff?text=CP",
-      linkedin: "https://linkedin.com"
+      image: chandraPatniImage,
+      linkedin: "https://www.linkedin.com/in/chandrapatni/"
     },
     {
       name: "Achal Paul",

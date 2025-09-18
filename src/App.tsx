@@ -20,6 +20,9 @@ import DigitalEngineering from "./pages/services/DigitalEngineering";
 import CFAService from "./pages/services/CFAService";
 import Patent from "./pages/services/Patent";
 import ConceptualizeUnicorn from "./pages/workshops/ConceptualizeUnicorn";
+import FundingMastery from "./pages/workshops/FundingMastery";
+import DigitalTransformation from "./pages/workshops/DigitalTransformation";
+import LeadershipExcellence from "./pages/workshops/LeadershipExcellence";
 import ForInvestors from "./pages/ForInvestors";
 import ForStartups from "./pages/ForStartups";
 import Education from "./pages/domains/Education";
@@ -48,6 +51,9 @@ const App = () => (
           <Route path="/services/cfa-service" element={<CFAService />} />
           <Route path="/services/patent" element={<Patent />} />
         <Route path="/workshops/conceptualize-unicorn" element={<ConceptualizeUnicorn />} />
+        <Route path="/workshops/funding-mastery" element={<FundingMastery />} />
+        <Route path="/workshops/digital-transformation" element={<DigitalTransformation />} />
+        <Route path="/workshops/leadership-excellence" element={<LeadershipExcellence />} />
         <Route path="/for-investors" element={<ForInvestors />} />
         <Route path="/for-startups" element={<ForStartups />} />
         <Route path="/domains" element={<Domains />} />

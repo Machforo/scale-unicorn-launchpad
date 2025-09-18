@@ -15,25 +15,25 @@ const WorkshopsSection = () => {
     {
       id: "funding-mastery",
       title: "Funding Mastery Workshop", 
-      facilitator: "Industry Experts",
-      duration: "3 Sessions",
-      description: "Navigate the funding landscape from pre-seed to Series A with expert guidance and real-world case studies.",
+      facilitator: "Sandipp Vijj",
+      duration: "4 Sessions",
+      description: "Master the art of raising capital and securing funding for your startup at every stage.",
       route: "/workshops/funding-mastery"
     },
     {
       id: "digital-transformation",
       title: "Digital Transformation",
-      facilitator: "Tech Leaders", 
-      duration: "5 Sessions",
-      description: "Leverage cutting-edge technology to scale your business and reach global markets efficiently.",
+      facilitator: "Sandipp Vijj", 
+      duration: "4 Sessions",
+      description: "Transform your business with cutting-edge digital strategies and technologies.",
       route: "/workshops/digital-transformation"
     },
     {
       id: "leadership-excellence",
       title: "Leadership Excellence",
-      facilitator: "Leadership Experts",
+      facilitator: "Sandipp Vijj",
       duration: "4 Sessions", 
-      description: "Develop exceptional leadership skills to build and manage high-performing teams in startup environments.",
+      description: "Develop exceptional leadership skills and build high-performing teams.",
       route: "/workshops/leadership-excellence"
     }
   ];

@@ -1,10 +1,12 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
+import LeadershipTeam from "@/components/LeadershipTeam";
+import FounderJourneySection from "@/components/FounderJourneySection";
 import SandippMethodology from "@/components/SandippMethodology";
 import WorkshopsSection from "@/components/WorkshopsSection";
 import GrowthStrategiesSection from "@/components/GrowthStrategiesSection";
-import FounderJourneySection from "@/components/FounderJourneySection";
+import LatestUpdatesSection from "@/components/LatestUpdatesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
@@ -32,10 +34,12 @@ const Index = () => {
       <main>
         <Hero />
         <AboutSection />
+        <LeadershipTeam />
+        <FounderJourneySection />
         <SandippMethodology />
         <WorkshopsSection />
-        <FounderJourneySection />
         <GrowthStrategiesSection />
+        <LatestUpdatesSection />
         <ContactSection />
       </main>
       <Footer />
