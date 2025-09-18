@@ -1,52 +1,9 @@
-import { CheckCircle, Award } from "lucide-react";
+import { Award } from "lucide-react";
 
 const SandippMethodology = () => {
   return (
-    <section className="py-20 bg-background" id="methodology">
+    <section className="py-20 bg-muted/20" id="methodology">
       <div className="container mx-auto px-6">
-        {/* Purpose Section */}
-        <div className="mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6 text-center">
-            Purpose of Our Community
-          </h2>
-          <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-8">
-            <p className="text-xl text-muted-foreground mb-6 text-center italic">
-              "You were born with wings — learn to use them and fly 🦋"
-            </p>
-            <div className="max-w-3xl mx-auto">
-              <p className="text-lg text-muted-foreground mb-4 text-center font-medium">
-                You were born with the Potential:
-              </p>
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
-                  You were born with goodness and trust
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
-                  You were born with ideals and dreams
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
-                  You were born with greatness
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
-                  You were born with wings
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
-                  You were not meant for crawling, so don't
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
-                  You have wings — learn to use them and fly
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
         {/* Sandipp's Methodology */}
         <div>
           <h2 className="text-4xl font-bold text-foreground mb-6 text-center">

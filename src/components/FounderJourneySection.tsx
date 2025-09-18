@@ -109,43 +109,6 @@ const FounderJourneySection = () => {
         </div>
 
 
-        {/* Impact Goals */}
-        <div>
-          <h3 className="text-3xl font-bold text-foreground text-center mb-12">
-            Vision Impact Goals
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {achievements.map((achievement, index) => (
-              <div key={index} className="text-center">
-                <div className="bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-elegant transition-shadow duration-200">
-                  <div className="text-4xl font-bold text-primary mb-2">
-                    {achievement.number}
-                  </div>
-                  <div className="text-lg font-semibold text-foreground mb-2">
-                    {achievement.label}
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {achievement.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Future Vision */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-8">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              The Future: Metaverse SkillTech University
-            </h3>
-            <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Pioneering a revolutionary educational model that combines Metaverse technology with Blockchain SkillsBank, 
-              creating scalable solutions for skill development across India, Nepal, Sri Lanka, and Bangladesh. 
-              This futuristic approach will democratize quality education and create sustainable pathways to employment and entrepreneurship.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

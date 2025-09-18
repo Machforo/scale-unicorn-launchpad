@@ -3,10 +3,13 @@ import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import LeadershipTeam from "@/components/LeadershipTeam";
 import FounderJourneySection from "@/components/FounderJourneySection";
+import VisionImpactGoals from "@/components/VisionImpactGoals";
+import PurposeOfCommunity from "@/components/PurposeOfCommunity";
 import SandippMethodology from "@/components/SandippMethodology";
 import WorkshopsSection from "@/components/WorkshopsSection";
 import GrowthStrategiesSection from "@/components/GrowthStrategiesSection";
-import LatestUpdatesSection from "@/components/LatestUpdatesSection";
+import ReadyToScale from "@/components/ReadyToScale";
+import SocialMediaUpdates from "@/components/SocialMediaUpdates";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
@@ -36,10 +39,13 @@ const Index = () => {
         <AboutSection />
         <LeadershipTeam />
         <FounderJourneySection />
+        <VisionImpactGoals />
+        <PurposeOfCommunity />
         <SandippMethodology />
         <WorkshopsSection />
         <GrowthStrategiesSection />
-        <LatestUpdatesSection />
+        <ReadyToScale />
+        <SocialMediaUpdates />
         <ContactSection />
       </main>
       <Footer />
