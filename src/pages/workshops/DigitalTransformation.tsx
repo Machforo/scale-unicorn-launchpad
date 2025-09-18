@@ -4,6 +4,8 @@ import { ArrowLeft, Clock, Users, Target, Award, CheckCircle, Calendar, CreditCa
 import { Link } from "react-router-dom";
 import PaymentModal from "@/components/PaymentModal";
 import { useToast } from "@/hooks/use-toast";
+import amardeepBajpaiImg from "@/assets/amardeep-bajpai-new.jpg";
+import dineshMakhijaImg from "@/assets/dinesh-makhija-new.jpg";
 
 
 const DigitalTransformation = () => {
@@ -113,7 +115,7 @@ const DigitalTransformation = () => {
               {/* Amardeep Bajpai */}
               <div className="text-center">
                 <img 
-                  src="/src/assets/amardeep-bajpai-new.jpg" 
+                  src={amardeepBajpaiImg} 
                   alt="Amardeep Bajpai" 
                   className="w-48 h-48 rounded-full mx-auto object-cover border-4 border-primary/20 mb-4"
                 />
@@ -129,7 +131,7 @@ const DigitalTransformation = () => {
               {/* Dinesh Makhija */}
               <div className="text-center">
                 <img 
-                  src="/src/assets/dinesh-makhija-new.jpg" 
+                  src={dineshMakhijaImg} 
                   alt="Dinesh Makhija" 
                   className="w-48 h-48 rounded-full mx-auto object-cover border-4 border-primary/20 mb-4"
                 />

@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import unicornLogo from "@/assets/unicorn-logo.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,7 +35,7 @@ const Header = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <Sparkles className="h-8 w-8 text-accent" />
+            <img src={unicornLogo} alt="Idea2Unicorn" className="h-8 w-8 object-contain" />
             <span className="text-2xl font-bold text-foreground">Idea2Unicorn</span>
           </Link>
 

@@ -4,6 +4,7 @@ import { ArrowLeft, Clock, Users, Target, Award, CheckCircle, Calendar, CreditCa
 import { Link } from "react-router-dom";
 import PaymentModal from "@/components/PaymentModal";
 import { useToast } from "@/hooks/use-toast";
+import sandippVijjImg from "@/assets/sandipp-vijj.png";
 
 
 const FundingMastery = () => {
@@ -124,7 +125,7 @@ const FundingMastery = () => {
               </div>
               <div className="text-center">
                 <img 
-                  src="/src/assets/sandipp-vijj.png" 
+                  src={sandippVijjImg} 
                   alt="Sandipp Vijj" 
                   className="w-48 h-48 rounded-full mx-auto object-cover border-4 border-primary/20"
                 />
