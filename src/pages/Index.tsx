@@ -10,7 +10,6 @@ import WorkshopsSection from "@/components/WorkshopsSection";
 import GrowthStrategiesSection from "@/components/GrowthStrategiesSection";
 import ReadyToScale from "@/components/ReadyToScale";
 import SocialMediaUpdates from "@/components/SocialMediaUpdates";
-import NewsMediaSection from "@/components/NewsMediaSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
@@ -47,7 +46,6 @@ const Index = () => {
         <GrowthStrategiesSection />
         <ReadyToScale />
         <SocialMediaUpdates />
-        <NewsMediaSection />
         <ContactSection />
       </main>
       <Footer />

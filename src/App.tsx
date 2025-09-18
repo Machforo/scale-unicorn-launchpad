@@ -34,6 +34,7 @@ import RealEstate from "./pages/domains/RealEstate";
 import BFSIFintech from "./pages/domains/BFSIFintech";
 import Telecom from "./pages/domains/Telecom";
 import Retail from "./pages/domains/Retail";
+import NewsMedia from "./pages/NewsMedia";
 
 const queryClient = new QueryClient();
 
@@ -71,6 +72,7 @@ const App = () => (
           <Route path="/domains/telecom" element={<Telecom />} />
           <Route path="/domains/retail" element={<Retail />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/news-media" element={<NewsMedia />} />
           <Route path="/integration-demo" element={<IntegrationDemo />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
