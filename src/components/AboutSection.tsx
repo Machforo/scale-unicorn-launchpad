@@ -27,19 +27,19 @@ const AboutSection = () => {
         </div>
 
         {/* Press Release Highlights */}
-        <div className="bg-card border border-border rounded-lg p-8 mb-16 shadow-card">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-foreground mb-4">How to Create the Blueprint of a Unicorn in 15 Days?</h3>
-            <p className="text-lg text-muted-foreground">
+        <div className="bg-gradient-to-br from-muted/20 to-muted/10 border border-border rounded-xl p-12 mb-16 shadow-xl">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-foreground mb-6">How to Create the Blueprint of a Unicorn in 15 Days?</h3>
+            <p className="text-xl text-muted-foreground">
               Pre-seed, Seed & Angel Funding available with comprehensive 360° services
             </p>
           </div>
           
-          <div className="grid md:grid-cols-4 gap-6 mb-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
             {highlights.map((highlight, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">{highlight.number}</div>
-                <div className="text-sm text-muted-foreground">{highlight.label}</div>
+                <div className="text-4xl font-bold text-primary mb-3">{highlight.number}</div>
+                <div className="text-base text-muted-foreground">{highlight.label}</div>
               </div>
             ))}
           </div>

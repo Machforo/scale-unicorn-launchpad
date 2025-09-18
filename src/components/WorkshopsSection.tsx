@@ -10,17 +10,17 @@ const WorkshopsSection = () => {
 
   const workshops = [
     {
-      title: "Dream Life Workshop",
+      title: "Conceptualize Your Unicorn",
       facilitator: "Sandipp Vijj",
-      duration: "2 Days",
-      description: "Transform your vision into reality with our comprehensive dream activation program. Master emotional freedom tools and create a clear roadmap for your ideal life.",
+      duration: "4 Sessions",
+      description: "Master the art of unicorn visualization through Sandipp's proven methodology based on 10 books including Bhagavad Gita, Blue Ocean Strategy, and Good to Great.",
       outcomes: [
-        "93% participants achieve clarity about life direction",
-        "Vision activation and goal-setting mastery",
-        "Emotional freedom and breakthrough techniques",
-        "Health optimization and self-image enhancement",
-        "Relationship rewiring strategies",
-        "Wealth creation rituals and mindset shifts"
+        "Session 1: Concept of Visualization explained by Sandipp",
+        "Session 2: Participant draws their dream life",
+        "Session 3: Present your vision to Sandipp",
+        "Session 4: Vision improvement and refinement",
+        "Access to 10-book methodology framework",
+        "Personal mentorship from Sandipp Vijj"
       ]
     },
     {

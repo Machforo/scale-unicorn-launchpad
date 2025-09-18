@@ -149,8 +149,29 @@ const CFAService = () => {
           </div>
         </div>
 
-        {/* Contact Form */}
-        <ConsultationForm onClose={() => {}} />
+        {/* Contact Section */}
+        <div className="bg-card border border-border rounded-lg p-8 text-center shadow-card">
+          <h2 className="text-2xl font-bold text-foreground mb-4">Advance Your Financial Career</h2>
+          <p className="text-muted-foreground mb-6">Schedule a consultation to discuss our CFA services and programs.</p>
+          <button 
+            onClick={() => {
+              const form = document.createElement('div');
+              form.innerHTML = `
+                <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onclick="this.remove()">
+                  <div class="bg-card p-6 rounded-lg max-w-md w-full mx-4" onclick="event.stopPropagation()">
+                    <h3 class="text-xl font-bold mb-4">Schedule Consultation</h3>
+                    <p class="text-muted-foreground mb-4">Contact us at: sandipp@idea2unicorn.ai</p>
+                    <button onclick="this.closest('.fixed').remove()" class="btn-primary">Close</button>
+                  </div>
+                </div>
+              `;
+              document.body.appendChild(form);
+            }}
+            className="btn-primary"
+          >
+            Schedule Consultation
+          </button>
+        </div>
       </div>
       <Footer />
     </div>
