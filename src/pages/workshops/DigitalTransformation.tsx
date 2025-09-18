@@ -102,31 +102,43 @@ const DigitalTransformation = () => {
             </div>
           </div>
 
-          {/* About Instructor */}
+          {/* About Instructors */}
           <div className="bg-gradient-to-r from-accent/10 to-primary/10 p-8 rounded-xl mb-12">
             <div className="flex items-center mb-6">
               <Award className="h-8 w-8 text-primary mr-3" />
-              <h2 className="text-3xl font-bold">About the Instructor</h2>
+              <h2 className="text-3xl font-bold">About the Instructors</h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-2xl font-semibold mb-4">Sandipp Vijj</h3>
-                <p className="text-muted-foreground mb-4">
-                  A digital transformation expert with extensive experience in helping organizations transition 
-                  to digital-first operations. Sandipp has led digital initiatives for companies across various 
-                  industries, implementing agile methodologies and emerging technologies.
-                </p>
-                <p className="text-muted-foreground">
-                  His practical approach combines strategic thinking with hands-on implementation, ensuring 
-                  sustainable digital transformation that drives real business results.
-                </p>
-              </div>
+            <div className="grid lg:grid-cols-2 gap-8">
+              {/* Amardeep Bajpai */}
               <div className="text-center">
                 <img 
-                  src="/src/assets/sandipp-vijj.png" 
-                  alt="Sandipp Vijj" 
-                  className="w-48 h-48 rounded-full mx-auto object-cover border-4 border-primary/20"
+                  src="/src/assets/amardeep-bajpai-new.jpg" 
+                  alt="Amardeep Bajpai" 
+                  className="w-48 h-48 rounded-full mx-auto object-cover border-4 border-primary/20 mb-4"
                 />
+                <h3 className="text-2xl font-semibold mb-4">Amardeep Bajpai</h3>
+                <p className="text-muted-foreground">
+                  AI and digital transformation specialist with deep expertise in implementing 
+                  artificial intelligence solutions for business growth. Amardeep brings cutting-edge 
+                  AI methodologies and practical insights to help organizations leverage technology 
+                  for competitive advantage.
+                </p>
+              </div>
+              
+              {/* Dinesh Makhija */}
+              <div className="text-center">
+                <img 
+                  src="/src/assets/dinesh-makhija-new.jpg" 
+                  alt="Dinesh Makhija" 
+                  className="w-48 h-48 rounded-full mx-auto object-cover border-4 border-primary/20 mb-4"
+                />
+                <h3 className="text-2xl font-semibold mb-4">Dinesh Makhija</h3>
+                <p className="text-muted-foreground">
+                  Digital transformation leader with extensive experience in technology 
+                  architecture and enterprise solutions. Dinesh specializes in cloud-first 
+                  strategies and scalable digital infrastructure that drives business innovation 
+                  and operational excellence.
+                </p>
               </div>
             </div>
           </div>

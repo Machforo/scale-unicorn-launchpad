@@ -8,8 +8,8 @@ import achalPaulImage from "@/assets/achal-paul-new.jpg";
 import rajivKapahiImage from "@/assets/rajiv-khapi.jpg";
 import sameerNigamImage from "@/assets/sameer-nigam.jpg";
 import chandraPatniImage from "@/assets/chandra-patni.jpg";
-import dineshMakhijaImage from "@/assets/dinesh-makhija.jpg";
-import satyavirYadavImage from "@/assets/satyavir-yadav.jpg";
+import dineshMakhijaImage from "@/assets/dinesh-makhija-new.jpg";
+import satyavirYadavImage from "@/assets/satyavir-yadav-new.jpg";
 
 const LeadershipTeam = () => {
   const founder = {

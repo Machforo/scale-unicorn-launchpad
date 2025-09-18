@@ -8,11 +8,36 @@ interface PaymentModalProps {
   isOpen: boolean;
   onClose: () => void;
   workshopTitle?: string;
+  servicePriceINR?: number;
+  servicePriceUSD?: number;
 }
 
-const PaymentModal = ({ isOpen, onClose, workshopTitle }: PaymentModalProps) => {
+const PaymentModal = ({ isOpen, onClose, workshopTitle, servicePriceINR, servicePriceUSD }: PaymentModalProps) => {
   const [selectedRegion, setSelectedRegion] = useState<'us' | 'india' | 'international'>('us');
+  const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
   const { toast } = useToast();
+
+  // Workshop/Service pricing mapping
+  const getServicePrice = () => {
+    if (servicePriceINR && servicePriceUSD) {
+      return currency === 'INR' ? `₹${servicePriceINR.toLocaleString()}` : `$${servicePriceUSD.toLocaleString()}`;
+    }
+    
+    // Default pricing for workshops
+    const workshopPricing: { [key: string]: { inr: number, usd: number } } = {
+      "Digital Transformation Workshop": { inr: 30000, usd: 360 },
+      "Conceptualize Your Unicorn": { inr: 30000, usd: 360 },
+      "Franchising Mastery": { inr: 60000, usd: 720 },
+      "FinTech Innovation": { inr: 30000, usd: 360 },
+      "Funding Mastery": { inr: 30000, usd: 360 },
+      "Leadership Excellence": { inr: 30000, usd: 360 },
+      "Dream Life Workshop": { inr: 3500, usd: 42 },
+      "General Consultation": { inr: 3000, usd: 36 }
+    };
+
+    const pricing = workshopPricing[workshopTitle || "General Consultation"];
+    return currency === 'INR' ? `₹${pricing.inr.toLocaleString()}` : `$${pricing.usd.toLocaleString()}`;
+  };
 
   const copyToClipboard = (text: string, label: string) => {
     navigator.clipboard.writeText(text);
@@ -30,9 +55,28 @@ const PaymentModal = ({ isOpen, onClose, workshopTitle }: PaymentModalProps) => 
             Payment Information
           </DialogTitle>
           {workshopTitle && (
-            <p className="text-center text-muted-foreground">
-              For: {workshopTitle}
-            </p>
+            <div className="text-center">
+              <p className="text-muted-foreground mb-2">For: {workshopTitle}</p>
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <Button
+                  variant={currency === 'INR' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => setCurrency('INR')}
+                >
+                  INR
+                </Button>
+                <Button
+                  variant={currency === 'USD' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => setCurrency('USD')}
+                >
+                  USD
+                </Button>
+              </div>
+              <p className="text-xl font-bold text-primary">
+                Price: {getServicePrice()}
+              </p>
+            </div>
           )}
         </DialogHeader>
 

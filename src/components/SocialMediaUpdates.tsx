@@ -26,24 +26,24 @@ const SocialMediaUpdates = () => {
   const linkedinPosts: LinkedInPost[] = [
     {
       id: "1",
-      content: "🚀 Transforming startups into unicorns with our proprietary #DesignYourUnicorn framework. Just completed another successful funding round for our portfolio startup! The key lies in systematic methodology and proven business strategies.",
-      engagement: "347 likes • 52 comments • 28 shares",
+      content: "In Good to Great, Jim Collins explains that great companies achieve sustained success by building on three core principles: disciplined people, disciplined thought, and disciplined action. These form the foundation of the Flywheel and are essential to moving from \"good\" to \"great.\"",
+      engagement: "156 likes • 23 comments • 18 shares",
       publishedAt: "2 days ago",
-      url: "https://www.linkedin.com/company/dream-life-creator-in-wellness/posts/"
+      url: "https://www.linkedin.com/posts/dream-life-creator-in-wellness_entrepreneur-startup-unicorn-activity-7323584636758974464-0jgG?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADfvJ7QBNM9oql8Qi0-uYmBOMCs1PukxmtA"
     },
     {
       id: "2",
-      content: "💡 The future of entrepreneurship lies in combining technology with social impact. Our Metaverse SkillTech University is revolutionizing how we prepare the next generation of entrepreneurs across India, Nepal, Sri Lanka, and Bangladesh.",
-      engagement: "298 likes • 41 comments • 19 shares", 
+      content: "How can Government help a startup Ecosystem? That's a powerful question — and very relevant for today's world. Governments can catalyze (meaning: speed up and energize) a startup ecosystem in several key ways:",
+      engagement: "284 likes • 31 comments • 22 shares", 
       publishedAt: "5 days ago",
-      url: "https://www.linkedin.com/company/dream-life-creator-in-wellness/posts/"
+      url: "https://www.linkedin.com/posts/dream-life-creator-in-wellness_how-can-government-help-a-startup-ecosystem-activity-7322068281933053954-jnmC?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADfvJ7QBNM9oql8Qi0-uYmBOMCs1PukxmtA"
     },
     {
       id: "3",
-      content: "🎯 Target: Transform 1 billion lives, impact 1 million businesses, create 100 unicorns. Our Zero-Investment Franchise Model is helping startups scale across tier 2/3 cities without equity dilution. #Idea2Unicorn",
-      engagement: "521 likes • 73 comments • 45 shares",
+      content: "Critical success factors to develop a strategy to create Unicorns (startup). Creating a unicorn—a startup valued at over $1 billion—is an ambitious goal. While there's no guaranteed formula, certain critical success factors (CSFs) significantly increase the chances. Here's a strategic breakdown:",
+      engagement: "387 likes • 64 comments • 29 shares",
       publishedAt: "1 week ago", 
-      url: "https://www.linkedin.com/company/dream-life-creator-in-wellness/posts/"
+      url: "https://www.linkedin.com/posts/dream-life-creator-in-wellness_critical-success-factors-to-develop-a-strategy-activity-7321333260414795776-cZ67?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADfvJ7QBNM9oql8Qi0-uYmBOMCs1PukxmtA"
     }
   ];
 

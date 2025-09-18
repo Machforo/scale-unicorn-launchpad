@@ -271,7 +271,7 @@ const Pricing = () => {
             Need a tailored solution for your specific requirements? We offer custom packages 
             designed to meet your unique business needs and budget.
           </p>
-          <Button size="lg">
+          <Button size="lg" onClick={() => window.location.href = "mailto:support@idea2unicorn.ai?subject=Schedule%20Consultation"}>
             Schedule a Consultation
           </Button>
         </div>
