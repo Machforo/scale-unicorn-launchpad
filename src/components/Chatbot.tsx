@@ -15,9 +15,6 @@ const Chatbot = () => {
   const quickQuestions = [
     "What workshops do you offer?",
     "How can I apply for incubation?",
-    "Tell me about growth strategies",
-    "What are the success rates?",
-    "How much do workshops cost?"
   ];
 
   const handleSendMessage = (message: string) => {
