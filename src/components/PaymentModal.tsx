@@ -252,9 +252,18 @@ const PaymentModal = ({ isOpen, onClose, workshopTitle, servicePriceINR, service
             </div>
           </div>
 
-          <div className="flex justify-end">
+          <div className="flex justify-between gap-4">
             <Button onClick={onClose} variant="outline">
               Close
+            </Button>
+            <Button 
+              onClick={() => {
+                window.open("https://calendly.com/atharv-kumar-webisdom/new-meeting", "_blank");
+                onClose();
+              }}
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
+            >
+              Paid & Book Slot
             </Button>
           </div>
         </div>

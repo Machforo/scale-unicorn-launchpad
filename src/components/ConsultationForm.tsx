@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import PaymentModal from "@/components/PaymentModal";
 
 
 interface ConsultationFormProps {
@@ -13,6 +14,7 @@ interface ConsultationFormProps {
 }
 
 const ConsultationForm = ({ onClose }: ConsultationFormProps) => {
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,15 +31,10 @@ const ConsultationForm = ({ onClose }: ConsultationFormProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Consultation Request Submitted!",
-      description: "Thank you for your interest. You'll be redirected to schedule your consultation.",
+      title: "Form Submitted!",
+      description: "Please proceed with payment to complete your consultation booking.",
     });
-    
-    // Redirect to Calendly after a short delay
-    setTimeout(() => {
-      window.open("https://calendly.com/atharv-kumar-webisdom/new-meeting", "_blank");
-      onClose();
-    }, 1500);
+    setShowPaymentModal(true);
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -175,6 +172,14 @@ const ConsultationForm = ({ onClose }: ConsultationFormProps) => {
         </form>
       </div>
 
+      <PaymentModal 
+        isOpen={showPaymentModal}
+        onClose={() => {
+          setShowPaymentModal(false);
+          onClose();
+        }}
+        workshopTitle="Consultation Session"
+      />
     </div>
   );
 };

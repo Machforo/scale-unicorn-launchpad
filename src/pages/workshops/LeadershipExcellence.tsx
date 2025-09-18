@@ -2,22 +2,20 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Clock, Users, Target, Award, CheckCircle, Calendar, CreditCard, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import PaymentModal from "@/components/PaymentModal";
 import { useToast } from "@/hooks/use-toast";
 
 
 const LeadershipExcellence = () => {
   const { toast } = useToast();
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
 
   const handleRegister = () => {
     toast({
-      title: "Registration Submitted!",
-      description: "Thank you for your interest. You'll be redirected to schedule your session.",
+      title: "Registration Started!",
+      description: "Please complete the payment process below.",
     });
-    
-    // Redirect to Calendly after a short delay
-    setTimeout(() => {
-      window.open("https://calendly.com/atharv-kumar-webisdom/new-meeting", "_blank");
-    }, 1500);
+    setShowPaymentModal(true);
   };
 
   const handleContact = () => {
@@ -189,6 +187,13 @@ const LeadershipExcellence = () => {
         </div>
       </div>
 
+      <PaymentModal 
+        isOpen={showPaymentModal}
+        onClose={() => setShowPaymentModal(false)}
+        workshopTitle="Leadership Excellence Workshop"
+        servicePriceINR={30000}
+        servicePriceUSD={360}
+      />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Clock, Users, Target, Award, CheckCircle, Calendar, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import PaymentModal from "@/components/PaymentModal";
 import { useToast } from "@/hooks/use-toast";
 
 import samKunduImage from "@/assets/sam-kundu-new.jpg";
@@ -188,6 +189,13 @@ const FranchisingMastery = () => {
         </div>
       </div>
 
+      <PaymentModal 
+        isOpen={showPaymentModal}
+        onClose={() => setShowPaymentModal(false)}
+        workshopTitle="Franchising Mastery Workshop"
+        servicePriceINR={60000}
+        servicePriceUSD={720}
+      />
     </div>
   );
 };

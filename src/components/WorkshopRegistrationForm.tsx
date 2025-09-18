@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import PaymentModal from "@/components/PaymentModal";
 
 
 interface WorkshopRegistrationFormProps {
@@ -14,6 +15,7 @@ interface WorkshopRegistrationFormProps {
 }
 
 const WorkshopRegistrationForm = ({ workshopTitle, onClose }: WorkshopRegistrationFormProps) => {
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,14 +31,9 @@ const WorkshopRegistrationForm = ({ workshopTitle, onClose }: WorkshopRegistrati
     e.preventDefault();
     toast({
       title: "Registration Submitted!",
-      description: `Thank you for registering for ${workshopTitle}. You'll be redirected to schedule your session.`,
+      description: `Please proceed with payment to complete your registration for ${workshopTitle}.`,
     });
-    
-    // Redirect to Calendly after a short delay
-    setTimeout(() => {
-      window.open("https://calendly.com/atharv-kumar-webisdom/new-meeting", "_blank");
-      onClose();
-    }, 1500);
+    setShowPaymentModal(true);
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -150,6 +147,14 @@ const WorkshopRegistrationForm = ({ workshopTitle, onClose }: WorkshopRegistrati
         </form>
       </div>
 
+      <PaymentModal 
+        isOpen={showPaymentModal}
+        onClose={() => {
+          setShowPaymentModal(false);
+          onClose();
+        }}
+        workshopTitle={workshopTitle}
+      />
     </div>
   );
 };

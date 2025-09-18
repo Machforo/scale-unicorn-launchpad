@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import PaymentModal from "./PaymentModal";
 
 
 const ContactSection = () => {
@@ -15,22 +16,20 @@ const ContactSection = () => {
     interest: "",
     message: ""
   });
-  
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Handle form submission
     console.log("Form submitted:", formData);
     
     toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. You'll be redirected to schedule a meeting.",
+      title: "Application Submitted!",
+      description: "Thank you for your interest. Payment details are displayed below.",
     });
     
-    // Redirect to Calendly after a short delay
-    setTimeout(() => {
-      window.open("https://calendly.com/atharv-kumar-webisdom/new-meeting", "_blank");
-    }, 1500);
+    setShowPaymentModal(true);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -223,6 +222,13 @@ const ContactSection = () => {
         </div>
       </div>
 
+      <PaymentModal 
+        isOpen={showPaymentModal}
+        onClose={() => setShowPaymentModal(false)}
+        workshopTitle={formData.interest === 'workshop' ? 'Workshop Registration' : 
+                     formData.interest === 'incubation' ? 'Incubation Program' : 
+                     'Consultation'}
+      />
     </section>
   );
 };
