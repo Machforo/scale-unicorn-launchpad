@@ -83,41 +83,6 @@ const GrowthStrategiesSection = () => {
             </div>
           ))}
         </div>
-
-        {/* CTA Section */}
-        <div className="bg-card border border-border rounded-lg p-8 shadow-elegant text-center max-w-4xl mx-auto">
-          <h3 className="text-3xl font-bold text-foreground mb-4">
-            Ready to Scale Your Startup?
-          </h3>
-          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            Discover how our proven growth strategies can help you expand across India 
-            without compromising your equity or vision.
-          </p>
-          
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="metrics-card">
-              <div className="text-3xl font-bold text-foreground mb-2">500+</div>
-              <div className="text-sm text-muted-foreground">Partner Network</div>
-            </div>
-            <div className="metrics-card">
-              <div className="text-3xl font-bold text-foreground mb-2">50+</div>
-              <div className="text-sm text-muted-foreground">Cities Covered</div>
-            </div>
-            <div className="metrics-card">
-              <div className="text-3xl font-bold text-foreground mb-2">₹100M+</div>
-              <div className="text-sm text-muted-foreground">Revenue Generated</div>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary">
-              Download Strategy Guide
-            </button>
-            <button className="btn-secondary">
-              Schedule Strategy Call
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );

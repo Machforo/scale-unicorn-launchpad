@@ -1,10 +1,7 @@
-import { useState, useEffect } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Youtube, Linkedin, ExternalLink, Clock, Play, Eye } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
 
 interface YouTubeVideo {
   id: string;
@@ -25,95 +22,60 @@ interface LinkedInPost {
 }
 
 const SocialMediaUpdates = () => {
-  const { toast } = useToast();
-  const [youtubeChannelUrl, setYoutubeChannelUrl] = useState("");
-  const [linkedinPageUrl, setLinkedinPageUrl] = useState("");
-  const [youtubeVideos, setYoutubeVideos] = useState<YouTubeVideo[]>([]);
-  const [linkedinPosts, setLinkedinPosts] = useState<LinkedInPost[]>([]);
-  const [loading, setLoading] = useState(false);
-
-  // Sample data for demonstration - replace with actual API calls
-  const sampleYouTubeVideos: YouTubeVideo[] = [
+  // LinkedIn channel: https://www.linkedin.com/company/dream-life-creator-in-wellness/posts/?feedView=all
+  const linkedinPosts: LinkedInPost[] = [
     {
       id: "1",
-      title: "How to Build a Unicorn Startup in 15 Days",
-      thumbnail: "/placeholder.svg",
-      views: "25K",
-      duration: "12:34",
+      content: "🚀 Transforming startups into unicorns with our proprietary #DesignYourUnicorn framework. Just completed another successful funding round for our portfolio startup! The key lies in systematic methodology and proven business strategies.",
+      engagement: "347 likes • 52 comments • 28 shares",
       publishedAt: "2 days ago",
-      url: "#"
+      url: "https://www.linkedin.com/company/dream-life-creator-in-wellness/posts/"
     },
     {
-      id: "2", 
-      title: "Funding Mastery: Pitch Deck Secrets",
-      thumbnail: "/placeholder.svg",
-      views: "18K",
-      duration: "8:45",
-      publishedAt: "1 week ago",
-      url: "#"
+      id: "2",
+      content: "💡 The future of entrepreneurship lies in combining technology with social impact. Our Metaverse SkillTech University is revolutionizing how we prepare the next generation of entrepreneurs across India, Nepal, Sri Lanka, and Bangladesh.",
+      engagement: "298 likes • 41 comments • 19 shares", 
+      publishedAt: "5 days ago",
+      url: "https://www.linkedin.com/company/dream-life-creator-in-wellness/posts/"
+    },
+    {
+      id: "3",
+      content: "🎯 Target: Transform 1 billion lives, impact 1 million businesses, create 100 unicorns. Our Zero-Investment Franchise Model is helping startups scale across tier 2/3 cities without equity dilution. #Idea2Unicorn",
+      engagement: "521 likes • 73 comments • 45 shares",
+      publishedAt: "1 week ago", 
+      url: "https://www.linkedin.com/company/dream-life-creator-in-wellness/posts/"
     }
   ];
 
-  const sampleLinkedInPosts: LinkedInPost[] = [
+  const youtubeVideos: YouTubeVideo[] = [
     {
       id: "1",
-      content: "🚀 Just completed another successful funding round for our portfolio startup! The key to successful fundraising isn't just about the numbers...",
-      engagement: "247 likes • 34 comments",
+      title: "How to Create a Unicorn Blueprint in 15 Days | Sandipp Vijj",
+      thumbnail: "/placeholder.svg",
+      views: "32K",
+      duration: "15:42",
       publishedAt: "3 days ago",
       url: "#"
     },
     {
-      id: "2",
-      content: "💡 The future of entrepreneurship lies in combining technology with social impact. Here's why every startup should think about...",
-      engagement: "189 likes • 28 comments", 
+      id: "2", 
+      title: "Zero-Investment Franchise Model for Startups | Growth Strategies",
+      thumbnail: "/placeholder.svg",
+      views: "24K",
+      duration: "12:28",
       publishedAt: "1 week ago",
+      url: "#"
+    },
+    {
+      id: "3",
+      title: "10 Business Methodologies Every Entrepreneur Must Know",
+      thumbnail: "/placeholder.svg", 
+      views: "41K",
+      duration: "18:55",
+      publishedAt: "2 weeks ago",
       url: "#"
     }
   ];
-
-  const fetchSocialMediaContent = async () => {
-    if (!youtubeChannelUrl && !linkedinPageUrl) {
-      toast({
-        title: "Please provide at least one channel URL",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    setLoading(true);
-    
-    try {
-      // For now, using sample data - replace with actual API calls
-      // when you provide the channel URLs
-      
-      if (youtubeChannelUrl) {
-        setYoutubeVideos(sampleYouTubeVideos);
-      }
-      
-      if (linkedinPageUrl) {
-        setLinkedinPosts(sampleLinkedInPosts);
-      }
-
-      toast({
-        title: "Social media content updated!",
-        description: "Latest posts and videos have been fetched."
-      });
-    } catch (error) {
-      toast({
-        title: "Error fetching content",
-        description: "Please check the URLs and try again.",
-        variant: "destructive"
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    // Load sample data initially
-    setYoutubeVideos(sampleYouTubeVideos);
-    setLinkedinPosts(sampleLinkedInPosts);
-  }, []);
 
   return (
     <section className="py-16 bg-muted/30">
@@ -126,43 +88,6 @@ const SocialMediaUpdates = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Stay connected with our latest content on YouTube and LinkedIn
           </p>
-        </div>
-
-        {/* Channel Configuration */}
-        <div className="mb-8 max-w-2xl mx-auto">
-          <Card>
-            <CardHeader>
-              <CardTitle>Configure Social Media Channels</CardTitle>
-              <CardDescription>
-                Provide your YouTube channel and LinkedIn page URLs to fetch latest content
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <Youtube className="h-5 w-5 text-red-600" />
-                <Input 
-                  placeholder="YouTube channel URL"
-                  value={youtubeChannelUrl}
-                  onChange={(e) => setYoutubeChannelUrl(e.target.value)}
-                />
-              </div>
-              <div className="flex items-center space-x-2">
-                <Linkedin className="h-5 w-5 text-blue-600" />
-                <Input
-                  placeholder="LinkedIn page URL" 
-                  value={linkedinPageUrl}
-                  onChange={(e) => setLinkedinPageUrl(e.target.value)}
-                />
-              </div>
-              <Button 
-                onClick={fetchSocialMediaContent}
-                disabled={loading}
-                className="w-full"
-              >
-                {loading ? "Fetching..." : "Update Content"}
-              </Button>
-            </CardContent>
-          </Card>
         </div>
 
         {/* Content Grid */}
@@ -243,18 +168,22 @@ const SocialMediaUpdates = () => {
                         {post.publishedAt}
                       </div>
                     </div>
-                    <Button variant="ghost" size="sm" className="mt-2 p-0 h-auto">
-                      <ExternalLink className="h-3 w-3 mr-1" />
-                      View Post
+                    <Button variant="ghost" size="sm" className="mt-2 p-0 h-auto" asChild>
+                      <a href={post.url} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-3 w-3 mr-1" />
+                        View Post
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>
               ))}
             </div>
             <div className="text-center mt-6">
-              <Button variant="outline">
-                <Linkedin className="h-4 w-4 mr-2" />
-                Follow on LinkedIn
+              <Button variant="outline" asChild>
+                <a href="https://www.linkedin.com/company/dream-life-creator-in-wellness/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-4 w-4 mr-2" />
+                  Follow on LinkedIn
+                </a>
               </Button>
             </div>
           </div>

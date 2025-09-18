@@ -1,8 +1,4 @@
-import { Target, Award, Users, Globe } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import LeadershipTeam from "@/components/LeadershipTeam";
-import FounderJourneySection from "./FounderJourneySection";
-import SocialMediaIntegration from "./SocialMediaIntegration";
+import { Target, Globe } from "lucide-react";
 
 const AboutSection = () => {
   const highlights = [
@@ -79,15 +75,6 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-
-      {/* Leadership Team Section */}
-      <LeadershipTeam />
-      
-      {/* Founder Journey Section */}
-      <FounderJourneySection />
-      
-      {/* Social Media Integration */}
-      <SocialMediaIntegration />
     </section>
   );
 };
