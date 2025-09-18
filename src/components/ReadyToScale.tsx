@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Rocket, Target, Users, TrendingUp, ArrowRight } from "lucide-react";
+import ConsultationForm from "@/components/ConsultationForm";
 
 const ReadyToScale = () => {
+  const [showConsultationForm, setShowConsultationForm] = useState(false);
   const scalingPoints = [
     {
       icon: Rocket,
@@ -69,17 +72,38 @@ const ReadyToScale = () => {
               Book a consultation with our experts and get a personalized roadmap to scale your startup to unicorn status.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="group">
-                Book Free Consultation
+              <Button 
+                size="lg" 
+                className="group"
+                onClick={() => setShowConsultationForm(true)}
+              >
+                Book Consultation
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline">
-                View Success Stories
+              <Button 
+                size="lg" 
+                variant="outline"
+                asChild
+              >
+                <a 
+                  href="https://www.linkedin.com/company/dream-life-creator-in-wellness/posts/?feedView=all" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  View Success Stories
+                </a>
               </Button>
             </div>
           </div>
         </div>
       </div>
+      
+      {/* Consultation Form Modal */}
+      {showConsultationForm && (
+        <ConsultationForm 
+          onClose={() => setShowConsultationForm(false)} 
+        />
+      )}
     </section>
   );
 };

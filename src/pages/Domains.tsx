@@ -1,9 +1,13 @@
+import { useEffect } from "react";
 import { GraduationCap, Building, CreditCard, Phone, ShoppingCart } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 
 const Domains = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const domains = [
     {
       icon: GraduationCap,
@@ -97,8 +101,8 @@ const Domains = () => {
           {domains.map((domain, index) => (
             <Link to={pathFor(domain.title)} key={index} className="bg-card border border-border rounded-lg p-8 shadow-card hover:shadow-elegant transition-shadow duration-200 block">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
-                  <domain.icon className="h-6 w-6 text-primary" />
+                <div className="w-12 h-12 bg-[hsl(var(--dark-orange))] rounded-lg flex items-center justify-center mr-4">
+                  <domain.icon className="h-6 w-6 text-[hsl(var(--dark-orange-foreground))]" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">{domain.title}</h3>
               </div>

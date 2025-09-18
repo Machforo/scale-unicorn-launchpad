@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Workshops from "./pages/Workshops";
 import Services from "./pages/Services";
 import Domains from "./pages/Domains";
+import Pricing from "./pages/Pricing";
 import Resources from "./pages/Resources";
 import IntegrationDemo from "./pages/IntegrationDemo";
 import NotFound from "./pages/NotFound";
@@ -45,6 +46,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/workshops" element={<Workshops />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/services/funding" element={<Funding />} />
           <Route path="/services/management-consulting" element={<ManagementConsulting />} />
           <Route path="/services/incubator-manager" element={<IncubatorManager />} />

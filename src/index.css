@@ -33,6 +33,10 @@ All colors MUST be HSL for proper theming.
     --accent: 0 85% 55%;
     --accent-foreground: 0 0% 100%;
     
+    /* Dark Orange for Domain Boxes */
+    --dark-orange: 25 95% 45%;
+    --dark-orange-foreground: 0 0% 100%;
+    
     /* Muted & Neutral */
     --muted: 220 14% 96%;
     --muted-foreground: 224 15% 55%;
@@ -87,6 +91,10 @@ All colors MUST be HSL for proper theming.
     /* Accent Color */
     --accent: 0 85% 65%;
     --accent-foreground: 0 0% 98%;
+    
+    /* Dark Orange for Domain Boxes */
+    --dark-orange: 25 95% 60%;
+    --dark-orange-foreground: 0 0% 98%;
     
     /* Muted & Neutral */
     --muted: 224 15% 15%;

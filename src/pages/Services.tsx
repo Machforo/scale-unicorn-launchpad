@@ -1,9 +1,13 @@
+import { useEffect } from "react";
 import { DollarSign, Users, TrendingUp, Target, Code, BarChart, FileText } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 
 const Services = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 const services = [
     {
       icon: DollarSign,
