@@ -30,10 +30,10 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Received contact form data:", formData);
 
     try {
-      // Send email to Sandeep@idea2unicorn.ai (testing mode limitation)
+      // Send email to atharvkumar43@gmail.com
       const emailResponse = await resend.emails.send({
         from: "Idea2Unicorn <onboarding@resend.dev>",
-        to: ["sandeep@idea2unicorn.ai"],
+        to: ["atharvkumar43@gmail.com"],
         subject: `New Contact Form Inquiry from ${formData.name}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
