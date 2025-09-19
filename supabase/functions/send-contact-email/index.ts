@@ -31,7 +31,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send email to atharvkumar43@gmail.com
     const emailResponse = await resend.emails.send({
-      from: "Contact Form <noreply@idea2unicorn.ai>", // Change this to your verified domain
+      from: "Idea2Unicorn <onboarding@resend.dev>",
       to: ["atharvkumar43@gmail.com"],
       subject: `New Contact Form Inquiry from ${formData.name}`,
       html: `
@@ -64,6 +64,14 @@ const handler = async (req: Request): Promise<Response> => {
         </div>
       `,
     });
+
+    if ((emailResponse as any)?.error) {
+      console.error("Resend error:", (emailResponse as any).error);
+      return new Response(
+        JSON.stringify({ success: false, error: "Email service error", details: (emailResponse as any).error?.message || (emailResponse as any).error }),
+        { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
 
     console.log("Email sent successfully:", emailResponse);
 
