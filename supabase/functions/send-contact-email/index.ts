@@ -31,7 +31,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send email to Sandeep@idea2unicorn.ai
     const emailResponse = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
+      from: "Contact Form <noreply@idea2unicorn.ai>", // Change this to your verified domain
       to: ["Sandeep@idea2unicorn.ai"],
       subject: `New Contact Form Inquiry from ${formData.name}`,
       html: `
