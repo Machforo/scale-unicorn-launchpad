@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import PaymentModal from "./PaymentModal";
+import { supabase } from "@/integrations/supabase/client";
 
 
 const ContactSection = () => {
@@ -16,22 +16,44 @@ const ContactSection = () => {
     interest: "",
     message: ""
   });
-  const [showPaymentModal, setShowPaymentModal] = useState(false);
   const { toast } = useToast();
 
-  console.log("ContactSection rendered", { showPaymentModal }); // Debug log
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
+    
     console.log("Form submitted:", formData);
     
-    toast({
-      title: "Application Submitted!",
-      description: "Thank you for your interest. Payment details are displayed below.",
-    });
-    
-    setShowPaymentModal(true);
+    try {
+      // Send email through Supabase edge function
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Inquiry Sent Successfully!",
+        description: "Thank you for your interest. We'll get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        interest: "",
+        message: ""
+      });
+
+    } catch (error) {
+      console.error("Error sending inquiry:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send your inquiry. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -118,7 +140,7 @@ const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="bg-card border border-border rounded-lg p-8 shadow-elegant">
-            <h3 className="text-2xl font-bold text-foreground mb-6">Apply Now</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-6">Inquire Now</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
@@ -223,14 +245,6 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
-
-      <PaymentModal 
-        isOpen={showPaymentModal}
-        onClose={() => setShowPaymentModal(false)}
-        workshopTitle={formData.interest === 'workshop' ? 'Workshop Registration' : 
-                     formData.interest === 'incubation' ? 'Incubation Program' : 
-                     'Consultation'}
-      />
     </section>
   );
 };

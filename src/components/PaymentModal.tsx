@@ -258,7 +258,7 @@ const PaymentModal = ({ isOpen, onClose, workshopTitle, servicePriceINR, service
             </Button>
             <Button 
               onClick={() => {
-                window.open("https://calendly.com/atharv-kumar-webisdom/new-meeting", "_blank");
+                window.open("https://calendly.com/sandeep-idea2unicorn/idea2unicorn-consult", "_blank");
                 onClose();
               }}
               className="bg-primary text-primary-foreground hover:bg-primary/90"
