@@ -2,12 +2,14 @@ import { useState } from "react";
 import { Check, DollarSign, IndianRupee } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ConsultationForm from "@/components/ConsultationForm";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const Pricing = () => {
   const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
+  const [showConsultationForm, setShowConsultationForm] = useState(false);
 
   const services = [
     {
@@ -253,7 +255,10 @@ const Pricing = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full mt-6">
+                  <Button 
+                    className="w-full mt-6"
+                    onClick={() => setShowConsultationForm(true)}
+                  >
                     Contact for Details
                   </Button>
                 </CardContent>
@@ -271,12 +276,19 @@ const Pricing = () => {
             Need a tailored solution for your specific requirements? We offer custom packages 
             designed to meet your unique business needs and budget.
           </p>
-          <Button size="lg" onClick={() => window.location.href = "mailto:support@idea2unicorn.ai?subject=Schedule%20Consultation"}>
+          <Button 
+            size="lg" 
+            onClick={() => setShowConsultationForm(true)}
+          >
             Schedule a Consultation
           </Button>
         </div>
       </div>
       <Footer />
+      
+      {showConsultationForm && (
+        <ConsultationForm onClose={() => setShowConsultationForm(false)} />
+      )}
     </div>
   );
 };
