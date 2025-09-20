@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import PaymentModal from "@/components/PaymentModal";
+import { supabase } from "@/integrations/supabase/client";
 
 
 interface IncubationFormProps {
@@ -35,13 +36,56 @@ const IncubationForm = ({ onClose }: IncubationFormProps) => {
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Application Submitted!",
-      description: "Please proceed with payment to complete your incubation application.",
-    });
-    setShowPaymentModal(true);
+    
+    try {
+      // Store form data in database
+      const { error } = await supabase
+        .from('form_responses')
+        .insert({
+          form_type: 'incubation',
+          name: formData.founderName,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.companyName,
+          message: `Problem: ${formData.problem}\n\nSolution: ${formData.solution}\n\nTraction: ${formData.traction}`,
+          additional_data: {
+            website: formData.website,
+            industry: formData.industry,
+            stage: formData.stage,
+            teamSize: formData.teamSize,
+            fundingRaised: formData.fundingRaised,
+            revenue: formData.revenue,
+            businessModel: formData.businessModel,
+            marketSize: formData.marketSize,
+            competition: formData.competition
+          }
+        });
+
+      if (error) {
+        console.error('Error saving form data:', error);
+        toast({
+          title: "Error",
+          description: "Failed to submit application. Please try again.",
+          variant: "destructive"
+        });
+        return;
+      }
+
+      toast({
+        title: "Application Submitted!",
+        description: "Please proceed with payment to complete your incubation application.",
+      });
+      setShowPaymentModal(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error", 
+        description: "Failed to submit application. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {

@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import PaymentModal from "@/components/PaymentModal";
+import { supabase } from "@/integrations/supabase/client";
 
 
 interface WorkshopRegistrationFormProps {
@@ -27,13 +28,50 @@ const WorkshopRegistrationForm = ({ workshopTitle, onClose }: WorkshopRegistrati
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Registration Submitted!",
-      description: `Please proceed with payment to complete your registration for ${workshopTitle}.`,
-    });
-    setShowPaymentModal(true);
+    
+    try {
+      // Store form data in database
+      const { error } = await supabase
+        .from('form_responses')
+        .insert({
+          form_type: 'workshop',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          message: formData.expectations,
+          additional_data: {
+            workshopTitle,
+            position: formData.position,
+            experience: formData.experience
+          }
+        });
+
+      if (error) {
+        console.error('Error saving form data:', error);
+        toast({
+          title: "Error",
+          description: "Failed to submit registration. Please try again.",
+          variant: "destructive"
+        });
+        return;
+      }
+
+      toast({
+        title: "Registration Submitted!",
+        description: `Please proceed with payment to complete your registration for ${workshopTitle}.`,
+      });
+      setShowPaymentModal(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "Failed to submit registration. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {

@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import PaymentModal from "@/components/PaymentModal";
+import { supabase } from "@/integrations/supabase/client";
 
 
 interface ConsultationFormProps {
@@ -28,13 +29,51 @@ const ConsultationForm = ({ onClose }: ConsultationFormProps) => {
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Form Submitted!",
-      description: "Please proceed with payment to complete your consultation booking.",
-    });
-    setShowPaymentModal(true);
+    
+    try {
+      // Store form data in database
+      const { error } = await supabase
+        .from('form_responses')
+        .insert({
+          form_type: 'consultation',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          message: formData.challenges,
+          additional_data: {
+            stage: formData.stage,
+            industry: formData.industry,
+            preferredDate: formData.preferredDate,
+            preferredTime: formData.preferredTime
+          }
+        });
+
+      if (error) {
+        console.error('Error saving form data:', error);
+        toast({
+          title: "Error",
+          description: "Failed to submit consultation request. Please try again.",
+          variant: "destructive"
+        });
+        return;
+      }
+
+      toast({
+        title: "Form Submitted!",
+        description: "Please proceed with payment to complete your consultation booking.",
+      });
+      setShowPaymentModal(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "Failed to submit consultation request. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
