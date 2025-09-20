@@ -33,8 +33,8 @@ const LeadershipTeam = () => {
     },
     {
       name: "Dinesh Makhija",
-      role: "AI Expert",
-      title: "Chief Information Officer",
+      role: "Advisor, AI & Technology",
+      title: "Advisor, AI & Technology",
       expertise: "AI",
       description: "Leading AI innovation and technology strategy",
       image: dineshMakhijaImage,
