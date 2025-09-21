@@ -37,6 +37,7 @@ import Retail from "./pages/domains/Retail";
 import NewsMedia from "./pages/NewsMedia";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
+import AdminForgotPassword from "./pages/AdminForgotPassword";
 
 const queryClient = new QueryClient();
 
@@ -76,8 +77,9 @@ const App = () => (
           <Route path="/resources" element={<Resources />} />
           <Route path="/news-media" element={<NewsMedia />} />
           <Route path="/integration-demo" element={<IntegrationDemo />} />
-          <Route path="/admin" element={<AdminLogin />} />
-          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/forgot-password" element={<AdminForgotPassword />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

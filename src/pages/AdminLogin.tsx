@@ -16,9 +16,20 @@ const AdminLogin = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simple hardcoded admin credentials (in production, use proper authentication)
-    if (username === 'admin' && password === 'admin123') {
-      sessionStorage.setItem('adminAuthenticated', 'true');
+    // Admin credentials
+    const validCredentials = [
+      { username: 'sandeep@idea2unicorn.ai', password: 'Sandeep@123' },
+      { username: 'atharv.kumar@webisdom.com', password: 'Atharv@123' },
+      { username: 'amardeep.bajpai@webisdom.com', password: 'Amardeep@123' }
+    ];
+
+    const isValid = validCredentials.some(
+      cred => cred.username === username && cred.password === password
+    );
+
+    if (isValid) {
+      localStorage.setItem('adminAuthenticated', 'true');
+      localStorage.setItem('adminUser', username);
       toast.success('Login successful');
       navigate('/admin/dashboard');
     } else {
@@ -62,12 +73,17 @@ const AdminLogin = () => {
             <Button type="submit" className="w-full" disabled={isLoading}>
               {isLoading ? 'Logging in...' : 'Login'}
             </Button>
+            <div className="mt-2">
+              <Button
+                type="button"
+                variant="link"
+                className="w-full text-sm"
+                onClick={() => navigate('/admin/forgot-password')}
+              >
+                Forgot Password?
+              </Button>
+            </div>
           </form>
-          <div className="mt-4 text-sm text-muted-foreground">
-            <p>Demo credentials:</p>
-            <p>Username: admin</p>
-            <p>Password: admin123</p>
-          </div>
         </CardContent>
       </Card>
     </div>

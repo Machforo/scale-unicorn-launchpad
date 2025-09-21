@@ -28,13 +28,34 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     // Check if admin is authenticated
-    const isAuthenticated = sessionStorage.getItem('adminAuthenticated');
+    const isAuthenticated = localStorage.getItem('adminAuthenticated');
     if (!isAuthenticated) {
       navigate('/admin');
       return;
     }
 
     fetchFormResponses();
+
+    // Set up real-time subscription
+    const channel = supabase
+      .channel('form_responses_changes')
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'form_responses'
+        },
+        (payload) => {
+          console.log('Real-time update:', payload);
+          fetchFormResponses(); // Refresh data when changes occur
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, [navigate]);
 
   const fetchFormResponses = async () => {
@@ -56,7 +77,8 @@ const AdminDashboard = () => {
   };
 
   const handleLogout = () => {
-    sessionStorage.removeItem('adminAuthenticated');
+    localStorage.removeItem('adminAuthenticated');
+    localStorage.removeItem('adminUser');
     navigate('/admin');
     toast.success('Logged out successfully');
   };
