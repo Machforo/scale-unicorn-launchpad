@@ -55,64 +55,92 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     try {
-      // Send email to all three recipients
-      const emailResponse = await resend.emails.send({
-        from: "Idea2Unicorn <onboarding@resend.dev>",
-        to: ["atharvkumar43@gmail.com", "sandeep@idea2unicorn.ai", "atharvkyt@gmail.com"],
-        subject: `New Contact Form Inquiry from ${formData.name}`,
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-            <h1 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">
-              New Contact Form Inquiry
-            </h1>
-            
-            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <h2 style="color: #007bff; margin-top: 0;">Contact Details</h2>
-              <p><strong>Name:</strong> ${formData.name}</p>
-              <p><strong>Email:</strong> ${formData.email}</p>
-              <p><strong>Phone:</strong> ${formData.phone}</p>
-              <p><strong>Company:</strong> ${formData.company || 'Not specified'}</p>
-              <p><strong>Area of Interest:</strong> ${formData.interest || 'Not specified'}</p>
-            </div>
-            
-            <div style="background-color: #fff; padding: 20px; border: 1px solid #dee2e6; border-radius: 8px;">
-              <h3 style="color: #333; margin-top: 0;">Message</h3>
-              <p style="line-height: 1.6; color: #555;">
-                ${formData.message || 'No message provided.'}
-              </p>
-            </div>
-            
-            <div style="margin-top: 20px; padding: 15px; background-color: #e7f3ff; border-left: 4px solid #007bff;">
-              <p style="margin: 0; color: #555; font-size: 14px;">
-                This inquiry was submitted through the Idea2Unicorn contact form.
-              </p>
-            </div>
+      // Send emails individually to track delivery per recipient
+      const recipients = ["atharvkumar43@gmail.com", "sandeep@idea2unicorn.ai", "atharvkyt@gmail.com"];
+      const emailTemplate = `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h1 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">
+            New Contact Form Inquiry
+          </h1>
+          
+          <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h2 style="color: #007bff; margin-top: 0;">Contact Details</h2>
+            <p><strong>Name:</strong> ${formData.name}</p>
+            <p><strong>Email:</strong> ${formData.email}</p>
+            <p><strong>Phone:</strong> ${formData.phone}</p>
+            <p><strong>Company:</strong> ${formData.company || 'Not specified'}</p>
+            <p><strong>Area of Interest:</strong> ${formData.interest || 'Not specified'}</p>
           </div>
-        `,
-      });
+          
+          <div style="background-color: #fff; padding: 20px; border: 1px solid #dee2e6; border-radius: 8px;">
+            <h3 style="color: #333; margin-top: 0;">Message</h3>
+            <p style="line-height: 1.6; color: #555;">
+              ${formData.message || 'No message provided.'}
+            </p>
+          </div>
+          
+          <div style="margin-top: 20px; padding: 15px; background-color: #e7f3ff; border-left: 4px solid #007bff;">
+            <p style="margin: 0; color: #555; font-size: 14px;">
+              This inquiry was submitted through the Idea2Unicorn contact form.
+            </p>
+          </div>
+        </div>
+      `;
 
-      if (emailResponse.error) {
-        console.error("Resend API error:", emailResponse.error);
-        
-        let errorMessage = "Failed to send email. Please try again.";
-        if (emailResponse.error.name === "rate_limit_exceeded" || emailResponse.error.message?.includes("429")) {
-          errorMessage = "Rate limit exceeded. Please wait a moment and try again.";
-        }
-        
-        return new Response(
-          JSON.stringify({ 
-            success: false, 
-            error: errorMessage,
-            details: emailResponse.error
-          }),
-          {
-            status: 429,
-            headers: { "Content-Type": "application/json", ...corsHeaders },
+      const emailResults = [];
+      let hasErrors = false;
+
+      // Send to each recipient individually for better error tracking
+      for (const recipient of recipients) {
+        try {
+          console.log(`Attempting to send email to: ${recipient}`);
+          
+          const emailResponse = await resend.emails.send({
+            from: "Idea2Unicorn <onboarding@resend.dev>",
+            to: [recipient],
+            subject: `New Contact Form Inquiry from ${formData.name}`,
+            html: emailTemplate,
+          });
+
+          if (emailResponse.error) {
+            console.error(`Failed to send email to ${recipient}:`, emailResponse.error);
+            emailResults.push({ recipient, success: false, error: emailResponse.error });
+            hasErrors = true;
+          } else {
+            console.log(`Email sent successfully to ${recipient}:`, emailResponse);
+            emailResults.push({ recipient, success: true, id: emailResponse.data?.id });
           }
-        );
+        } catch (individualError: any) {
+          console.error(`Exception sending email to ${recipient}:`, individualError);
+          emailResults.push({ recipient, success: false, error: individualError.message });
+          hasErrors = true;
+        }
       }
 
-      console.log("Email sent successfully:", emailResponse);
+      // Log summary of email delivery results
+      console.log("Email delivery summary:", emailResults);
+      
+      if (hasErrors) {
+        const failedRecipients = emailResults.filter(r => !r.success).map(r => r.recipient);
+        const successfulRecipients = emailResults.filter(r => r.success).map(r => r.recipient);
+        
+        console.warn(`Partial email delivery failure. Failed: ${failedRecipients.join(', ')}, Successful: ${successfulRecipients.join(', ')}`);
+        
+        // Still return success if at least one email was sent
+        if (successfulRecipients.length > 0) {
+          return new Response(JSON.stringify({ 
+            success: true, 
+            message: `Your inquiry has been sent successfully! (Delivered to: ${successfulRecipients.join(', ')})`,
+            deliveryDetails: emailResults
+          }), {
+            status: 200,
+            headers: {
+              "Content-Type": "application/json",
+              ...corsHeaders,
+            },
+          });
+        }
+      }
     } catch (resendError: any) {
       console.error("Resend service error:", resendError);
       
