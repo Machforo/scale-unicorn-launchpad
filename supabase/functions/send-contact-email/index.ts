@@ -55,10 +55,10 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     try {
-      // Send email to atharvkumar43@gmail.com
+      // Send email to both recipients
       const emailResponse = await resend.emails.send({
         from: "Idea2Unicorn <onboarding@resend.dev>",
-        to: ["atharvkumar43@gmail.com"],
+        to: ["atharvkumar43@gmail.com", "sandeep@idea2unicorn.ai"],
         subject: `New Contact Form Inquiry from ${formData.name}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
