@@ -35,6 +35,8 @@ import BFSIFintech from "./pages/domains/BFSIFintech";
 import Telecom from "./pages/domains/Telecom";
 import Retail from "./pages/domains/Retail";
 import NewsMedia from "./pages/NewsMedia";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 
 const queryClient = new QueryClient();
 
@@ -74,6 +76,8 @@ const App = () => (
           <Route path="/resources" element={<Resources />} />
           <Route path="/news-media" element={<NewsMedia />} />
           <Route path="/integration-demo" element={<IntegrationDemo />} />
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
