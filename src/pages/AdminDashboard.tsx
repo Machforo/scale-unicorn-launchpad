@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
-import { LogOut, Mail, Phone, Building, MessageSquare, Calendar } from 'lucide-react';
+import { LogOut, Mail, Phone, Building, MessageSquare, Calendar, Download } from 'lucide-react';
 
 interface FormResponse {
   id: string;
@@ -106,6 +106,55 @@ const AdminDashboard = () => {
     }
   };
 
+  const downloadCSV = () => {
+    if (formResponses.length === 0) {
+      toast.error('No data available to download');
+      return;
+    }
+
+    // Define CSV headers
+    const headers = [
+      'Name',
+      'Email', 
+      'Phone',
+      'Company',
+      'Form Type',
+      'Message',
+      'Date',
+      'Additional Data'
+    ];
+
+    // Convert data to CSV format
+    const csvData = formResponses.map(response => [
+      response.name || '',
+      response.email || '',
+      response.phone || '',
+      response.company || '',
+      response.form_type || '',
+      response.message ? `"${response.message.replace(/"/g, '""')}"` : '', // Escape quotes in message
+      formatDate(response.created_at),
+      response.additional_data ? `"${JSON.stringify(response.additional_data).replace(/"/g, '""')}"` : ''
+    ]);
+
+    // Combine headers with data
+    const csvContent = [headers, ...csvData]
+      .map(row => row.join(','))
+      .join('\n');
+
+    // Create and download the file
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    link.setAttribute('href', url);
+    link.setAttribute('download', `form-responses-${new Date().toISOString().split('T')[0]}.csv`);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    toast.success('CSV file downloaded successfully');
+  };
+
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -122,10 +171,16 @@ const AdminDashboard = () => {
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold">Admin Dashboard</h1>
-          <Button onClick={handleLogout} variant="outline" size="sm">
-            <LogOut className="w-4 h-4 mr-2" />
-            Logout
-          </Button>
+          <div className="flex gap-2">
+            <Button onClick={downloadCSV} variant="outline" size="sm">
+              <Download className="w-4 h-4 mr-2" />
+              Download CSV
+            </Button>
+            <Button onClick={handleLogout} variant="outline" size="sm">
+              <LogOut className="w-4 h-4 mr-2" />
+              Logout
+            </Button>
+          </div>
         </div>
       </header>
 
