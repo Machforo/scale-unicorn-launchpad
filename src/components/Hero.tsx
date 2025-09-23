@@ -32,15 +32,15 @@ const Hero = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/workshops">
-                <Button className="btn-primary group">
+            <div className="flex flex-col sm:flex-row gap-4 w-full">
+              <Link to="/workshops" className="w-full sm:w-auto">
+                <Button className="btn-primary group w-full sm:w-auto">
                   Join a Workshop
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Button 
-                className="btn-secondary"
+                className="btn-secondary w-full sm:w-auto"
                 onClick={() => setActiveForm("incubation")}
               >
                 Apply for Incubation

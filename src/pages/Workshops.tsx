@@ -10,6 +10,19 @@ const Workshops = () => {
 
   const workshops = [
     {
+      title: "Business Visioning - Idea2Unicorn",
+      facilitator: "Sandipp Vijj",
+      duration: "2 Cohort Lectures + 3 One-to-One Sessions",
+      description: "Our proprietary workshop using a 5-step visual methodology. Join WhatsApp group: https://lnkd.in/gUAY4hNa. Pricing: India - ₹2,790 total (₹504 lectures + ₹2,502 sessions), USA & Others - $225 total ($25 lectures + $200 sessions)",
+      outcomes: [
+        "Visualizing business vision using What, When, Where, Why & How methodology",
+        "Feedback & enhance your vision by 2-5 times across life spheres",
+        "Clear visualization of enterprise & life dimensions", 
+        "Guidance on overcoming business vision obstructions",
+        "Steps to achieve your business vision"
+      ]
+    },
+    {
       title: "Dream Life Workshop",
       facilitator: "Sandipp Vijj",
       duration: "2 Days",

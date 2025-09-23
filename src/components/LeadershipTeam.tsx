@@ -10,6 +10,9 @@ import sameerNigamImage from "@/assets/sameer-nigam.jpg";
 import chandraPatniImage from "@/assets/chandra-patni.jpg";
 import dineshMakhijaImage from "@/assets/dinesh-makhija-new.jpg";
 import satyavirYadavImage from "@/assets/satyavir-yadav-new.jpg";
+import arpitSinghImage from "@/assets/arpit-singh.png";
+import drAtulMehtaImage from "@/assets/dr-atul-mehta.png";
+import sameerKarwalImage from "@/assets/sameer-karwal.png";
 
 const LeadershipTeam = () => {
   const founder = {
@@ -111,6 +114,33 @@ const LeadershipTeam = () => {
       description: "Strategic communication and brand development expert",
       image: achalPaulImage,
       linkedin: "https://www.linkedin.com/in/achal-paul-8a2385b/"
+    },
+    {
+      name: "Arpit Singh",
+      role: "Principal Consultant",
+      title: "International Business & Partnerships",
+      expertise: "International Business",
+      description: "Leading international business expansion and strategic partnerships",
+      image: arpitSinghImage,
+      linkedin: "https://www.linkedin.com/in/arpitsinghyo/"
+    },
+    {
+      name: "Dr. Atul Mehta",
+      role: "Medical & Healthcare Advisor",
+      title: "Medical & Healthcare Specialist",
+      expertise: "Healthcare",
+      description: "Healthcare innovation and medical expertise advisor",
+      image: drAtulMehtaImage,
+      linkedin: "https://www.linkedin.com/in/atulmehta07/"
+    },
+    {
+      name: "Sameer Karwal",
+      role: "Business Development Advisor",
+      title: "Business Development Specialist", 
+      expertise: "Business Development",
+      description: "Strategic business development and growth acceleration expert",
+      image: sameerKarwalImage,
+      linkedin: "https://www.linkedin.com/in/atulmehta07/"
     }
   ];
 
@@ -187,11 +217,11 @@ const LeadershipTeam = () => {
         <div className="mt-16 bg-card border border-border rounded-lg p-8 shadow-card">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">10+</div>
+              <div className="text-3xl font-bold text-primary mb-2">13+</div>
               <div className="text-muted-foreground">Team Members</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">50+</div>
+              <div className="text-3xl font-bold text-primary mb-2">60+</div>
               <div className="text-muted-foreground">Years Combined Experience</div>
             </div>
             <div>

@@ -66,9 +66,14 @@ const Chatbot = () => {
           <div className="flex items-center justify-between p-4 border-b border-border bg-primary text-primary-foreground rounded-t-lg">
             <div className="flex items-center space-x-2">
               <MessageCircle className="h-5 w-5" />
-              <span className="font-semibold">Be A Unicorn Assistant</span>
+              <span className="font-semibold">Idea2Unicorn Assistant</span>
             </div>
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <button 
+              onClick={() => setIsOpen(false)}
+              className="p-1 hover:bg-primary-foreground/20 rounded-full transition-colors"
+            >
+              <X className="h-4 w-4" />
+            </button>
           </div>
 
           {/* Messages */}

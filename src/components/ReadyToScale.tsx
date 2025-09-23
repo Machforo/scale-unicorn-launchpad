@@ -64,20 +64,56 @@ const ReadyToScale = () => {
         </div>
 
         <div className="text-center">
-          <div className="bg-card/80 backdrop-blur-sm border border-border rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              Start Your Scaling Journey Today
+          <div className="bg-card/80 backdrop-blur-sm border border-border rounded-2xl p-8 max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold text-foreground mb-6">
+              Create a Blueprint for Your Unicorn in 15 Days
             </h3>
-            <p className="text-muted-foreground mb-6">
-              Book a consultation with our experts and get a personalized roadmap to scale your startup to unicorn status.
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              Transform your idea into a scalable unicorn with Idea2Unicorn.ai's comprehensive approach. 
+              With a team of visionary entrepreneurs, investors, AI experts, and global business leaders, 
+              we solve every business problem holistically.
             </p>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 text-left">
+              <div className="space-y-2">
+                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">1</div>
+                <h4 className="font-semibold text-foreground">360° Services</h4>
+                <p className="text-sm text-muted-foreground">Complete support for every stage of growth</p>
+              </div>
+              <div className="space-y-2">
+                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">2</div>
+                <h4 className="font-semibold text-foreground">Access to Funding</h4>
+                <p className="text-sm text-muted-foreground">Pre-seed, Seed & Angel funding opportunities</p>
+              </div>
+              <div className="space-y-2">
+                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">3</div>
+                <h4 className="font-semibold text-foreground">Strategic Tie-ups</h4>
+                <p className="text-sm text-muted-foreground">Top incubator partnerships in India</p>
+              </div>
+              <div className="space-y-2">
+                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">4</div>
+                <h4 className="font-semibold text-foreground">Proprietary Workshops</h4>
+                <p className="text-sm text-muted-foreground">Through Angel Investor Networks</p>
+              </div>
+              <div className="space-y-2">
+                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">5</div>
+                <h4 className="font-semibold text-foreground">Committed Fund</h4>
+                <p className="text-sm text-muted-foreground">₹1 cr fund to fuel ambitious founders</p>
+              </div>
+              <div className="space-y-2">
+                <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center text-accent-foreground font-bold text-sm">✓</div>
+                <h4 className="font-semibold text-foreground">Holistic Solutions</h4>
+                <p className="text-sm text-muted-foreground">Turning ideas into scalable unicorns</p>
+              </div>
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
                 className="group"
                 onClick={() => setShowConsultationForm(true)}
               >
-                Book Consultation
+                Start Your Blueprint
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button 
@@ -86,11 +122,11 @@ const ReadyToScale = () => {
                 asChild
               >
                 <a 
-                  href="https://www.linkedin.com/company/dream-life-creator-in-wellness/posts/?feedView=all" 
+                  href="https://www.three60magazine.com/creating-the-blueprint-of-a-unicorn-in-just-15-days/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  View Success Stories
+                  Read Our Story
                 </a>
               </Button>
             </div>
