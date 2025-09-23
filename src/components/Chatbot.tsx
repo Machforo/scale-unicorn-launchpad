@@ -8,7 +8,7 @@ const Chatbot = () => {
   const [messages, setMessages] = useState([
     {
       type: "bot",
-      message: "Hi! I'm here to help you learn more about Be A Unicorn. What would you like to know about our workshops and growth strategies?"
+      message: "Hi! I'm here to help you learn more about Idea2Unicorn. What would you like to know about our workshops and growth strategies?"
     }
   ]);
   const [inputMessage, setInputMessage] = useState("");
