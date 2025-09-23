@@ -10,7 +10,7 @@ const WorkshopsSection = () => {
       facilitator: "Sandipp Vijj",
       duration: "5 Steps",
       description: "Our proprietary Idea2Unicorn workshop using a 5-step visual method to transform your business vision across all spheres of life.",
-      route: "/workshops"
+      route: "/workshops/business-visioning"
     },
     {
       id: "conceptualize-unicorn",

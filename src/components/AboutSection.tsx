@@ -22,33 +22,6 @@ const AboutSection = () => {
           </p>
         </div>
 
-        {/* Stats Section with Background Color from Image */}
-        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8 mb-16">
-          <h3 className="text-3xl font-bold text-center text-gray-800 mb-8">
-            How to Create the Blueprint of a Unicorn in 15 Days?
-          </h3>
-          <p className="text-center text-gray-600 mb-8">
-            Pre-seed, Seed & Angel Funding available with comprehensive 360° services
-          </p>
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-purple-600 mb-2">$1M</div>
-              <p className="text-gray-600">Possible valuation in 4 weeks</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-purple-600 mb-2">360°</div>
-              <p className="text-gray-600">Complete services available</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-purple-600 mb-2">7</div>
-              <p className="text-gray-600">Incubator partnerships including IIM Calcutta</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-purple-600 mb-2">₹75L</div>
-              <p className="text-gray-600">Corpus already committed</p>
-            </div>
-          </div>
-        </div>
 
         {/* Mission & Vision */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16">

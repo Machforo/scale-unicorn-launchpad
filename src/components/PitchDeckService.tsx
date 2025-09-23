@@ -132,7 +132,7 @@ const PitchDeckService = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  Three60 Magazine - Creating the Blueprint of a Unicorn in 15 Days
+                  Three60 Magazine - Create a Blueprint for Your Unicorn in 15 Days
                   <ExternalLink className="ml-1 h-3 w-3" />
                 </a>
               </Button>

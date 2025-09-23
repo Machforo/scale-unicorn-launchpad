@@ -66,7 +66,7 @@ const ReadyToScale = () => {
         <div className="text-center">
           <div className="bg-card/80 backdrop-blur-sm border border-border rounded-2xl p-8 max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold text-foreground mb-6">
-              Create a Blueprint for Your Unicorn in 15 Days
+              Create a Blueprint of your unicorn in 15 days
             </h3>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Transform your idea into a scalable unicorn with Idea2Unicorn.ai's comprehensive approach. 

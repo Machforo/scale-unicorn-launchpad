@@ -12,10 +12,6 @@ const Chatbot = () => {
   ]);
   const [inputMessage, setInputMessage] = useState("");
 
-  const quickQuestions = [
-    "What workshops do you offer?",
-    "How can I apply for incubation?",
-  ];
 
   const handleSendMessage = (message: string) => {
     if (!message.trim()) return;
@@ -46,22 +42,19 @@ const Chatbot = () => {
   return (
     <>
       {/* Chatbot Toggle Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-elegant flex items-center justify-center transition-all duration-300 ${
-          isOpen ? "bg-destructive hover:bg-destructive/90" : "bg-primary hover:bg-primary/90 text-primary-foreground"
-        }`}
-      >
-        {isOpen ? (
-          <X className="h-6 w-6 text-white" />
-        ) : (
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-elegant flex items-center justify-center transition-all duration-300 bg-primary hover:bg-primary/90 text-primary-foreground"
+          aria-label="Open chat"
+        >
           <MessageCircle className="h-6 w-6 text-white" />
-        )}
-      </button>
+        </button>
+      )}
 
       {/* Chatbot Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] h-96 bg-card border border-border rounded-lg shadow-elegant">
+        <div className="fixed bottom-24 right-6 z-50 w-full max-w-[calc(100vw-3rem)] sm:w-96 h-96 bg-card border border-border rounded-lg shadow-elegant flex flex-col">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-border bg-primary text-primary-foreground rounded-t-lg">
             <div className="flex items-center space-x-2">
@@ -77,7 +70,7 @@ const Chatbot = () => {
           </div>
 
           {/* Messages */}
-          <div className="flex flex-col h-64 p-4 overflow-y-auto space-y-3">
+          <div className="flex flex-col flex-1 p-4 overflow-y-auto space-y-3">
             {messages.map((msg, index) => (
               <div
                 key={index}
@@ -97,22 +90,6 @@ const Chatbot = () => {
           </div>
 
           {/* Quick Questions */}
-          {messages.length <= 1 && (
-            <div className="px-4 pb-2">
-              <div className="text-xs text-muted-foreground mb-2">Quick questions:</div>
-              <div className="flex flex-wrap gap-1">
-                {quickQuestions.slice(0, 3).map((question, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleSendMessage(question)}
-                    className="text-xs bg-muted hover:bg-muted/80 px-2 py-1 rounded transition-colors"
-                  >
-                    {question}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
 
           {/* Input */}
           <div className="p-4 border-t border-border">
@@ -121,7 +98,7 @@ const Chatbot = () => {
                 type="text"
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
-                onKeyPress={(e) => e.key === "Enter" && handleSendMessage(inputMessage)}
+                onKeyDown={(e) => e.key === "Enter" && handleSendMessage(inputMessage)}
                 placeholder="Type your message..."
                 className="flex-1 px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary min-w-0"
               />

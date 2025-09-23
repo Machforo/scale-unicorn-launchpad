@@ -77,6 +77,17 @@ const services = [
     },
     {
       icon: FileText,
+      title: "Pitch Deck Evaluation",
+      description: "Startup pitch deck evaluation and funding readiness with expert guidance.",
+      features: [
+        "Deck review & scoring",
+        "Market offering critique",
+        "Funding requirement assessment",
+        "Preparation for investor meetings"
+      ]
+    },
+    {
+      icon: FileText,
       title: "Patent",
       description: "Intellectual property protection and patent filing services for innovative startups and technologies.",
       features: [
@@ -95,6 +106,7 @@ const services = [
     if (title === "Business Strategy") return "/services/business-strategy";
     if (title === "Digital Engineering") return "/services/digital-engineering";
     if (title === "CFA Service") return "/services/cfa-service";
+    if (title === "Pitch Deck Evaluation") return "/services/pitch-deck-evaluation";
     if (title === "Patent") return "/services/patent";
     return "#";
   };
