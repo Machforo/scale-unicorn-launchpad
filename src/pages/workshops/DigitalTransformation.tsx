@@ -2,22 +2,16 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Clock, Users, Target, Award, CheckCircle, Calendar, CreditCard, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-import PaymentModal from "@/components/PaymentModal";
-import { useToast } from "@/hooks/use-toast";
+import WorkshopRegistrationForm from "@/components/WorkshopRegistrationForm";
 import amardeepBajpaiImg from "@/assets/amardeep-bajpai-new.jpg";
 import dineshMakhijaImg from "@/assets/dinesh-makhija-new.jpg";
 
 
 const DigitalTransformation = () => {
-  const [showPaymentModal, setShowPaymentModal] = useState(false);
-  const { toast } = useToast();
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
 
   const handleRegister = () => {
-    toast({
-      title: "Registration Started!",
-      description: "Please complete the payment process below.",
-    });
-    setShowPaymentModal(true);
+    setShowRegistrationForm(true);
   };
 
   const handleContact = () => {
@@ -201,13 +195,12 @@ const DigitalTransformation = () => {
         </div>
       </div>
 
-      <PaymentModal 
-        isOpen={showPaymentModal}
-        onClose={() => setShowPaymentModal(false)}
-        workshopTitle="Digital Transformation Workshop"
-        servicePriceINR={30000}
-        servicePriceUSD={360}
-      />
+      {showRegistrationForm && (
+        <WorkshopRegistrationForm
+          workshopTitle="Digital Transformation Workshop"
+          onClose={() => setShowRegistrationForm(false)}
+        />
+      )}
     </div>
   );
 };

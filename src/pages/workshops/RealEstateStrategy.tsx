@@ -2,20 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Clock, Users, Target, CheckCircle } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import PaymentModal from "@/components/PaymentModal";
+import WorkshopRegistrationForm from "@/components/WorkshopRegistrationForm";
 import satyavirYadavImage from "@/assets/satyavir-yadav-new.jpg";
 
 const RealEstateStrategy = () => {
-  const { toast } = useToast();
-  const [showPayment, setShowPayment] = useState(false);
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
 
   const handleRegister = () => {
-    toast({
-      title: "Registration",
-      description: "Opening payment options…",
-    });
-    setShowPayment(true);
+    setShowRegistrationForm(true);
   };
 
   return (
@@ -82,7 +76,12 @@ const RealEstateStrategy = () => {
         </section>
       </div>
 
-      <PaymentModal isOpen={showPayment} onClose={() => setShowPayment(false)} workshopTitle="Real Estate Compounded Growth Strategy" servicePriceINR={18000} servicePriceUSD={220} />
+      {showRegistrationForm && (
+        <WorkshopRegistrationForm
+          workshopTitle="Real Estate Compounded Growth Strategy"
+          onClose={() => setShowRegistrationForm(false)}
+        />
+      )}
     </div>
   );
 };

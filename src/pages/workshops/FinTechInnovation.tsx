@@ -2,21 +2,14 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Clock, Users, Target, Award, CheckCircle, Calendar, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-import PaymentModal from "@/components/PaymentModal";
-import { useToast } from "@/hooks/use-toast";
-
+import WorkshopRegistrationForm from "@/components/WorkshopRegistrationForm";
 import chandraPatniImage from "@/assets/chandra-patni.jpg";
 
 const FinTechInnovation = () => {
-  const [showPaymentModal, setShowPaymentModal] = useState(false);
-  const { toast } = useToast();
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
 
   const handleRegister = () => {
-    toast({
-      title: "Registration Started!",
-      description: "Please complete the payment process below.",
-    });
-    setShowPaymentModal(true);
+    setShowRegistrationForm(true);
   };
 
   const handleContact = () => {
@@ -189,13 +182,12 @@ const FinTechInnovation = () => {
         </div>
       </div>
 
-      <PaymentModal 
-        isOpen={showPaymentModal}
-        onClose={() => setShowPaymentModal(false)}
-        workshopTitle="FinTech Innovation Workshop"
-        servicePriceINR={30000}
-        servicePriceUSD={360}
-      />
+      {showRegistrationForm && (
+        <WorkshopRegistrationForm
+          workshopTitle="FinTech Innovation Workshop"
+          onClose={() => setShowRegistrationForm(false)}
+        />
+      )}
     </div>
   );
 };

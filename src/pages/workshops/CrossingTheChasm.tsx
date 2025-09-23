@@ -2,19 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Clock, Users, Target, CheckCircle } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import PaymentModal from "@/components/PaymentModal";
+import WorkshopRegistrationForm from "@/components/WorkshopRegistrationForm";
 
 const CrossingTheChasm = () => {
-  const { toast } = useToast();
-  const [showPayment, setShowPayment] = useState(false);
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
 
   const handleRegister = () => {
-    toast({
-      title: "Registration",
-      description: "Opening payment options…",
-    });
-    setShowPayment(true);
+    setShowRegistrationForm(true);
   };
 
   return (
@@ -66,7 +60,12 @@ const CrossingTheChasm = () => {
         </section>
       </div>
 
-      <PaymentModal isOpen={showPayment} onClose={() => setShowPayment(false)} workshopTitle="Crossing the Chasm Strategy" servicePriceINR={12000} servicePriceUSD={150} />
+      {showRegistrationForm && (
+        <WorkshopRegistrationForm
+          workshopTitle="Crossing the Chasm Strategy"
+          onClose={() => setShowRegistrationForm(false)}
+        />
+      )}
     </div>
   );
 };

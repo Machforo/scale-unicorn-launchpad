@@ -2,19 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Clock, Users, Target, CheckCircle, MessageCircle } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import PaymentModal from "@/components/PaymentModal";
+import WorkshopRegistrationForm from "@/components/WorkshopRegistrationForm";
 
 const BusinessVisioning = () => {
-  const { toast } = useToast();
-  const [showPayment, setShowPayment] = useState(false);
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
 
   const handleRegister = () => {
-    toast({
-      title: "Registration",
-      description: "Opening payment options…",
-    });
-    setShowPayment(true);
+    setShowRegistrationForm(true);
   };
 
   const whatsappGroup = "https://lnkd.in/gUAY4hNa";
@@ -106,7 +100,12 @@ const BusinessVisioning = () => {
         </section>
       </div>
 
-      <PaymentModal isOpen={showPayment} onClose={() => setShowPayment(false)} workshopTitle="Business Visioning" servicePriceINR={2790} servicePriceUSD={225} />
+      {showRegistrationForm && (
+        <WorkshopRegistrationForm
+          workshopTitle="Business Visioning - Idea2Unicorn"
+          onClose={() => setShowRegistrationForm(false)}
+        />
+      )}
     </div>
   );
 };

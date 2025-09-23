@@ -2,20 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Clock, Users, Target, CheckCircle } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import PaymentModal from "@/components/PaymentModal";
+import WorkshopRegistrationForm from "@/components/WorkshopRegistrationForm";
 import anssavJainImage from "@/assets/ansshav-jain.png";
 
 const UnicornStrategy = () => {
-  const { toast } = useToast();
-  const [showPayment, setShowPayment] = useState(false);
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
 
   const handleRegister = () => {
-    toast({
-      title: "Registration",
-      description: "Opening payment options…",
-    });
-    setShowPayment(true);
+    setShowRegistrationForm(true);
   };
 
   return (
@@ -82,7 +76,12 @@ const UnicornStrategy = () => {
         </section>
       </div>
 
-      <PaymentModal isOpen={showPayment} onClose={() => setShowPayment(false)} workshopTitle="Strategy to Become a Unicorn" servicePriceINR={50000} servicePriceUSD={600} />
+      {showRegistrationForm && (
+        <WorkshopRegistrationForm
+          workshopTitle="Strategy to Become a Unicorn"
+          onClose={() => setShowRegistrationForm(false)}
+        />
+      )}
     </div>
   );
 };
