@@ -36,7 +36,8 @@ const Workshops = () => {
         "Health optimization and self-image enhancement",
         "Relationship rewiring strategies",
         "Wealth creation rituals and mindset shifts"
-      ]
+      ],
+      route: "/workshops/dream-life"
     },
     {
       title: "Crossing the Chasm Strategy",
@@ -49,7 +50,8 @@ const Workshops = () => {
         "Customer acquisition strategy optimization",
         "Risk mitigation during scaling phases",
         "Revenue model refinement"
-      ]
+      ],
+      route: "/workshops/crossing-chasm"
     },
     {
       title: "Smart Growth Without Diluting Equity",
@@ -62,7 +64,8 @@ const Workshops = () => {
         "Revenue multiplication without external funding",
         "Operational efficiency optimization",
         "Market expansion frameworks"
-      ]
+      ],
+      route: "/workshops/smart-growth"
     },
     {
       title: "Real Estate Compounded Growth Strategy",
@@ -75,7 +78,8 @@ const Workshops = () => {
         "Portfolio diversification techniques",
         "Risk management in real estate",
         "Passive income generation methods"
-      ]
+      ],
+      route: "/workshops/real-estate-strategy"
     },
     {
       title: "Strategy to Become a Unicorn",
@@ -88,7 +92,8 @@ const Workshops = () => {
         "Scaling culture and team building",
         "Market disruption strategies",
         "Exit strategy planning"
-      ]
+      ],
+      route: "/workshops/unicorn-strategy"
     }
   ];
 
@@ -115,7 +120,7 @@ const Workshops = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {workshops.map((workshop, index) => (
-            <div key={index}>
+            <div key={index} className="transform hover:scale-105 transition-all duration-300">
               <WorkshopCard 
                 {...workshop} 
                 onRegister={() => workshop.route ? navigate(workshop.route) : setSelectedWorkshop(workshop.title)}

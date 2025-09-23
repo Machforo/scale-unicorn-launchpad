@@ -28,6 +28,11 @@ import LeadershipExcellence from "./pages/workshops/LeadershipExcellence";
 import FranchisingMastery from "./pages/workshops/FranchisingMastery";
 import FinTechInnovation from "./pages/workshops/FinTechInnovation";
 import BusinessVisioning from "./pages/workshops/BusinessVisioning";
+import DreamLifeWorkshop from "./pages/workshops/DreamLifeWorkshop";
+import CrossingTheChasm from "./pages/workshops/CrossingTheChasm";
+import SmartGrowth from "./pages/workshops/SmartGrowth";
+import RealEstateStrategy from "./pages/workshops/RealEstateStrategy";
+import UnicornStrategy from "./pages/workshops/UnicornStrategy";
 import PitchDeckEvaluation from "./pages/services/PitchDeckEvaluation";
 import ForInvestors from "./pages/ForInvestors";
 import ForStartups from "./pages/ForStartups";
@@ -69,6 +74,11 @@ const App = () => (
           <Route path="/workshops/franchising-mastery" element={<FranchisingMastery />} />
           <Route path="/workshops/fintech-innovation" element={<FinTechInnovation />} />
           <Route path="/workshops/business-visioning" element={<BusinessVisioning />} />
+          <Route path="/workshops/dream-life" element={<DreamLifeWorkshop />} />
+          <Route path="/workshops/crossing-chasm" element={<CrossingTheChasm />} />
+          <Route path="/workshops/smart-growth" element={<SmartGrowth />} />
+          <Route path="/workshops/real-estate-strategy" element={<RealEstateStrategy />} />
+          <Route path="/workshops/unicorn-strategy" element={<UnicornStrategy />} />
           <Route path="/services/pitch-deck-evaluation" element={<PitchDeckEvaluation />} />
         <Route path="/for-investors" element={<ForInvestors />} />
         <Route path="/for-startups" element={<ForStartups />} />

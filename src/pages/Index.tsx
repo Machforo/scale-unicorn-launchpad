@@ -12,7 +12,6 @@ import ReadyToScale from "@/components/ReadyToScale";
 import SocialMediaUpdates from "@/components/SocialMediaUpdates";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import PitchDeckService from "@/components/PitchDeckService";
 import Chatbot from "@/components/Chatbot";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -44,7 +43,6 @@ const Index = () => {
         <PurposeOfCommunity />
         <SandippMethodology />
         <WorkshopsSection />
-        <PitchDeckService />
         <GrowthStrategiesSection />
         <ReadyToScale />
         <SocialMediaUpdates />
