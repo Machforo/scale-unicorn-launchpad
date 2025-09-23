@@ -18,22 +18,13 @@ const LeadershipTeam = () => {
   const founder = {
     name: "Sandeep (Sandipp) K Vij (Vijj)",
     role: "CEO and Founder",
-    title: "MBA – IIMA",
+    title: "MBA – IIMA | Retail and Visioning Expert",
     description: "Serial Entrepreneur and Venture Capitalist",
     image: sandippVijjImage,
     linkedin: "https://www.linkedin.com/in/sandeepvij"
   };
 
   const principalPartners = [
-    {
-      name: "Chandra Patni",
-      role: "Fintech Expert",
-      title: "Financial Technology Specialist", 
-      expertise: "Fintech",
-      description: "Leading fintech innovation and digital financial solutions",
-      image: chandraPatniImage,
-      linkedin: "https://www.linkedin.com/in/chandrapatni/"
-    },
     {
       name: "Dinesh Makhija",
       role: "Advisor, AI & Technology",
@@ -60,15 +51,6 @@ const LeadershipTeam = () => {
       description: "Pioneering digital learning solutions and educational technology",
       image: sameerNigamImage,
       linkedin: "https://www.linkedin.com/in/sameernigam/"
-    },
-    {
-      name: "Sandipp Vijj",
-      role: "Retail & Visioning Expert",
-      title: "CEO and Founder",
-      expertise: "Retail, Visioning, Crossing the Chasm",
-      description: "Expert in retail strategies, business visioning, and market crossing methodologies",
-      image: sandippVijjImage,
-      linkedin: "https://www.linkedin.com/in/sandeepvij"
     },
     {
       name: "Ansshav Jain",
@@ -114,7 +96,10 @@ const LeadershipTeam = () => {
       description: "Strategic communication and brand development expert",
       image: achalPaulImage,
       linkedin: "https://www.linkedin.com/in/achal-paul-8a2385b/"
-    },
+    }
+  ];
+
+  const internationalBusinessPartners = [
     {
       name: "Arpit Singh",
       role: "Principal Consultant",
@@ -123,6 +108,15 @@ const LeadershipTeam = () => {
       description: "Leading international business expansion and strategic partnerships",
       image: arpitSinghImage,
       linkedin: "https://www.linkedin.com/in/arpitsinghyo/"
+    },
+    {
+      name: "Chandra Patni",
+      role: "Fintech Expert",
+      title: "Financial Technology Specialist", 
+      expertise: "Fintech",
+      description: "Leading fintech innovation and digital financial solutions",
+      image: chandraPatniImage,
+      linkedin: "https://www.linkedin.com/in/chandrapatni/"
     },
     {
       name: "Dr. Atul Mehta",
@@ -202,12 +196,24 @@ const LeadershipTeam = () => {
         </div>
 
         {/* Principal Partners */}
-        <div>
+        <div className="mb-16">
           <h3 className="text-3xl font-bold text-foreground text-center mb-12">
             Principal Partners & Domain Experts
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {principalPartners.map((partner, index) => (
+              <PersonCard key={index} person={partner} />
+            ))}
+          </div>
+        </div>
+
+        {/* International Business and Partnerships */}
+        <div>
+          <h3 className="text-3xl font-bold text-foreground text-center mb-12">
+            International Business & Partnerships
+          </h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {internationalBusinessPartners.map((partner, index) => (
               <PersonCard key={index} person={partner} />
             ))}
           </div>

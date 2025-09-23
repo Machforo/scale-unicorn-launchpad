@@ -116,19 +116,19 @@ const Chatbot = () => {
 
           {/* Input */}
           <div className="p-4 border-t border-border">
-            <div className="flex space-x-2">
+            <div className="flex space-x-2 items-end">
               <input
                 type="text"
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
                 onKeyPress={(e) => e.key === "Enter" && handleSendMessage(inputMessage)}
                 placeholder="Type your message..."
-                className="flex-1 px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                className="flex-1 px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary min-w-0"
               />
               <Button
                 onClick={() => handleSendMessage(inputMessage)}
                 size="sm"
-                className="px-3"
+                className="px-3 shrink-0"
               >
                 <Send className="h-4 w-4" />
               </Button>

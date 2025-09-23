@@ -5,6 +5,14 @@ import { Link } from "react-router-dom";
 const WorkshopsSection = () => {
   const workshops = [
     {
+      id: "business-visioning",
+      title: "Business Visioning",
+      facilitator: "Sandipp Vijj",
+      duration: "5 Steps",
+      description: "Our proprietary Idea2Unicorn workshop using a 5-step visual method to transform your business vision across all spheres of life.",
+      route: "/workshops"
+    },
+    {
       id: "conceptualize-unicorn",
       title: "Conceptualize Your Unicorn",
       facilitator: "Sandipp Vijj",
