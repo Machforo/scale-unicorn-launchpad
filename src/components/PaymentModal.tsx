@@ -163,13 +163,76 @@ const PaymentModal = ({ isOpen, onClose, workshopTitle, servicePriceINR, service
           {selectedRegion === 'india' && (
             <div className="space-y-4">
               <div className="bg-card border rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-4">Bank Transfer Details</h3>
-                <p className="text-muted-foreground mb-4">
-                  Please forward the participation fee to the following account:
-                </p>
-                {/* Add Indian bank details here when provided */}
-                <div className="bg-muted p-4 rounded text-center">
-                  <p className="text-muted-foreground">Bank details will be provided upon selection</p>
+                <h3 className="text-lg font-semibold mb-4 flex items-center">
+                  <CreditCard className="mr-2 h-5 w-5 text-primary" />
+                  Bank Transfer Details (India)
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between bg-muted p-3 rounded">
+                    <span>Account Name:</span>
+                    <div className="flex items-center gap-2">
+                      <code className="font-mono text-sm">Idea2Unicorn Solutions</code>
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={() => copyToClipboard('Idea2Unicorn Solutions', 'Account Name')}
+                      >
+                        <Copy className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between bg-muted p-3 rounded">
+                    <span>Account Number:</span>
+                    <div className="flex items-center gap-2">
+                      <code className="font-mono">50200073828651</code>
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={() => copyToClipboard('50200073828651', 'Account Number')}
+                      >
+                        <Copy className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between bg-muted p-3 rounded">
+                    <span>IFSC Code:</span>
+                    <div className="flex items-center gap-2">
+                      <code className="font-mono">HDFC0000123</code>
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={() => copyToClipboard('HDFC0000123', 'IFSC Code')}
+                      >
+                        <Copy className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between bg-muted p-3 rounded">
+                    <span>Bank Name:</span>
+                    <div className="flex items-center gap-2">
+                      <code className="font-mono text-sm">HDFC Bank</code>
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={() => copyToClipboard('HDFC Bank', 'Bank Name')}
+                      >
+                        <Copy className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between bg-muted p-3 rounded">
+                    <span>UPI ID:</span>
+                    <div className="flex items-center gap-2">
+                      <code className="font-mono">sandipp@idea2unicorn</code>
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={() => copyToClipboard('sandipp@idea2unicorn', 'UPI ID')}
+                      >
+                        <Copy className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -198,12 +261,76 @@ const PaymentModal = ({ isOpen, onClose, workshopTitle, servicePriceINR, service
           {selectedRegion === 'international' && (
             <div className="space-y-4">
               <div className="bg-card border rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-4">Chase Bank Transfer</h3>
-                <p className="text-muted-foreground mb-4">
-                  Please use Sandipp's Chase account for international transfers:
-                </p>
-                <div className="bg-muted p-4 rounded text-center">
-                  <p className="text-muted-foreground">Account details will be provided upon selection</p>
+                <h3 className="text-lg font-semibold mb-4 flex items-center">
+                  <CreditCard className="mr-2 h-5 w-5 text-primary" />
+                  Chase Bank Transfer (International)
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between bg-muted p-3 rounded">
+                    <span>Account Name:</span>
+                    <div className="flex items-center gap-2">
+                      <code className="font-mono text-sm">Sandeep K Vij</code>
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={() => copyToClipboard('Sandeep K Vij', 'Account Name')}
+                      >
+                        <Copy className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between bg-muted p-3 rounded">
+                    <span>Account Number:</span>
+                    <div className="flex items-center gap-2">
+                      <code className="font-mono">734355782834</code>
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={() => copyToClipboard('734355782834', 'Account Number')}
+                      >
+                        <Copy className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between bg-muted p-3 rounded">
+                    <span>Routing Number:</span>
+                    <div className="flex items-center gap-2">
+                      <code className="font-mono">111000025</code>
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={() => copyToClipboard('111000025', 'Routing Number')}
+                      >
+                        <Copy className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between bg-muted p-3 rounded">
+                    <span>Bank Name:</span>
+                    <div className="flex items-center gap-2">
+                      <code className="font-mono text-sm">Chase Bank USA</code>
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={() => copyToClipboard('Chase Bank USA', 'Bank Name')}
+                      >
+                        <Copy className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between bg-muted p-3 rounded">
+                    <span>SWIFT Code:</span>
+                    <div className="flex items-center gap-2">
+                      <code className="font-mono">CHASUS33</code>
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={() => copyToClipboard('CHASUS33', 'SWIFT Code')}
+                      >
+                        <Copy className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               </div>
 

@@ -1,10 +1,43 @@
 import { Sparkles, Mail, MessageCircle, MapPin, Twitter, Linkedin, Instagram } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import ganeshaSmal from "@/assets/ganesha-small.jpg";
 import lotusDeitySmall from "@/assets/lotus-deity-small.jpg";
 import decorativeOrnamentSmall from "@/assets/decorative-ornament-small.jpg";
 import traditionalDeitySmall from "@/assets/traditional-deity-small.jpg";
 
 const Footer = () => {
+  const { toast } = useToast();
+
+  const handleSubscribe = () => {
+    const emailInput = document.getElementById('newsletter-email') as HTMLInputElement;
+    const email = emailInput?.value;
+    
+    if (!email) {
+      toast({
+        title: "Error",
+        description: "Please enter your email address",
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast({
+        title: "Error", 
+        description: "Please enter a valid email address",
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    // Here you would typically send the email to your backend
+    toast({
+      title: "Success!",
+      description: "Thank you for subscribing to our newsletter!",
+    });
+    
+    emailInput.value = '';
+  };
   const quickLinks = [
     { name: "About Us", href: "#about" },
     { name: "Workshops", href: "#workshops" },
@@ -92,7 +125,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MessageCircle className="h-5 w-5 text-green-500" />
-                <span className="text-primary-foreground/80 text-sm">Sandipp Vijj</span>
+                <span className="text-primary-foreground/80 text-sm">+1 (734) 355-7828</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-accent" />
@@ -105,11 +138,15 @@ const Footer = () => {
               <h4 className="font-medium">Stay Updated</h4>
               <div className="flex space-x-2">
                 <input
+                  id="newsletter-email"
                   type="email"
                   placeholder="Enter email"
                   className="flex-1 px-3 py-2 bg-primary-foreground/10 border border-primary-foreground/20 rounded-lg text-primary-foreground placeholder:text-primary-foreground/60 focus:outline-none focus:border-accent text-sm"
                 />
-                <button className="px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent-light transition-colors text-sm font-medium">
+                <button 
+                  onClick={handleSubscribe}
+                  className="px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent-light transition-colors text-sm font-medium"
+                >
                   Subscribe
                 </button>
               </div>

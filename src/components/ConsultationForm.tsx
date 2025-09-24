@@ -20,6 +20,8 @@ const ConsultationForm = ({ onClose }: ConsultationFormProps) => {
     name: "",
     email: "",
     phone: "",
+    linkedin: "",
+    whatsapp: "",
     company: "",
     stage: "",
     industry: "",
@@ -44,6 +46,8 @@ const ConsultationForm = ({ onClose }: ConsultationFormProps) => {
           company: formData.company,
           message: formData.challenges,
           additional_data: {
+            linkedin: formData.linkedin,
+            whatsapp: formData.whatsapp,
             stage: formData.stage,
             industry: formData.industry,
             preferredDate: formData.preferredDate,
@@ -115,13 +119,37 @@ const ConsultationForm = ({ onClose }: ConsultationFormProps) => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="phone">Phone Number *</Label>
+            <Label htmlFor="phone">Cell Number *</Label>
             <Input
               id="phone"
               type="tel"
               value={formData.phone}
               onChange={(e) => handleInputChange("phone", e.target.value)}
-              placeholder="Enter your phone number"
+              placeholder="Enter your cell number"
+              required
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="linkedin">LinkedIn Profile *</Label>
+            <Input
+              id="linkedin"
+              type="url"
+              value={formData.linkedin}
+              onChange={(e) => handleInputChange("linkedin", e.target.value)}
+              placeholder="https://linkedin.com/in/yourprofile"
+              required
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="whatsapp">WhatsApp Number *</Label>
+            <Input
+              id="whatsapp"
+              type="tel"
+              value={formData.whatsapp}
+              onChange={(e) => handleInputChange("whatsapp", e.target.value)}
+              placeholder="Enter your WhatsApp number"
               required
             />
           </div>

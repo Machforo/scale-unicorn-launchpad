@@ -9,6 +9,8 @@ import SandippMethodology from "@/components/SandippMethodology";
 import WorkshopsSection from "@/components/WorkshopsSection";
 import GrowthStrategiesSection from "@/components/GrowthStrategiesSection";
 import ReadyToScale from "@/components/ReadyToScale";
+import SuccessStories from "@/components/SuccessStories";
+import AwardsSection from "@/components/AwardsSection";
 import SocialMediaUpdates from "@/components/SocialMediaUpdates";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -45,6 +47,8 @@ const Index = () => {
         <WorkshopsSection />
         <GrowthStrategiesSection />
         <ReadyToScale />
+        <SuccessStories />
+        <AwardsSection />
         <SocialMediaUpdates />
         <ContactSection />
       </main>

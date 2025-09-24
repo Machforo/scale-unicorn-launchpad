@@ -20,6 +20,8 @@ const IncubationForm = ({ onClose }: IncubationFormProps) => {
     founderName: "",
     email: "",
     phone: "",
+    linkedin: "",
+    whatsapp: "",
     companyName: "",
     website: "",
     industry: "",
@@ -51,6 +53,8 @@ const IncubationForm = ({ onClose }: IncubationFormProps) => {
           company: formData.companyName,
           message: `Problem: ${formData.problem}\n\nSolution: ${formData.solution}\n\nTraction: ${formData.traction}`,
           additional_data: {
+            linkedin: formData.linkedin,
+            whatsapp: formData.whatsapp,
             website: formData.website,
             industry: formData.industry,
             stage: formData.stage,
@@ -130,13 +134,39 @@ const IncubationForm = ({ onClose }: IncubationFormProps) => {
 
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number *</Label>
+              <Label htmlFor="phone">Cell Number *</Label>
               <Input
                 id="phone"
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => handleInputChange("phone", e.target.value)}
-                placeholder="Enter your phone number"
+                placeholder="Enter your cell number"
+                required
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="linkedin">LinkedIn Profile *</Label>
+              <Input
+                id="linkedin"
+                type="url"
+                value={formData.linkedin}
+                onChange={(e) => handleInputChange("linkedin", e.target.value)}
+                placeholder="https://linkedin.com/in/yourprofile"
+                required
+              />
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="whatsapp">WhatsApp Number *</Label>
+              <Input
+                id="whatsapp"
+                type="tel"
+                value={formData.whatsapp}
+                onChange={(e) => handleInputChange("whatsapp", e.target.value)}
+                placeholder="Enter your WhatsApp number"
                 required
               />
             </div>
