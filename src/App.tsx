@@ -45,6 +45,8 @@ import NewsMedia from "./pages/NewsMedia";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminForgotPassword from "./pages/AdminForgotPassword";
+import PartnerUs from "./pages/PartnerUs";
+import Careers from "./pages/Careers";
 
 const queryClient = new QueryClient();
 
@@ -90,6 +92,8 @@ const App = () => (
           <Route path="/domains/retail" element={<Retail />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/news-media" element={<NewsMedia />} />
+          <Route path="/partner-us" element={<PartnerUs />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/integration-demo" element={<IntegrationDemo />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
