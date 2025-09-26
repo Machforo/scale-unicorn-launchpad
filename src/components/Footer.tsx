@@ -69,13 +69,13 @@ const Footer = () => {
               smart growth strategies without diluting equity through proprietary methodologies and expert guidance.
             </p>
             <div className="flex space-x-4">
-              <a href="https://chat.whatsapp.com/IPUGHnx2IxpKlPpXMT28Dy" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
+              <a href="https://chat.whatsapp.com/FSTIIBNedzl8ee7VkUtYAz" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
               <a href="https://www.linkedin.com/company/dream-life-creator-in-wellness/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://chat.whatsapp.com/HCJIIzJ7rLUEtpGLwZe8GB" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
+              <a href="https://chat.whatsapp.com/FSTIIBNedzl8ee7VkUtYAz" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>

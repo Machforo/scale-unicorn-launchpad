@@ -34,7 +34,7 @@ const Careers = () => {
                 <Button 
                   size="lg" 
                   variant="outline"
-                  onClick={() => window.open('https://chat.whatsapp.com/IPUGHnx2IxpKlPpXMT28Dy', '_blank')}
+                  onClick={() => window.open('https://chat.whatsapp.com/FSTIIBNedzl8ee7VkUtYAz', '_blank')}
                 >
                   <MessageCircle className="mr-2 h-5 w-5" />
                   Join Community
@@ -225,6 +225,34 @@ const Careers = () => {
                 </CardContent>
               </Card>
 
+              {/* Partial CxOs */}
+              <Card className="p-6 hover:shadow-lg transition-all duration-300 border-primary/20">
+                <CardContent className="space-y-4 p-0">
+                  <div className="flex items-center justify-between">
+                    <Briefcase className="h-10 w-10 text-primary" />
+                    <Badge variant="outline">Executive</Badge>
+                  </div>
+                  <h3 className="text-xl font-semibold">Partial CxOs for Startups</h3>
+                  <p className="text-muted-foreground">
+                    Experienced executive leaders who can provide strategic guidance and leadership to startups.
+                  </p>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• Executive leadership</li>
+                    <li>• Strategic planning</li>
+                    <li>• Operational guidance</li>
+                  </ul>
+                  <div className="pt-4">
+                    <Button 
+                      variant="outline" 
+                      className="w-full"
+                      onClick={() => window.location.href = 'mailto:careers@idea2unicorn.ai?subject=Partial CxO Position Inquiry'}
+                    >
+                      Apply Now
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
               {/* Volunteers */}
               <Card className="p-6 hover:shadow-lg transition-all duration-300 border-primary/20">
                 <CardContent className="space-y-4 p-0">
@@ -305,7 +333,7 @@ const Careers = () => {
                     <Button 
                       size="lg" 
                       variant="outline"
-                      onClick={() => window.open('https://chat.whatsapp.com/IPUGHnx2IxpKlPpXMT28Dy', '_blank')}
+                      onClick={() => window.open('https://chat.whatsapp.com/FSTIIBNedzl8ee7VkUtYAz', '_blank')}
                     >
                       <MessageCircle className="mr-2 h-5 w-5" />
                       Join Community

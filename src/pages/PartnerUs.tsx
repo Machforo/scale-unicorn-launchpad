@@ -27,7 +27,7 @@ const PartnerUs = () => {
                 <Button 
                   size="lg" 
                   className="btn-primary"
-                  onClick={() => window.open('https://chat.whatsapp.com/IPUGHnx2IxpKlPpXMT28Dy', '_blank')}
+                  onClick={() => window.open('https://chat.whatsapp.com/FSTIIBNedzl8ee7VkUtYAz', '_blank')}
                 >
                   <MessageCircle className="mr-2 h-5 w-5" />
                   Join our WhatsApp Community
@@ -59,11 +59,8 @@ const PartnerUs = () => {
                   </div>
                   <h3 className="text-xl font-semibold">Founder Advisors</h3>
                   <p className="text-muted-foreground">
-                    For Founders, Unicorn creators, or Startup CEOs. 1% sweat equity of the US arm is available.
+                    1% sweat equity of the US arm is available to the Founders, Unicorn creators or CEOs of startups.
                   </p>
-                  <div className="pt-4">
-                    <Button variant="outline" className="w-full">Learn More</Button>
-                  </div>
                 </CardContent>
               </Card>
 
@@ -76,11 +73,8 @@ const PartnerUs = () => {
                   </div>
                   <h3 className="text-xl font-semibold">Co-Founders / Principal Consultants</h3>
                   <p className="text-muted-foreground">
-                    Experienced professionals who can manage Angel Networks, Access to Funds, Attorneys, CPAs, etc.
+                    Experienced professionals who manage Angel Networks, Access to Funds, Serial Entrepreneurs, Attorneys, CPAs, etc.
                   </p>
-                  <div className="pt-4">
-                    <Button variant="outline" className="w-full">Learn More</Button>
-                  </div>
                 </CardContent>
               </Card>
 
@@ -93,11 +87,8 @@ const PartnerUs = () => {
                   </div>
                   <h3 className="text-xl font-semibold">Domain Experts</h3>
                   <p className="text-muted-foreground">
-                    Specialists in AI, Retail, BFSI, Education, Real Estate, Fintech, Telecom
+                    Specialists to guide Investee companies in AI, Retail, BFSI, Education, Real Estate, Fintech, Telecom.
                   </p>
-                  <div className="pt-4">
-                    <Button variant="outline" className="w-full">Learn More</Button>
-                  </div>
                 </CardContent>
               </Card>
 
@@ -110,11 +101,8 @@ const PartnerUs = () => {
                   </div>
                   <h3 className="text-xl font-semibold">Investors</h3>
                   <p className="text-muted-foreground">
-                    To support and scale investee startups in our growing ecosystem.
+                    For Investee Startups to support and scale in our growing ecosystem.
                   </p>
-                  <div className="pt-4">
-                    <Button variant="outline" className="w-full">Learn More</Button>
-                  </div>
                 </CardContent>
               </Card>
 
@@ -127,11 +115,8 @@ const PartnerUs = () => {
                   </div>
                   <h3 className="text-xl font-semibold">Partial CxOs</h3>
                   <p className="text-muted-foreground">
-                    Experienced leaders for startups who can provide executive guidance.
+                    Partial CxOs for startups who can provide executive leadership and guidance.
                   </p>
-                  <div className="pt-4">
-                    <Button variant="outline" className="w-full">Learn More</Button>
-                  </div>
                 </CardContent>
               </Card>
 
@@ -146,9 +131,6 @@ const PartnerUs = () => {
                   <p className="text-muted-foreground">
                     Passionate individuals who want to contribute to the startup ecosystem.
                   </p>
-                  <div className="pt-4">
-                    <Button variant="outline" className="w-full">Learn More</Button>
-                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -214,7 +196,7 @@ const PartnerUs = () => {
                   <Button 
                     size="lg" 
                     variant="outline"
-                    onClick={() => window.open('https://chat.whatsapp.com/IPUGHnx2IxpKlPpXMT28Dy', '_blank')}
+                    onClick={() => window.open('https://chat.whatsapp.com/FSTIIBNedzl8ee7VkUtYAz', '_blank')}
                   >
                     <MessageCircle className="mr-2 h-5 w-5" />
                     Join WhatsApp
