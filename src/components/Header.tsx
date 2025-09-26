@@ -22,6 +22,14 @@ const Header = () => {
     { name: "Contact", href: "#contact" },
   ];
 
+  const personas = [
+    { name: "Startups", href: "/for-startups" },
+    { name: "Partners", href: "/partner-us" },
+    { name: "Investors", href: "/for-investors" },
+    { name: "Workshop Participants", href: "/workshops" },
+    { name: "Students", href: "/resources" },
+  ];
+
   const handleNavClick = (href: string) => {
     if (href.startsWith("#")) {
       const section = href.slice(1);
@@ -34,84 +42,97 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
-      <nav className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <img src={unicornLogo} alt="Idea2Unicorn" className="h-8 w-8 object-contain" />
-            <span className="text-2xl font-bold text-foreground">Idea2Unicorn</span>
+      <nav className="container mx-auto px-4 lg:px-6 py-3">
+        <div className="flex items-center justify-between gap-6">
+          {/* Logo Section */}
+          <Link to="/" className="flex items-center space-x-3 flex-shrink-0">
+            <img src={unicornLogo} alt="Idea2Unicorn" className="h-10 w-10 object-contain" />
+            <span className="text-xl lg:text-2xl font-bold text-foreground whitespace-nowrap">Idea2Unicorn</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 flex-1 justify-center">
             {navigation.map((item) => (
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
-                className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 whitespace-nowrap"
               >
                 {item.name}
               </button>
             ))}
           </div>
 
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button 
-              variant={location.pathname === "/for-investors" ? "default" : "outline"}
-              onClick={() => navigate("/for-investors")}
-              className={location.pathname === "/for-investors" ? "btn-primary" : "btn-secondary"}
-            >
-              For Investors
-            </Button>
-            <Button 
-              variant={location.pathname === "/for-startups" ? "default" : "outline"}
-              onClick={() => navigate("/for-startups")}
-              className={location.pathname === "/for-startups" ? "btn-primary" : "btn-secondary"}
-            >
-              For Startups
-            </Button>
-          </div>
+          {/* Personas Dropdown & Mobile Menu */}
+          <div className="flex items-center gap-4">
+            {/* Desktop Personas Dropdown */}
+            <div className="hidden md:block">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" className="btn-secondary">
+                    Explore for You
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48 bg-popover border border-border shadow-elegant">
+                  {personas.map((persona) => (
+                    <DropdownMenuItem
+                      key={persona.name}
+                      onClick={() => navigate(persona.href)}
+                      className="cursor-pointer text-popover-foreground hover:bg-muted"
+                    >
+                      {persona.name}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6 text-foreground" />
-            ) : (
-              <Menu className="h-6 w-6 text-foreground" />
-            )}
-          </button>
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <X className="h-5 w-5 text-foreground" />
+              ) : (
+                <Menu className="h-5 w-5 text-foreground" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4">
-            <div className="flex flex-col space-y-4">
+          <div className="lg:hidden mt-4 pb-4 border-t border-border pt-4">
+            <div className="flex flex-col space-y-3">
               {navigation.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium text-left"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 text-left py-1"
                 >
                   {item.name}
                 </button>
               ))}
-              <Button 
-                variant={location.pathname === "/for-investors" ? "default" : "outline"}
-                className={`w-full mt-4 ${location.pathname === "/for-investors" ? "btn-primary" : "btn-secondary"}`}
-                onClick={() => navigate("/for-investors")}
-              >
-                For Investors
-              </Button>
-              <Button 
-                variant={location.pathname === "/for-startups" ? "default" : "outline"}
-                className={`w-full ${location.pathname === "/for-startups" ? "btn-primary" : "btn-secondary"}`}
-                onClick={() => navigate("/for-startups")}
-              >
-                For Startups
-              </Button>
+              
+              {/* Mobile Personas Section */}
+              <div className="mt-4 pt-3 border-t border-border">
+                <h3 className="text-sm font-semibold text-foreground mb-2">Explore for You</h3>
+                <div className="flex flex-col space-y-2">
+                  {personas.map((persona) => (
+                    <button
+                      key={persona.name}
+                      onClick={() => {
+                        navigate(persona.href);
+                        setIsMenuOpen(false);
+                      }}
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200 text-left py-1"
+                    >
+                      {persona.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         )}
