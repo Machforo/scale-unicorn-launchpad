@@ -22,19 +22,21 @@ const WorkshopsSection = () => {
     },
     {
       id: "funding-mastery",
-      title: "Funding Mastery Workshop", 
+      title: "Funding Mastery Workshop - Coming Soon", 
       facilitator: "Sandipp Vijj",
       duration: "4 Sessions",
       description: "Master the art of raising capital and securing funding for your startup with proven strategies and investor insights.",
-      route: "/workshops/funding-mastery"
+      route: "/workshops/funding-mastery",
+      comingSoon: true
     },
     {
       id: "digital-transformation",
-      title: "Digital Transformation",
+      title: "Digital Transformation - Coming Soon",
       facilitator: "Dinesh Makhija & Amardeep Bajpai", 
       duration: "4 Sessions",
       description: "Transform your business with cutting-edge digital strategies, AI integration, and technology implementation.",
-      route: "/workshops/digital-transformation"
+      route: "/workshops/digital-transformation",
+      comingSoon: true
     },
     {
       id: "leadership-excellence",
@@ -55,7 +57,7 @@ const WorkshopsSection = () => {
     {
       id: "fintech-innovation",
       title: "FinTech Innovation Workshop",
-      facilitator: "Chandra Patni",
+      facilitator: "Dr. Atul Mehta",
       duration: "4 Sessions", 
       description: "Navigate the FinTech landscape, understand regulatory requirements, and build innovative financial solutions.",
       route: "/workshops/fintech-innovation"
@@ -76,22 +78,33 @@ const WorkshopsSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {workshops.map((workshop) => (
-            <div key={workshop.id} className="bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-lg transition-all duration-200">
+            <div key={workshop.id} className={`bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-lg transition-all duration-200 ${workshop.comingSoon ? 'opacity-75' : ''}`}>
               <div className="flex items-center mb-4">
                 <Calendar className="h-5 w-5 text-primary mr-2" />
                 <span className="text-sm text-muted-foreground">{workshop.duration}</span>
+                {workshop.comingSoon && (
+                  <span className="ml-auto text-xs bg-accent/20 text-accent-foreground px-2 py-1 rounded-full font-semibold">
+                    Coming Soon
+                  </span>
+                )}
               </div>
               
               <h3 className="text-xl font-bold text-foreground mb-2">{workshop.title}</h3>
               <p className="text-sm text-muted-foreground mb-3">Facilitator: {workshop.facilitator}</p>
               <p className="text-muted-foreground mb-6 text-sm leading-relaxed">{workshop.description}</p>
               
-              <Link to={workshop.route}>
-                <Button className="w-full btn-primary group">
-                  Learn More & Register
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              {!workshop.comingSoon ? (
+                <Link to={workshop.route}>
+                  <Button className="w-full btn-primary group">
+                    Learn More & Register
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+              ) : (
+                <Button disabled className="w-full opacity-50 cursor-not-allowed">
+                  Coming Soon
                 </Button>
-              </Link>
+              )}
             </div>
           ))}
         </div>

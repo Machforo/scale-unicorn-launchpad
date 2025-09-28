@@ -1,5 +1,7 @@
-import { ExternalLink, BookOpen, Target } from "lucide-react";
+import { useState } from "react";
+import { ExternalLink, BookOpen, Play, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -97,49 +99,201 @@ const Resources = () => {
     }
   ];
 
+  const videos = [
+    {
+      title: "Smart Growth Methodology Overview",
+      presenter: "Sandipp Vijj",
+      duration: "45 mins",
+      description: "Introduction to our proprietary Smart Growth methodology for scaling startups without dilution",
+      link: "#"
+    },
+    {
+      title: "Crossing the Chasm in Indian Market",
+      presenter: "Amardeep Bajpai",
+      duration: "32 mins", 
+      description: "Strategies for moving from early adopters to mainstream market in India",
+      link: "#"
+    },
+    {
+      title: "Digital Transformation for Startups",
+      presenter: "Dinesh Makhija",
+      duration: "38 mins",
+      description: "Leveraging AI and digital technologies to accelerate startup growth",
+      link: "#"
+    },
+    {
+      title: "Franchising Mastery Fundamentals",
+      presenter: "Sam Kundu",
+      duration: "41 mins",
+      description: "Building scalable franchise models for business expansion",
+      link: "#"
+    }
+  ];
+
+  const recordedWorkshops = [
+    {
+      title: "Business Visioning Masterclass",
+      facilitator: "Sandipp Vijj",
+      date: "December 2024",
+      duration: "3 hours",
+      description: "Complete recording of our flagship Business Visioning workshop with 5-step methodology",
+      link: "#"
+    },
+    {
+      title: "Conceptualize Your Unicorn - Session 1",
+      facilitator: "Sandipp Vijj", 
+      date: "November 2024",
+      duration: "2.5 hours",
+      description: "First session of the 10-book methodology framework for unicorn creation",
+      link: "#"
+    },
+    {
+      title: "Leadership Excellence Workshop",
+      facilitator: "Sandipp Vijj",
+      date: "October 2024", 
+      duration: "4 hours",
+      description: "Comprehensive leadership development session for startup founders",
+      link: "#"
+    },
+    {
+      title: "FinTech Innovation Deep Dive",
+      facilitator: "Dr. Atul Mehta",
+      date: "September 2024",
+      duration: "3.5 hours", 
+      description: "Exploring fintech opportunities and regulatory landscape in India",
+      link: "#"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <div className="container mx-auto px-6 py-12 pt-24">
-
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Recommended Reading
+            Learning Resources
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Essential books recommended by our leadership team for entrepreneurs and business leaders
+            Curated learning materials to accelerate your entrepreneurial journey
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {books.map((book, index) => (
-            <div key={index} className="bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-elegant transition-all duration-300">
-              <div className="flex items-start justify-between mb-4">
-                <BookOpen className="h-8 w-8 text-primary flex-shrink-0" />
-                <Button asChild variant="ghost" size="sm" className="text-primary hover:text-primary/80">
-                  <a href={book.link} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
-                </Button>
-              </div>
-              
-              <h3 className="text-lg font-semibold text-foreground mb-2 line-clamp-2">
-                {book.title}
-              </h3>
-              
-              <p className="text-sm text-muted-foreground mb-4">
-                by {book.author}
-              </p>
-              
-              <Button asChild variant="outline" className="w-full">
-                <a href={book.link} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  View on Amazon
-                </a>
-              </Button>
+        <Tabs defaultValue="books" className="w-full">
+          <TabsList className="grid w-full grid-cols-3 mb-8">
+            <TabsTrigger value="books" className="flex items-center gap-2">
+              <BookOpen className="h-4 w-4" />
+              Books
+            </TabsTrigger>
+            <TabsTrigger value="videos" className="flex items-center gap-2">
+              <Play className="h-4 w-4" />
+              Videos
+            </TabsTrigger>
+            <TabsTrigger value="workshops" className="flex items-center gap-2">
+              <Video className="h-4 w-4" />
+              Recorded Workshops
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="books">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {books.map((book, index) => (
+                <div key={index} className="bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-elegant transition-all duration-300">
+                  <div className="flex items-start justify-between mb-4">
+                    <BookOpen className="h-8 w-8 text-primary flex-shrink-0" />
+                    <Button asChild variant="ghost" size="sm" className="text-primary hover:text-primary/80">
+                      <a href={book.link} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  </div>
+                  
+                  <h3 className="text-lg font-semibold text-foreground mb-2 line-clamp-2">
+                    {book.title}
+                  </h3>
+                  
+                  <p className="text-sm text-muted-foreground mb-4">
+                    by {book.author}
+                  </p>
+                  
+                  <Button asChild variant="outline" className="w-full">
+                    <a href={book.link} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      View on Amazon
+                    </a>
+                  </Button>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </TabsContent>
+
+          <TabsContent value="videos">
+            <div className="grid md:grid-cols-2 gap-6">
+              {videos.map((video, index) => (
+                <div key={index} className="bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-elegant transition-all duration-300">
+                  <div className="flex items-start justify-between mb-4">
+                    <Play className="h-8 w-8 text-primary flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground bg-muted px-2 py-1 rounded">
+                      {video.duration}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {video.title}
+                  </h3>
+                  
+                  <p className="text-sm text-primary font-medium mb-2">
+                    Presenter: {video.presenter}
+                  </p>
+                  
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                    {video.description}
+                  </p>
+                  
+                  <Button variant="outline" className="w-full">
+                    <Play className="h-4 w-4 mr-2" />
+                    Watch Video
+                  </Button>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="workshops">
+            <div className="grid md:grid-cols-2 gap-6">
+              {recordedWorkshops.map((workshop, index) => (
+                <div key={index} className="bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-elegant transition-all duration-300">
+                  <div className="flex items-start justify-between mb-4">
+                    <Video className="h-8 w-8 text-primary flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground bg-muted px-2 py-1 rounded">
+                      {workshop.duration}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {workshop.title}
+                  </h3>
+                  
+                  <div className="text-sm text-muted-foreground mb-2">
+                    <span className="font-medium text-primary">Facilitator:</span> {workshop.facilitator}
+                  </div>
+                  
+                  <div className="text-sm text-muted-foreground mb-3">
+                    <span className="font-medium">Date:</span> {workshop.date}
+                  </div>
+                  
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                    {workshop.description}
+                  </p>
+                  
+                  <Button variant="outline" className="w-full">
+                    <Video className="h-4 w-4 mr-2" />
+                    Watch Recording
+                  </Button>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
 
         {/* Download Section */}
         <div className="mt-16 bg-card border border-border rounded-lg p-8 shadow-card text-center">

@@ -32,19 +32,32 @@ const Hero = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 w-full">
-              <Link to="/workshops" className="w-full sm:w-auto">
-                <Button className="btn-primary group w-full sm:w-auto">
-                  Join a Workshop
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 w-full">
+              <Link to="/for-investors" className="w-full">
+                <Button className="btn-primary w-full h-12">
+                  Investors
                 </Button>
               </Link>
-              <Button 
-                className="btn-secondary w-full sm:w-auto"
-                onClick={() => setActiveForm("incubation")}
-              >
-                Apply for Incubation
-              </Button>
+              <Link to="/for-startups" className="w-full">
+                <Button className="btn-secondary w-full h-12">
+                  Startups
+                </Button>
+              </Link>
+              <Link to="/partner-us" className="w-full">
+                <Button className="btn-primary w-full h-12">
+                  Partners
+                </Button>
+              </Link>
+              <Link to="/workshops" className="w-full">
+                <Button className="btn-secondary w-full h-12">
+                  Workshops
+                </Button>
+              </Link>
+              <Link to="/resources" className="w-full">
+                <Button className="btn-primary w-full h-12">
+                  Students
+                </Button>
+              </Link>
             </div>
 
             {/* Key Metrics */}

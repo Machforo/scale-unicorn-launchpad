@@ -110,20 +110,11 @@ const LeadershipTeam = () => {
       linkedin: "https://www.linkedin.com/in/arpitsinghyo/"
     },
     {
-      name: "Chandra Patni",
-      role: "Fintech Expert",
-      title: "Financial Technology Specialist", 
-      expertise: "Fintech",
-      description: "Leading fintech innovation and digital financial solutions",
-      image: chandraPatniImage,
-      linkedin: "https://www.linkedin.com/in/chandrapatni/"
-    },
-    {
       name: "Dr. Atul Mehta",
-      role: "Medical & Healthcare Advisor",
-      title: "Medical & Healthcare Specialist",
-      expertise: "Healthcare",
-      description: "Healthcare innovation and medical expertise advisor",
+      role: "Fintech Expert",
+      title: "Medical & Financial Technology Specialist",
+      expertise: "Fintech",
+      description: "Leading fintech innovation, digital financial solutions, and healthcare technology integration",
       image: drAtulMehtaImage,
       linkedin: "https://www.linkedin.com/in/atulmehta07/"
     },

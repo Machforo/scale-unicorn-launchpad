@@ -15,11 +15,19 @@ const Header = () => {
     { name: "About", href: "#about" },
     { name: "Services", href: "/services" },
     { name: "Domains", href: "/domains" },
-    { name: "Partner with Us", href: "/partner-us" },
     { name: "News & Media", href: "/news-media" },
     { name: "Plans & Pricing", href: "/pricing" },
     { name: "Resources", href: "/resources" },
     { name: "Contact", href: "#contact" },
+  ];
+
+  const sectors = [
+    { name: "FnB", href: "/sectors/fnb" },
+    { name: "Pharmaceuticals", href: "/sectors/pharmaceuticals" },
+    { name: "Education", href: "/sectors/education" },
+    { name: "SaaS", href: "/sectors/saas" },
+    { name: "IT Services", href: "/sectors/it-services" },
+    { name: "Renewable Energy", href: "/sectors/renewable-energy" },
   ];
 
   const personas = [
@@ -63,8 +71,30 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Personas Dropdown & Mobile Menu */}
+          {/* Dropdowns & Mobile Menu */}
           <div className="flex items-center gap-4">
+            {/* Desktop Sectors Dropdown */}
+            <div className="hidden md:block">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" className="btn-secondary">
+                    Sectors
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48 bg-popover border border-border shadow-elegant">
+                  {sectors.map((sector) => (
+                    <DropdownMenuItem
+                      key={sector.name}
+                      onClick={() => navigate(sector.href)}
+                      className="cursor-pointer text-popover-foreground hover:bg-muted"
+                    >
+                      {sector.name}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+
             {/* Desktop Personas Dropdown */}
             <div className="hidden md:block">
               <DropdownMenu>
@@ -115,6 +145,25 @@ const Header = () => {
                 </button>
               ))}
               
+              {/* Mobile Sectors Section */}
+              <div className="mt-4 pt-3 border-t border-border">
+                <h3 className="text-sm font-semibold text-foreground mb-2">Sectors</h3>
+                <div className="flex flex-col space-y-2">
+                  {sectors.map((sector) => (
+                    <button
+                      key={sector.name}
+                      onClick={() => {
+                        navigate(sector.href);
+                        setIsMenuOpen(false);
+                      }}
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200 text-left py-1"
+                    >
+                      {sector.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               {/* Mobile Personas Section */}
               <div className="mt-4 pt-3 border-t border-border">
                 <h3 className="text-sm font-semibold text-foreground mb-2">Explore for You</h3>
