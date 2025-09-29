@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, TrendingUp, Target, Users, CheckCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ConsultationForm from "@/components/ConsultationForm";
+import ConsultationFormModal from "@/components/ConsultationFormModal";
 
 const FnB = () => {
   const [showConsultationForm, setShowConsultationForm] = useState(false);
@@ -137,8 +137,9 @@ const FnB = () => {
       </div>
 
       {showConsultationForm && (
-        <ConsultationForm 
-          onClose={() => setShowConsultationForm(false)}
+        <ConsultationFormModal 
+          isOpen={showConsultationForm}
+          onClose={() => setShowConsultationForm(false)} 
         />
       )}
       

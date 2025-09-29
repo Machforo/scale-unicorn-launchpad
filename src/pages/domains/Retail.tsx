@@ -33,7 +33,54 @@ const Retail = () => {
           </div>
         </div>
 
-        {/* Retail Technology Focus Areas */}
+        {/* E-commerce & Retail Focus */}
+        <section className="bg-card border border-border rounded-lg p-8 shadow-card">
+          <h2 className="text-2xl font-bold text-foreground mb-6">E-commerce Solutions</h2>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Platform Development</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>• Multi-vendor marketplaces</li>
+                <li>• B2B e-commerce platforms</li>
+                <li>• Mobile commerce apps</li>
+                <li>• Social commerce integration</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Growth Strategies</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>• Omnichannel retail strategy</li>
+                <li>• Customer acquisition & retention</li>
+                <li>• Supply chain optimization</li>
+                <li>• Digital marketing automation</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="bg-primary/5 border border-primary/20 rounded-lg p-6">
+            <h4 className="font-semibold text-foreground mb-2">Key E-commerce Metrics</h4>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+              <div>
+                <div className="text-xl font-bold text-primary">$150B+</div>
+                <div className="text-sm text-muted-foreground">India E-commerce Market</div>
+              </div>
+              <div>
+                <div className="text-xl font-bold text-primary">400M+</div>
+                <div className="text-sm text-muted-foreground">Digital Shoppers</div>
+              </div>
+              <div>
+                <div className="text-xl font-bold text-primary">30%</div>
+                <div className="text-sm text-muted-foreground">YoY Growth Rate</div>
+              </div>
+              <div>
+                <div className="text-xl font-bold text-primary">45%</div>
+                <div className="text-sm text-muted-foreground">Mobile Commerce Share</div>
+              </div>
+            </div>
+          </div>
+        </section>
         <div className="grid lg:grid-cols-2 gap-12 mb-12">
           <div>
             <h2 className="text-2xl font-bold text-foreground mb-6">Retail Innovation Areas</h2>

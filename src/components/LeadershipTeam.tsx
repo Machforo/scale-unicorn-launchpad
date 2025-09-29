@@ -32,7 +32,7 @@ const LeadershipTeam = () => {
       expertise: "AI",
       description: "Leading AI innovation and technology strategy",
       image: dineshMakhijaImage,
-      linkedin: "https://www.linkedin.com/in/dinesh-makhija-ai/"
+      linkedin: "http://linkedin.com/in/dinesh-makhija-5774141"
     },
     {
       name: "Amardeep Bajpai",
@@ -59,7 +59,7 @@ const LeadershipTeam = () => {
       expertise: "Visioning",
       description: "Senior corporate professional for 2 decades, Serial entrepreneur for 10+ years, specializing in business visioning",
       image: ansshavJainImage,
-      linkedin: "https://www.linkedin.com/in/ansshav-jain/"
+      linkedin: "https://www.linkedin.com/in/anshavatar/"
     },
     {
       name: "Sam Kundu",
@@ -125,7 +125,7 @@ const LeadershipTeam = () => {
       expertise: "Business Development",
       description: "Strategic business development and growth acceleration expert",
       image: sameerKarwalImage,
-      linkedin: "https://www.linkedin.com/in/sameer-karwal/"
+      linkedin: "http://linkedin.com/in/sameerkarwal"
     }
   ];
 

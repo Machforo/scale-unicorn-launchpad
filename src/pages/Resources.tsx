@@ -13,7 +13,7 @@ const Resources = () => {
       link: "https://www.amazon.com/Bhagavad-Gita-Original-English-As/dp/B07MDTX8BR/ref=sr_1_1?crid=YUWQID07I4YZ&dib=eyJ2IjoiMSJ9.jtqlx-tib5EJfQBY7KeozuFQIfJnrMBb7tPftwpvHrbnRWxQORHjivYESwH0baGIL-tpWBl9xvRqKZsFoNOxUZqYZXnoOV3zaNjSOr2ZLzx2TSGR99UbGflbHWSuk1FyAFxJgOUAZljKsVWsWyv2KaUtZWOAnBCqz2kvw-azsqIyvI4yDqhZzim1IFIMG64kCszK2g8nNPGIiLIS2EP1irpg1zRq13jhH4wIJXLdUoc.rJfCjl_TrQXYC5o7cgLfr5oi4nz5f30jO_aud6f55ts&dib_tag=se&keywords=bhagavad+gita+as+it+is&qid=1758194560&sprefix=bhagwad+gita+as+%2Caps%2C422&sr=8-1"
     },
     {
-      title: "John C Maxwell Attitude 101",
+      title: "Attitude 101: What Every Leader Needs to Know",
       author: "John C Maxwell", 
       link: "https://www.amazon.in/Attitude-101-What-Leader-Needs/dp/0785288341"
     },
@@ -25,17 +25,17 @@ const Resources = () => {
     {
       title: "One Word That Will Change Your Life Expanded Edition",
       author: "Jon Gordon, Dan Britton",
-      link: "https://www.amazon.in/One-Word-That-Will-Change/dp/1118451309"
+      link: "https://www.amazon.in/One-Word-That-Will-Change-ebook/dp/B00BATL788/"
     },
     {
-      title: "The 21 Most Powerful Minutes in a Leader's day",
+      title: "The 21 Most Powerful Minutes in a Leader's Day",
       author: "John C Maxwell",
-      link: "https://www.amazon.in/Most-Powerful-Minutes-Leaders-Day/dp/0785266658"
+      link: "https://www.amazon.in/Most-Powerful-Minutes-Leaders-Day/dp/0785289429"
     },
     {
-      title: "Dan Roam Draw To Win",
+      title: "Draw To Win: A Crash Course on How to Lead, Sell and Innovate With Your Visual Mind",
       author: "Dan Roam",
-      link: "https://www.amazon.in/Draw-Win-Crash-Course-Innovate/dp/1101903953"
+      link: "https://www.amazon.in/Draw-Win-Course-Innovate-Visual/dp/1591842697"
     },
     {
       title: "The Back Of The Napkin",
@@ -43,9 +43,9 @@ const Resources = () => {
       link: "https://www.amazon.in/Back-Napkin-Expanded-Edition-Problems/dp/1591842697"
     },
     {
-      title: "Product Development For The Service Sector",
+      title: "Product Development for the Service Sector: Lessons from Market Leaders",
       author: "Robert G Cooper",
-      link: "https://www.amazon.in/Product-Development-Service-Sector-Lessons/dp/0465020359"
+      link: "https://www.amazon.in/Product-Development-Service-Sector-Lessons/dp/0465020364"
     },
     {
       title: "Crossing the Chasm, 3rd Edition",
@@ -199,7 +199,9 @@ const Resources = () => {
               {books.map((book, index) => (
                 <div key={index} className="bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-elegant transition-all duration-300">
                   <div className="flex items-start justify-between mb-4">
-                    <BookOpen className="h-8 w-8 text-primary flex-shrink-0" />
+                    <div className="w-20 h-28 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                      <BookOpen className="h-8 w-8 text-primary" />
+                    </div>
                     <Button asChild variant="ghost" size="sm" className="text-primary hover:text-primary/80">
                       <a href={book.link} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4" />
@@ -319,11 +321,30 @@ const Resources = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <input 
+              id="resources-newsletter-email"
               type="email" 
               placeholder="Enter your email" 
               className="flex-1 px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
             />
-            <Button className="btn-primary">Subscribe</Button>
+            <Button 
+              className="btn-primary"
+              onClick={() => {
+                const emailInput = document.getElementById('resources-newsletter-email') as HTMLInputElement;
+                const email = emailInput?.value;
+                if (!email) {
+                  alert("Please enter your email address");
+                  return;
+                }
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                  alert("Please enter a valid email address");
+                  return;
+                }
+                alert("Thank you for subscribing to our resources newsletter!");
+                emailInput.value = '';
+              }}
+            >
+              Subscribe
+            </Button>
           </div>
         </div>
       </div>

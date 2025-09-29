@@ -106,14 +106,6 @@ const SocialMediaIntegration = () => {
               ))}
             </div>
 
-            <div className="mt-6 text-center">
-              <Button variant="outline" className="w-full" asChild>
-                <a href="https://www.youtube.com/c/SampleInvestingChannel" target="_blank" rel="noopener noreferrer">
-                  <Youtube className="h-4 w-4 mr-2" />
-                  View All Videos
-                </a>
-              </Button>
-            </div>
           </div>
 
           {/* LinkedIn Section */}

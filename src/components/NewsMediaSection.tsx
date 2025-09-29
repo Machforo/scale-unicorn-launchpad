@@ -214,9 +214,12 @@ Adding his perspective, Ansshav Jain, Serial Entrepreneur & Venture Capitalist, 
             <div className="text-center py-16">
               <Newspaper className="h-16 w-16 text-muted-foreground/50 mx-auto mb-4" />
               <h3 className="text-2xl font-semibold text-foreground mb-2">More Press Releases Coming Soon</h3>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground mb-6">
                 Stay tuned for official announcements and company updates.
               </p>
+              <Button asChild className="btn-primary">
+                <a href="#contact">Subscribe for Updates</a>
+              </Button>
             </div>
           </TabsContent>
 
@@ -224,9 +227,15 @@ Adding his perspective, Ansshav Jain, Serial Entrepreneur & Venture Capitalist, 
             <div className="text-center py-16">
               <TrendingUp className="h-16 w-16 text-muted-foreground/50 mx-auto mb-4" />
               <h3 className="text-2xl font-semibold text-foreground mb-2">Media Coverage Archive</h3>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground mb-6">
                 Comprehensive coverage from leading business publications coming soon.
               </p>
+              <Button asChild className="btn-primary">
+                <a href="https://www.three60magazine.com/creating-the-blueprint-of-a-unicorn-in-just-15-days/" target="_blank" rel="noopener noreferrer">
+                  View Media Coverage
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
             </div>
           </TabsContent>
         </Tabs>
@@ -247,7 +256,23 @@ Adding his perspective, Ansshav Jain, Serial Entrepreneur & Venture Capitalist, 
                   placeholder="Enter your email"
                   className="flex-1 px-4 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary/20"
                 />
-                <Button className="sm:w-auto">
+                <Button 
+                  className="sm:w-auto"
+                  onClick={() => {
+                    const emailInput = document.querySelector('input[type="email"]') as HTMLInputElement;
+                    const email = emailInput?.value;
+                    if (!email) {
+                      alert("Please enter your email address");
+                      return;
+                    }
+                    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                      alert("Please enter a valid email address");
+                      return;
+                    }
+                    alert("Thank you for subscribing to our newsletter!");
+                    emailInput.value = '';
+                  }}
+                >
                   Subscribe
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>

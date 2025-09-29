@@ -131,7 +131,7 @@ const ContactSection = () => {
                   <div className="text-sm text-muted-foreground">Active Startups</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-secondary">50+</div>
+                  <div className="text-2xl font-bold text-primary bg-primary/10 rounded-lg px-2 py-1">50+</div>
                   <div className="text-sm text-muted-foreground">Expert Mentors</div>
                 </div>
               </div>

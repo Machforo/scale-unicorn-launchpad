@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/professional-meeting.jpg";
 import WorkshopRegistrationForm from "./WorkshopRegistrationForm";
-import ConsultationForm from "./ConsultationForm";
+import ConsultationFormModal from "./ConsultationFormModal";
 import IncubationForm from "./IncubationForm";
 
 const Hero = () => {
@@ -105,7 +105,7 @@ const Hero = () => {
       <IncubationForm onClose={() => setActiveForm(null)} />
     )}
     {activeForm === "consultation" && (
-      <ConsultationForm onClose={() => setActiveForm(null)} />
+      <ConsultationFormModal onClose={() => setActiveForm(null)} isOpen={true} />
     )}
     </>
   );

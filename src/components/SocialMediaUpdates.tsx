@@ -140,12 +140,6 @@ const SocialMediaUpdates = () => {
                 </Card>
               ))}
             </div>
-            <div className="text-center mt-6">
-              <Button variant="outline">
-                <Youtube className="h-4 w-4 mr-2" />
-                View All Videos
-              </Button>
-            </div>
           </div>
 
           {/* LinkedIn Posts */}

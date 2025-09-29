@@ -236,16 +236,47 @@ const SuccessStories = () => {
               Join hundreds of entrepreneurs who have transformed their startups with our proven methodologies
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="btn-primary">
-              Apply for Incubation
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="lg" variant="outline">
-              Book a Consultation
-              <ExternalLink className="ml-2 h-5 w-5" />
-            </Button>
-          </div>
+              <div className="flex items-center space-x-4">
+                <Button 
+                  size="lg" 
+                  className="btn-primary"
+                  onClick={() => {
+                    // Create consultation form modal instead of just applying
+                    const consultationModal = document.createElement('div');
+                    consultationModal.innerHTML = `
+                      <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                        <div class="bg-white p-6 rounded-lg max-w-md w-full mx-4">
+                          <h3 class="text-xl font-bold mb-4">Book a Consultation</h3>
+                          <p class="text-gray-600 mb-4">Please visit our Contact section to book a consultation.</p>
+                          <button onclick="this.closest('div').remove(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="w-full bg-blue-600 text-white py-2 rounded">
+                            Go to Contact Section
+                          </button>
+                          <button onclick="this.closest('div').remove()" class="w-full mt-2 bg-gray-300 text-gray-700 py-2 rounded">
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    `;
+                    document.body.appendChild(consultationModal);
+                  }}
+                >
+                  Apply for Incubation
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  onClick={() => {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                >
+                  Book a Consultation
+                  <ExternalLink className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
         </div>
       </div>
     </section>
