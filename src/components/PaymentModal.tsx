@@ -10,9 +10,11 @@ interface PaymentModalProps {
   workshopTitle?: string;
   servicePriceINR?: number;
   servicePriceUSD?: number;
+  calendlyUrl?: string;
+  onPaidAndBook?: () => void | Promise<void>;
 }
 
-const PaymentModal = ({ isOpen, onClose, workshopTitle, servicePriceINR, servicePriceUSD }: PaymentModalProps) => {
+const PaymentModal = ({ isOpen, onClose, workshopTitle, servicePriceINR, servicePriceUSD, calendlyUrl, onPaidAndBook }: PaymentModalProps) => {
   const [selectedRegion, setSelectedRegion] = useState<'us' | 'india' | 'international'>('us');
   const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
   const { toast } = useToast();
@@ -384,9 +386,16 @@ const PaymentModal = ({ isOpen, onClose, workshopTitle, servicePriceINR, service
               Close
             </Button>
             <Button 
-              onClick={() => {
-                window.open("https://calendly.com/sandeep-idea2unicorn/idea2unicorn-consult", "_blank");
-                onClose();
+              onClick={async () => {
+                try {
+                  if (onPaidAndBook) {
+                    await onPaidAndBook();
+                  }
+                  const url = calendlyUrl || "https://calendly.com/sandeep-idea2unicorn/idea2unicorn-consult";
+                  window.open(url, "_blank");
+                } finally {
+                  onClose();
+                }
               }}
               className="bg-primary text-primary-foreground hover:bg-primary/90"
             >

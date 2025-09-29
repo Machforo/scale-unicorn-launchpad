@@ -32,33 +32,13 @@ const ConsultationFormModal = ({ isOpen, onClose }: ConsultationFormModalProps) 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     try {
-      // First show payment modal before proceeding
       setShowPaymentModal(true);
-      
-      // Save to Supabase
-      const { error } = await supabase
-        .from('form_responses')
-        .insert([
-          {
-            ...formData,
-            form_type: 'consultation'
-          }
-        ]);
-
-      if (error) throw error;
-
-      toast({
-        title: "Consultation Request Submitted!",
-        description: "Please complete the payment to confirm your consultation booking.",
-      });
-
     } catch (error) {
-      console.error("Error submitting consultation:", error);
+      console.error("Error opening payment modal:", error);
       toast({
         title: "Error",
-        description: "Failed to submit consultation request. Please try again.",
+        description: "Failed to open payment. Please try again.",
         variant: "destructive",
       });
     }
@@ -255,13 +235,26 @@ const ConsultationFormModal = ({ isOpen, onClose }: ConsultationFormModalProps) 
       {showPaymentModal && (
         <PaymentModal
           isOpen={showPaymentModal}
-          onClose={() => {
-            setShowPaymentModal(false);
-            onClose();
-          }}
+          onClose={() => setShowPaymentModal(false)}
           workshopTitle="General Consultation"
           servicePriceINR={3000}
           servicePriceUSD={36}
+          calendlyUrl="https://calendly.com/sandeep-idea2unicorn/idea2unicorn-consult"
+          onPaidAndBook={async () => {
+            const { error } = await supabase
+              .from('form_responses')
+              .insert([
+                {
+                  ...formData,
+                  form_type: 'consultation'
+                }
+              ]);
+            if (error) {
+              toast({ title: "Error", description: "Failed to save your details. Please retry.", variant: "destructive" });
+            } else {
+              toast({ title: "Payment noted", description: "Proceeding to booking..." });
+            }
+          }}
         />
       )}
     </>

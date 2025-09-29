@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -8,6 +10,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 
 const NewsMediaSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const { toast } = useToast();
 
   const newsArticles = [
     {
@@ -252,24 +255,30 @@ Adding his perspective, Ansshav Jain, Serial Entrepreneur & Venture Capitalist, 
             <CardContent>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                 <input 
+                  id="news-email"
                   type="email" 
                   placeholder="Enter your email"
                   className="flex-1 px-4 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary/20"
                 />
                 <Button 
                   className="sm:w-auto"
-                  onClick={() => {
-                    const emailInput = document.querySelector('input[type="email"]') as HTMLInputElement;
-                    const email = emailInput?.value;
+                  onClick={async () => {
+                    const emailInput = document.getElementById('news-email') as HTMLInputElement;
+                    const email = emailInput?.value?.trim();
                     if (!email) {
-                      alert("Please enter your email address");
+                      toast({ title: "Error", description: "Please enter your email address", variant: "destructive" });
                       return;
                     }
                     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                      alert("Please enter a valid email address");
+                      toast({ title: "Invalid email", description: "Please enter a valid email address", variant: "destructive" });
                       return;
                     }
-                    alert("Thank you for subscribing to our newsletter!");
+                    const { error } = await supabase.from('form_responses').insert({ form_type: 'newsletter', name: 'Newsletter Subscriber', email, additional_data: { source: 'news-media' } });
+                    if (error) {
+                      toast({ title: "Subscription failed", description: "Please try again later.", variant: "destructive" });
+                      return;
+                    }
+                    toast({ title: "Subscribed!", description: "You will receive our latest updates." });
                     emailInput.value = '';
                   }}
                 >

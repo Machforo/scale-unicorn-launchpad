@@ -218,9 +218,11 @@ const AwardsSection = () => {
               <div className="text-sm text-muted-foreground">Expert Column</div>
             </div>
           </div>
-          <Button variant="outline">
-            <ExternalLink className="h-4 w-4 mr-2" />
-            View Media Coverage
+          <Button variant="outline" asChild>
+            <a href="https://www.three60magazine.com/creating-the-blueprint-of-a-unicorn-in-just-15-days/" target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="h-4 w-4 mr-2" />
+              View Media Coverage
+            </a>
           </Button>
         </div>
       </div>
