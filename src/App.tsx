@@ -52,6 +52,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AdminForgotPassword from "./pages/AdminForgotPassword";
 import PartnerUs from "./pages/PartnerUs";
 import Careers from "./pages/Careers";
+import Events from "./pages/Events";
 
 const queryClient = new QueryClient();
 
@@ -102,6 +103,7 @@ const App = () => (
           <Route path="/domains/retail" element={<Retail />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/news-media" element={<NewsMedia />} />
+          <Route path="/events" element={<Events />} />
           <Route path="/partner-us" element={<PartnerUs />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/integration-demo" element={<IntegrationDemo />} />
