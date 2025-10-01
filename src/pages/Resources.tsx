@@ -4,98 +4,134 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import bhagavadGitaImg from "@/assets/books/bhagavad-gita.jpg";
+import attitude101Img from "@/assets/books/attitude-101.jpg";
+import theAlchemistImg from "@/assets/books/the-alchemist.jpg";
+import oneWordImg from "@/assets/books/one-word.jpg";
+import minutes21Img from "@/assets/books/21-minutes.jpg";
+import drawToWinImg from "@/assets/books/draw-to-win.jpg";
+import backOfNapkinImg from "@/assets/books/back-of-napkin.jpg";
+import productDevImg from "@/assets/books/product-development.jpg";
+import crossingChasmImg from "@/assets/books/crossing-chasm.jpg";
+import zoneToWinImg from "@/assets/books/zone-to-win.jpg";
+import goodToGreatImg from "@/assets/books/good-to-great.jpg";
+import customersDotComImg from "@/assets/books/customers-dot-com.jpg";
+import agileSamuraiImg from "@/assets/books/agile-samurai.jpg";
+import leanSixSigmaImg from "@/assets/books/lean-six-sigma.jpg";
+import maxEMarketingImg from "@/assets/books/max-e-marketing.jpg";
+import geWorkoutImg from "@/assets/books/ge-workout.jpg";
+import sixSigmaMarketingImg from "@/assets/books/six-sigma-marketing.jpg";
+import scrumImg from "@/assets/books/scrum.jpg";
 
 const Resources = () => {
   const books = [
     {
       title: "Bhagavad Gita As It Is",
-      author: "A.C.Bhakthivedantha Swamy Prabhupada",
-      link: "https://www.amazon.com/Bhagavad-Gita-Original-English-As/dp/B07MDTX8BR/ref=sr_1_1?crid=YUWQID07I4YZ&dib=eyJ2IjoiMSJ9.jtqlx-tib5EJfQBY7KeozuFQIfJnrMBb7tPftwpvHrbnRWxQORHjivYESwH0baGIL-tpWBl9xvRqKZsFoNOxUZqYZXnoOV3zaNjSOr2ZLzx2TSGR99UbGflbHWSuk1FyAFxJgOUAZljKsVWsWyv2KaUtZWOAnBCqz2kvw-azsqIyvI4yDqhZzim1IFIMG64kCszK2g8nNPGIiLIS2EP1irpg1zRq13jhH4wIJXLdUoc.rJfCjl_TrQXYC5o7cgLfr5oi4nz5f30jO_aud6f55ts&dib_tag=se&keywords=bhagavad+gita+as+it+is&qid=1758194560&sprefix=bhagwad+gita+as+%2Caps%2C422&sr=8-1"
+      author: "A.C. Bhaktivedanta Swami Prabhupada",
+      link: "https://www.amazon.in/Bhagavad-As-C-Bhaktivedanta-Prabhupada/dp/9382176225",
+      image: bhagavadGitaImg
     },
     {
       title: "Attitude 101: What Every Leader Needs to Know",
       author: "John C Maxwell", 
-      link: "https://www.amazon.in/Attitude-101-What-Leader-Needs/dp/0785288341"
+      link: "https://www.amazon.in/Attitude-101-What-Leader-Needs/dp/0785288341",
+      image: attitude101Img
     },
     {
       title: "The Alchemist",
       author: "Paulo Coelho",
-      link: "https://www.amazon.in/Alchemist-Paulo-Coelho/dp/8172234988"
+      link: "https://www.amazon.in/Alchemist-Paulo-Coelho/dp/8172234988",
+      image: theAlchemistImg
     },
     {
       title: "One Word That Will Change Your Life Expanded Edition",
       author: "Jon Gordon, Dan Britton",
-      link: "https://www.amazon.in/One-Word-That-Will-Change-ebook/dp/B00BATL788/"
+      link: "https://www.amazon.in/One-Word-That-Will-Change-ebook/dp/B00BATL788",
+      image: oneWordImg
     },
     {
       title: "The 21 Most Powerful Minutes in a Leader's Day",
       author: "John C Maxwell",
-      link: "https://www.amazon.in/Most-Powerful-Minutes-Leaders-Day/dp/0785289429"
+      link: "https://www.amazon.in/Most-Powerful-Minutes-Leaders-Day/dp/0785289429",
+      image: minutes21Img
     },
     {
-      title: "Draw To Win: A Crash Course on How to Lead, Sell and Innovate With Your Visual Mind",
+      title: "Draw to Win",
       author: "Dan Roam",
-      link: "https://www.amazon.in/Draw-Win-Course-Innovate-Visual/dp/1591842697"
+      link: "https://www.amazon.in/Draw-Win-Course-Innovate-Visual/dp/0735219222",
+      image: drawToWinImg
     },
     {
-      title: "The Back Of The Napkin",
+      title: "The Back of the Napkin",
       author: "Dan Roam",
-      link: "https://www.amazon.in/Back-Napkin-Expanded-Edition-Problems/dp/1591842697"
+      link: "https://www.amazon.in/Back-Napkin-Expanded-Problems-Pictures/dp/1591842697",
+      image: backOfNapkinImg
     },
     {
-      title: "Product Development for the Service Sector: Lessons from Market Leaders",
+      title: "Product Development for the Service Sector",
       author: "Robert G Cooper",
-      link: "https://www.amazon.in/Product-Development-Service-Sector-Lessons/dp/0465020364"
+      link: "https://www.amazon.in/Product-Development-Service-Sector-Lessons/dp/0465020364",
+      image: productDevImg
     },
     {
       title: "Crossing the Chasm, 3rd Edition",
       author: "Geoffrey A Moore",
-      link: "https://www.amazon.in/Crossing-Chasm-3rd-Disruptive-Mainstream/dp/0062292986"
+      link: "https://www.amazon.in/Crossing-Chasm-3rd-Disruptive-Mainstream/dp/0062292986",
+      image: crossingChasmImg
     },
     {
-      title: "Zone to win",
+      title: "Zone to Win",
       author: "Geoffrey A Moore",
-      link: "https://amzn.in/d/eF7NDPj"
+      link: "https://amzn.in/d/eF7NDPj",
+      image: zoneToWinImg
     },
     {
       title: "Good to Great",
       author: "Jim Collins",
-      link: "https://amzn.in/d/4ZNggsC"
+      link: "https://amzn.in/d/4ZNggsC",
+      image: goodToGreatImg
     },
     {
       title: "Customers.com",
-      author: "Ronni T Marshak, Patricia B Seybold",
-      link: "https://amzn.in/d/1sVnXVB"
+      author: "Patricia B Seybold, Ronni T Marshak",
+      link: "https://amzn.in/d/1sVnXVB",
+      image: customersDotComImg
     },
     {
       title: "The Agile Samurai",
-      author: "Jonathan Ramusson",
-      link: "https://amzn.in/d/eW7QeIt"
+      author: "Jonathan Rasmusson",
+      link: "https://amzn.in/d/eW7QeIt",
+      image: agileSamuraiImg
     },
     {
       title: "The Lean Six Sigma Pocket Toolbook",
-      author: "Dave Rowlands, Michael L George",
-      link: "https://amzn.in/d/c6lT22o"
+      author: "Michael L George, Dave Rowlands",
+      link: "https://amzn.in/d/c6lT22o",
+      image: leanSixSigmaImg
     },
     {
       title: "Max-E-Marketing in the Net Future",
-      author: "Chuck Martin, Stan Rapp",
-      link: "https://amzn.in/d/52ve44q"
+      author: "Stan Rapp, Chuck Martin",
+      link: "https://amzn.in/d/52ve44q",
+      image: maxEMarketingImg
     },
     {
       title: "The GE Work-Out",
-      author: "David Ulrich, Dave Ulrich",
-      link: "https://amzn.in/d/3VckTBU"
+      author: "Dave Ulrich, Steve Kerr, Ron Ashkenas",
+      link: "https://amzn.in/d/3VckTBU",
+      image: geWorkoutImg
     },
     {
       title: "Six Sigma for Marketing Processes",
       author: "Clyde M Creveling",
-      link: "https://amzn.in/d/fCAdTdY"
+      link: "https://amzn.in/d/fCAdTdY",
+      image: sixSigmaMarketingImg
     },
     {
       title: "Scrum: The Art of Doing Twice the Work in Half the Time",
       author: "Jeff Sutherland, JJ Sutherland",
-      link: "https://amzn.in/d/5YgLwOB"
+      link: "https://amzn.in/d/5YgLwOB",
+      image: scrumImg
     }
   ];
 
@@ -197,32 +233,36 @@ const Resources = () => {
           <TabsContent value="books">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {books.map((book, index) => (
-                <div key={index} className="bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-elegant transition-all duration-300">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-20 h-28 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                      <BookOpen className="h-8 w-8 text-primary" />
-                    </div>
-                    <Button asChild variant="ghost" size="sm" className="text-primary hover:text-primary/80">
+                <div key={index} className="bg-card border border-border rounded-lg overflow-hidden shadow-card hover:shadow-elegant transition-all duration-300">
+                  <div className="relative h-64 bg-gradient-to-br from-primary/20 to-primary/10">
+                    <img 
+                      src={book.image} 
+                      alt={book.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <Button asChild variant="ghost" size="sm" className="absolute top-2 right-2 bg-background/80 hover:bg-background text-primary hover:text-primary/80">
                       <a href={book.link} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4" />
                       </a>
                     </Button>
                   </div>
                   
-                  <h3 className="text-lg font-semibold text-foreground mb-2 line-clamp-2">
-                    {book.title}
-                  </h3>
-                  
-                  <p className="text-sm text-muted-foreground mb-4">
-                    by {book.author}
-                  </p>
-                  
-                  <Button asChild variant="outline" className="w-full">
-                    <a href={book.link} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      View on Amazon
-                    </a>
-                  </Button>
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-foreground mb-2 line-clamp-2 min-h-[3.5rem]">
+                      {book.title}
+                    </h3>
+                    
+                    <p className="text-sm text-muted-foreground mb-4">
+                      by {book.author}
+                    </p>
+                    
+                    <Button asChild variant="outline" className="w-full">
+                      <a href={book.link} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        View on Amazon
+                      </a>
+                    </Button>
+                  </div>
                 </div>
               ))}
             </div>

@@ -53,6 +53,7 @@ import AdminForgotPassword from "./pages/AdminForgotPassword";
 import PartnerUs from "./pages/PartnerUs";
 import Careers from "./pages/Careers";
 import Events from "./pages/Events";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -65,6 +66,7 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
           <Route path="/workshops" element={<Workshops />} />
           <Route path="/services" element={<Services />} />
           <Route path="/pricing" element={<Pricing />} />
