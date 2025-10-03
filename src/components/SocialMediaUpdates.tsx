@@ -51,29 +51,29 @@ const SocialMediaUpdates = () => {
     {
       id: "1",
       title: "How to Create a Unicorn Blueprint in 15 Days | Sandipp Vijj",
-      thumbnail: "/placeholder.svg",
+      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
       views: "32K",
       duration: "15:42",
       publishedAt: "3 days ago",
-      url: "#"
+      url: "https://www.youtube.com/@idea2unicorn"
     },
     {
       id: "2", 
       title: "Zero-Investment Franchise Model for Startups | Growth Strategies",
-      thumbnail: "/placeholder.svg",
+      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
       views: "24K",
       duration: "12:28",
       publishedAt: "1 week ago",
-      url: "#"
+      url: "https://www.youtube.com/@idea2unicorn"
     },
     {
       id: "3",
       title: "10 Business Methodologies Every Entrepreneur Must Know",
-      thumbnail: "/placeholder.svg", 
+      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg", 
       views: "41K",
       duration: "18:55",
       publishedAt: "2 weeks ago",
-      url: "#"
+      url: "https://www.youtube.com/@idea2unicorn"
     }
   ];
 
@@ -130,9 +130,11 @@ const SocialMediaUpdates = () => {
                             {video.publishedAt}
                           </div>
                         </div>
-                        <Button variant="ghost" size="sm" className="mt-2 p-0 h-auto">
-                          <ExternalLink className="h-3 w-3 mr-1" />
-                          Watch Video
+                        <Button variant="ghost" size="sm" className="mt-2 p-0 h-auto" asChild>
+                          <a href={video.url} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="h-3 w-3 mr-1" />
+                            Watch Video
+                          </a>
                         </Button>
                       </div>
                     </div>

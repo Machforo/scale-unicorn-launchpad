@@ -141,28 +141,28 @@ const Resources = () => {
       presenter: "Sandipp Vijj",
       duration: "45 mins",
       description: "Introduction to our proprietary Smart Growth methodology for scaling startups without dilution",
-      link: "#"
+      link: "https://www.youtube.com/@idea2unicorn"
     },
     {
       title: "Crossing the Chasm in Indian Market",
       presenter: "Amardeep Bajpai",
       duration: "32 mins", 
       description: "Strategies for moving from early adopters to mainstream market in India",
-      link: "#"
+      link: "https://www.youtube.com/@idea2unicorn"
     },
     {
       title: "Digital Transformation for Startups",
       presenter: "Dinesh Makhija",
       duration: "38 mins",
       description: "Leveraging AI and digital technologies to accelerate startup growth",
-      link: "#"
+      link: "https://www.youtube.com/@idea2unicorn"
     },
     {
       title: "Franchising Mastery Fundamentals",
       presenter: "Sam Kundu",
       duration: "41 mins",
       description: "Building scalable franchise models for business expansion",
-      link: "#"
+      link: "https://www.youtube.com/@idea2unicorn"
     }
   ];
 
@@ -173,7 +173,7 @@ const Resources = () => {
       date: "December 2024",
       duration: "3 hours",
       description: "Complete recording of our flagship Business Visioning workshop with 5-step methodology",
-      link: "#"
+      link: "https://www.youtube.com/@idea2unicorn"
     },
     {
       title: "Conceptualize Your Unicorn - Session 1",
@@ -181,7 +181,7 @@ const Resources = () => {
       date: "November 2024",
       duration: "2.5 hours",
       description: "First session of the 10-book methodology framework for unicorn creation",
-      link: "#"
+      link: "https://www.youtube.com/@idea2unicorn"
     },
     {
       title: "Leadership Excellence Workshop",
@@ -189,7 +189,7 @@ const Resources = () => {
       date: "October 2024", 
       duration: "4 hours",
       description: "Comprehensive leadership development session for startup founders",
-      link: "#"
+      link: "https://www.youtube.com/@idea2unicorn"
     },
     {
       title: "FinTech Innovation Deep Dive",
@@ -197,7 +197,7 @@ const Resources = () => {
       date: "September 2024",
       duration: "3.5 hours", 
       description: "Exploring fintech opportunities and regulatory landscape in India",
-      link: "#"
+      link: "https://www.youtube.com/@idea2unicorn"
     }
   ];
 
@@ -291,9 +291,11 @@ const Resources = () => {
                     {video.description}
                   </p>
                   
-                  <Button variant="outline" className="w-full">
-                    <Play className="h-4 w-4 mr-2" />
-                    Watch Video
+                  <Button variant="outline" className="w-full" asChild>
+                    <a href={video.link} target="_blank" rel="noopener noreferrer">
+                      <Play className="h-4 w-4 mr-2" />
+                      Watch Video
+                    </a>
                   </Button>
                 </div>
               ))}
@@ -327,9 +329,11 @@ const Resources = () => {
                     {workshop.description}
                   </p>
                   
-                  <Button variant="outline" className="w-full">
-                    <Video className="h-4 w-4 mr-2" />
-                    Watch Recording
+                  <Button variant="outline" className="w-full" asChild>
+                    <a href={workshop.link} target="_blank" rel="noopener noreferrer">
+                      <Video className="h-4 w-4 mr-2" />
+                      Watch Recording
+                    </a>
                   </Button>
                 </div>
               ))}

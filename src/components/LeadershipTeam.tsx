@@ -1,7 +1,7 @@
 import { ExternalLink, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sandippVijjImage from "@/assets/sandipp-vijj.png";
-import ansshavJainImage from "@/assets/ansshav-jain.png";
+
 import amardeepBajpaiImage from "@/assets/amardeep-bajpai-new.jpg";
 import samKunduImage from "@/assets/sam-kundu-new.jpg";
 import achalPaulImage from "@/assets/achal-paul-new.jpg";
@@ -51,15 +51,6 @@ const LeadershipTeam = () => {
       description: "Pioneering digital learning solutions and educational technology",
       image: sameerNigamImage,
       linkedin: "https://www.linkedin.com/in/sameernigam/"
-    },
-    {
-      name: "Ansshav Jain",
-      role: "Visioning Expert",
-      title: "Founder of Bringleverse UK & India, DYU NFT $1B Fund",
-      expertise: "Visioning",
-      description: "Senior corporate professional for 2 decades, Serial entrepreneur for 10+ years, specializing in business visioning",
-      image: ansshavJainImage,
-      linkedin: "https://www.linkedin.com/in/anshavatar/"
     },
     {
       name: "Sam Kundu",
@@ -214,7 +205,7 @@ const LeadershipTeam = () => {
         <div className="mt-16 bg-card border border-border rounded-lg p-8 shadow-card">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">13+</div>
+              <div className="text-3xl font-bold text-primary mb-2">12+</div>
               <div className="text-muted-foreground">Team Members</div>
             </div>
             <div>

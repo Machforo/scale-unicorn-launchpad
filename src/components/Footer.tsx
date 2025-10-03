@@ -56,7 +56,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
@@ -128,8 +128,8 @@ const Footer = () => {
                 <MessageCircle className="h-5 w-5 text-green-500" />
                 <span className="text-primary-foreground/80 text-sm">+1 (734) 355-7828</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-accent" />
+              <div className="flex items-start space-x-3">
+                <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <span className="text-primary-foreground/80 text-sm">9809, #203 Walnut st, Dallas, TX 75243, USA</span>
               </div>
             </div>

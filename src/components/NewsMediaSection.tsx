@@ -28,7 +28,7 @@ The initiative offers pre-seed, seed, and angel funding opportunities alongside 
 
 Speaking on the launch, Sandipp Vijj (MBA – IIMA), Founder, Idea2Unicorn.ai said: "Every entrepreneur dreams of building a unicorn, but few have the blueprint or ecosystem to get there. Our mission is to fast-track this journey by combining strategic expertise, technology, and funding into one platform. With the right mentorship and resources, we believe a unicorn is not a distant dream for a level 5 leader entrepreneur — it can be a reality in just 15 days of disciplined execution."
 
-Adding his perspective, Ansshav Jain, Serial Entrepreneur & Venture Capitalist, commented: "Startups often struggle in the critical early phase — not due to lack of ideas, but because of limited access to capital, strategy, and execution support. What we are building here is an end-to-end ecosystem that eliminates these gaps and empowers founders to focus on scaling with confidence."`,
+Our integrated approach combines strategic consulting, funding access, and execution support to help founders build sustainable, high-growth businesses. We believe that with the right ecosystem and mentorship, every ambitious entrepreneur can achieve unicorn status.`,
       publication: "Three 60 Magazine",
       date: "September 18, 2025",
       category: "Press Release",

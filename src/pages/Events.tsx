@@ -125,19 +125,12 @@ const Events = () => {
                   For inquiries about upcoming events, partnerships, or to discuss how we can help your business grow, reach out to our team.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
-                  <Button 
-                    onClick={() => window.location.href = '/#contact'} 
-                    className="btn-primary"
-                  >
-                    Contact Us
-                  </Button>
-                  <Button 
-                    onClick={() => window.location.href = '/workshops'} 
-                    variant="outline"
-                    className="btn-secondary"
-                  >
-                    View All Workshops
-                  </Button>
+                <Button 
+                  onClick={() => window.location.href = '/#contact'} 
+                  className="btn-primary"
+                >
+                  Contact Us
+                </Button>
                 </div>
               </CardContent>
             </Card>

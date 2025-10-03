@@ -37,7 +37,6 @@ import RenewableEnergy from "./pages/sectors/RenewableEnergy";
 import SectorEducation from "./pages/sectors/Education";
 import SmartGrowth from "./pages/workshops/SmartGrowth";
 import RealEstateStrategy from "./pages/workshops/RealEstateStrategy";
-import UnicornStrategy from "./pages/workshops/UnicornStrategy";
 import PitchDeckEvaluation from "./pages/services/PitchDeckEvaluation";
 import ForInvestors from "./pages/ForInvestors";
 import ForStartups from "./pages/ForStartups";
@@ -93,7 +92,6 @@ const App = () => (
           <Route path="/sectors/renewable-energy" element={<RenewableEnergy />} />
           <Route path="/workshops/smart-growth" element={<SmartGrowth />} />
           <Route path="/workshops/real-estate-strategy" element={<RealEstateStrategy />} />
-          <Route path="/workshops/unicorn-strategy" element={<UnicornStrategy />} />
           <Route path="/services/pitch-deck-evaluation" element={<PitchDeckEvaluation />} />
         <Route path="/for-investors" element={<ForInvestors />} />
         <Route path="/for-startups" element={<ForStartups />} />

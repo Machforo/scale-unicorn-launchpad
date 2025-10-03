@@ -52,14 +52,6 @@ const Workshops = () => {
       route: "/workshops/real-estate-strategy"
     },
     {
-      id: "unicorn-strategy",
-      title: "Strategy to Become a Unicorn",
-      facilitator: "Mr Jain",
-      duration: "4 Days",
-      description: "The ultimate masterclass on building billion-dollar companies. Learn the insider strategies used by unicorn founders and investors.",
-      route: "/workshops/unicorn-strategy"
-    },
-    {
       id: "conceptualize-unicorn",
       title: "Conceptualize Your Unicorn",
       facilitator: "Sandipp Vijj",
