@@ -51,29 +51,29 @@ const SocialMediaUpdates = () => {
     {
       id: "1",
       title: "How to Create a Unicorn Blueprint in 15 Days | Sandipp Vijj",
-      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+      thumbnail: "https://i.ytimg.com/vi/placeholder/mqdefault.jpg",
       views: "32K",
       duration: "15:42",
       publishedAt: "3 days ago",
-      url: "https://www.youtube.com/@idea2unicorn"
+      url: "https://www.youtube.com/@idea2unicorn/videos"
     },
     {
       id: "2", 
       title: "Zero-Investment Franchise Model for Startups | Growth Strategies",
-      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+      thumbnail: "https://i.ytimg.com/vi/placeholder/mqdefault.jpg",
       views: "24K",
       duration: "12:28",
       publishedAt: "1 week ago",
-      url: "https://www.youtube.com/@idea2unicorn"
+      url: "https://www.youtube.com/@idea2unicorn/videos"
     },
     {
       id: "3",
       title: "10 Business Methodologies Every Entrepreneur Must Know",
-      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg", 
+      thumbnail: "https://i.ytimg.com/vi/placeholder/mqdefault.jpg", 
       views: "41K",
       duration: "18:55",
       publishedAt: "2 weeks ago",
-      url: "https://www.youtube.com/@idea2unicorn"
+      url: "https://www.youtube.com/@idea2unicorn/videos"
     }
   ];
 
@@ -132,8 +132,8 @@ const SocialMediaUpdates = () => {
                         </div>
                         <Button variant="ghost" size="sm" className="mt-2 p-0 h-auto" asChild>
                           <a href={video.url} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="h-3 w-3 mr-1" />
-                            Watch Video
+                            <Youtube className="h-3 w-3 mr-1" />
+                            View on YouTube
                           </a>
                         </Button>
                       </div>
@@ -174,11 +174,17 @@ const SocialMediaUpdates = () => {
                 </Card>
               ))}
             </div>
-            <div className="text-center mt-6">
+            <div className="flex gap-4 justify-center mt-6">
               <Button variant="outline" asChild>
                 <a href="https://www.linkedin.com/company/dream-life-creator-in-wellness/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-4 w-4 mr-2" />
                   Follow on LinkedIn
+                </a>
+              </Button>
+              <Button variant="outline" asChild>
+                <a href="https://www.youtube.com/@idea2unicorn" target="_blank" rel="noopener noreferrer">
+                  <Youtube className="h-4 w-4 mr-2" />
+                  Subscribe on YouTube
                 </a>
               </Button>
             </div>
