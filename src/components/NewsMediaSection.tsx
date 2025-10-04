@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, ExternalLink, ArrowRight, Newspaper, Users, TrendingUp, Award } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import teamImage from "@/assets/professional-meeting.jpg";
 
 const NewsMediaSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -32,7 +33,7 @@ Our integrated approach combines strategic consulting, funding access, and execu
       publication: "Three 60 Magazine",
       date: "September 18, 2025",
       category: "Press Release",
-      image: "https://www.three60magazine.com/storage/2025/09/Creating-the-Blueprint-of-a-Unicorn-in-Just-15-Days.png",
+      image: teamImage,
       url: "https://www.three60magazine.com/creating-the-blueprint-of-a-unicorn-in-just-15-days/",
       featured: true,
       readTime: "5 min read"
