@@ -57,18 +57,18 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
           {/* Company Info */}
-          <div className="space-y-6">
-          <div className="flex items-center space-x-2">
-            <Sparkles className="h-8 w-8 text-accent" />
-            <span className="text-2xl font-bold">Idea2Unicorn</span>
-          </div>
-            <p className="text-primary-foreground/80 leading-relaxed">
+          <div className="space-y-4">
+            <div className="flex items-center space-x-2 mb-4">
+              <Sparkles className="h-8 w-8 text-accent" />
+              <span className="text-2xl font-bold">Idea2Unicorn</span>
+            </div>
+            <p className="text-primary-foreground/80 leading-relaxed text-sm">
               India's premier startup growth accelerator helping entrepreneurs scale with 
               smart growth strategies without diluting equity through proprietary methodologies and expert guidance.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 pt-2">
               <a href="https://wa.me/17343557828" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp +1 734-355-7828" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
                 <MessageCircle className="h-5 w-5" />
               </a>
@@ -82,14 +82,14 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-6">
-            <h3 className="text-lg font-semibold">Quick Links</h3>
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <div className="space-y-3">
               {quickLinks.map((link, index) => (
                 <a
                   key={index}
                   href={link.href}
-                  className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
                 >
                   {link.name}
                 </a>
@@ -98,8 +98,8 @@ const Footer = () => {
           </div>
 
           {/* Workshops */}
-          <div className="space-y-6">
-            <h3 className="text-lg font-semibold">Workshops</h3>
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold mb-4">Workshops</h3>
             <div className="space-y-3">
               {workshops.map((workshop, index) => (
                 <button
@@ -117,15 +117,15 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6">
-            <h3 className="text-lg font-semibold">Contact Us</h3>
-            <div className="space-y-4">
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-accent" />
-                <span className="text-primary-foreground/80 text-sm">Sandipp@idea2unicorn.ai</span>
+                <Mail className="h-5 w-5 text-accent flex-shrink-0" />
+                <span className="text-primary-foreground/80 text-sm break-all">Sandipp@idea2unicorn.ai</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MessageCircle className="h-5 w-5 text-green-500" />
+                <MessageCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
                 <span className="text-primary-foreground/80 text-sm">+1 (734) 355-7828</span>
               </div>
               <div className="flex items-start space-x-3">
@@ -135,8 +135,8 @@ const Footer = () => {
             </div>
 
             {/* Newsletter */}
-            <div className="space-y-3">
-              <h4 className="font-medium">Stay Updated</h4>
+            <div className="space-y-3 pt-2">
+              <h4 className="font-medium text-sm">Stay Updated</h4>
               <div className="flex space-x-2">
                 <input
                   id="newsletter-email"
@@ -146,7 +146,7 @@ const Footer = () => {
                 />
                 <button 
                   onClick={handleSubscribe}
-                  className="px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent-light transition-colors text-sm font-medium"
+                  className="px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent-light transition-colors text-sm font-medium whitespace-nowrap"
                 >
                   Subscribe
                 </button>
