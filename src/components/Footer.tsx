@@ -58,9 +58,9 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-x-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-8 lg:gap-x-10 xl:gap-x-12 justify-items-start">
           {/* Company Info */}
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-4 w-full max-w-[280px]">
             <div className="flex items-center space-x-2">
               <Sparkles className="h-8 w-8 text-accent" />
               <span className="text-2xl font-bold">Idea2Unicorn</span>
@@ -83,7 +83,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-4 w-full">
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <nav className="flex flex-col space-y-3">
               {quickLinks.map((link, index) => (
@@ -99,7 +99,7 @@ const Footer = () => {
           </div>
 
           {/* Workshops */}
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-4 w-full">
             <h3 className="text-lg font-semibold">Workshops</h3>
             <nav className="flex flex-col space-y-3">
               {workshops.map((workshop, index) => (
@@ -115,7 +115,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-4 w-full">
             <h3 className="text-lg font-semibold">Contact Us</h3>
             <div className="flex flex-col space-y-3">
               <a href="mailto:Sandipp@idea2unicorn.ai" className="flex items-center space-x-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
