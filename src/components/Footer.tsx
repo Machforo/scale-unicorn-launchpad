@@ -1,5 +1,6 @@
 import { Sparkles, Mail, MessageCircle, MapPin, Twitter, Linkedin, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 import ganeshaSmal from "@/assets/ganesha-small.jpg";
 import lotusDeitySmall from "@/assets/lotus-deity-small.jpg";
 import decorativeOrnamentSmall from "@/assets/decorative-ornament-small.jpg";
@@ -39,28 +40,28 @@ const Footer = () => {
     emailInput.value = '';
   };
   const quickLinks = [
-    { name: "About Us", href: "#about" },
-    { name: "Workshops", href: "#workshops" },
-    { name: "Growth Strategies", href: "#growth" },
+    { name: "About Us", href: "/about" },
+    { name: "Workshops", href: "/workshops" },
+    { name: "Growth Strategies", href: "/#growth" },
     { name: "Careers", href: "/careers" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   const workshops = [
-    { name: "Dream Life Workshop", href: "#" },
-    { name: "Crossing the Chasm", href: "#" },
-    { name: "Smart Growth Strategy", href: "#" },
-    { name: "Real Estate Growth", href: "#" },
-    { name: "Unicorn Strategy", href: "#" },
+    { name: "Dream Life Workshop", href: "/workshops/business-visioning" },
+    { name: "Crossing the Chasm", href: "/workshops/crossing-the-chasm" },
+    { name: "Smart Growth Strategy", href: "/workshops/smart-growth" },
+    { name: "Real Estate Growth", href: "/workshops/real-estate-strategy" },
+    { name: "Unicorn Strategy", href: "/workshops/conceptualize-unicorn" },
   ];
 
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-x-8">
           {/* Company Info */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2 mb-4">
+          <div className="flex flex-col space-y-4">
+            <div className="flex items-center space-x-2">
               <Sparkles className="h-8 w-8 text-accent" />
               <span className="text-2xl font-bold">Idea2Unicorn</span>
             </div>
@@ -68,7 +69,7 @@ const Footer = () => {
               India's premier startup growth accelerator helping entrepreneurs scale with 
               smart growth strategies without diluting equity through proprietary methodologies and expert guidance.
             </p>
-            <div className="flex space-x-4 pt-2">
+            <div className="flex space-x-4">
               <a href="https://wa.me/17343557828" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp +1 734-355-7828" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">
                 <MessageCircle className="h-5 w-5" />
               </a>
@@ -82,60 +83,57 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <div className="space-y-3">
+          <div className="flex flex-col space-y-4">
+            <h3 className="text-lg font-semibold">Quick Links</h3>
+            <nav className="flex flex-col space-y-3">
               {quickLinks.map((link, index) => (
-                <a
+                <Link
                   key={index}
-                  href={link.href}
-                  className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+                  to={link.href}
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
-            </div>
+            </nav>
           </div>
 
           {/* Workshops */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold mb-4">Workshops</h3>
-            <div className="space-y-3">
+          <div className="flex flex-col space-y-4">
+            <h3 className="text-lg font-semibold">Workshops</h3>
+            <nav className="flex flex-col space-y-3">
               {workshops.map((workshop, index) => (
-                <button
+                <Link
                   key={index}
-                  onClick={() => {
-                    const form = document.querySelector('#workshop-form');
-                    if (form) form.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm w-full text-left"
+                  to={workshop.href}
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
                 >
                   {workshop.name}
-                </button>
+                </Link>
               ))}
-            </div>
+            </nav>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
+          <div className="flex flex-col space-y-4">
+            <h3 className="text-lg font-semibold">Contact Us</h3>
+            <div className="flex flex-col space-y-3">
+              <a href="mailto:Sandipp@idea2unicorn.ai" className="flex items-center space-x-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 <Mail className="h-5 w-5 text-accent flex-shrink-0" />
-                <span className="text-primary-foreground/80 text-sm break-all">Sandipp@idea2unicorn.ai</span>
-              </div>
-              <div className="flex items-center space-x-3">
+                <span className="text-sm break-all">Sandipp@idea2unicorn.ai</span>
+              </a>
+              <a href="https://wa.me/17343557828" className="flex items-center space-x-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 <MessageCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                <span className="text-primary-foreground/80 text-sm">+1 (734) 355-7828</span>
-              </div>
-              <div className="flex items-start space-x-3">
+                <span className="text-sm">+1 (734) 355-7828</span>
+              </a>
+              <a href="https://www.google.com/maps/search/?api=1&query=9809+%23203+Walnut+st+Dallas+TX+75243+USA" target="_blank" rel="noopener noreferrer" className="flex items-start space-x-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-primary-foreground/80 text-sm">9809, #203 Walnut st, Dallas, TX 75243, USA</span>
-              </div>
+                <span className="text-sm">9809, #203 Walnut st, Dallas, TX 75243, USA</span>
+              </a>
             </div>
 
             {/* Newsletter */}
-            <div className="space-y-3 pt-2">
+            <div className="flex flex-col space-y-3 mt-2">
               <h4 className="font-medium text-sm">Stay Updated</h4>
               <div className="flex space-x-2">
                 <input
@@ -146,7 +144,7 @@ const Footer = () => {
                 />
                 <button 
                   onClick={handleSubscribe}
-                  className="px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent-light transition-colors text-sm font-medium whitespace-nowrap"
+                  className="px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors text-sm font-medium whitespace-nowrap"
                 >
                   Subscribe
                 </button>
