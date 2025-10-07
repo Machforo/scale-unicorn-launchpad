@@ -234,11 +234,11 @@ const Resources = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {books.map((book, index) => (
                 <div key={index} className="bg-card border border-border rounded-lg overflow-hidden shadow-card hover:shadow-elegant transition-all duration-300">
-                  <div className="relative h-64 bg-gradient-to-br from-primary/20 to-primary/10">
+                  <div className="relative h-80 bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center p-4">
                     <img 
                       src={book.image} 
                       alt={book.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                     <Button asChild variant="ghost" size="sm" className="absolute top-2 right-2 bg-background/80 hover:bg-background text-primary hover:text-primary/80">
                       <a href={book.link} target="_blank" rel="noopener noreferrer">
