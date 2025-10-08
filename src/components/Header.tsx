@@ -60,15 +60,25 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6 flex-1 justify-center">
-            {navigation.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavClick(item.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 whitespace-nowrap"
-              >
-                {item.name}
-              </button>
-            ))}
+            {navigation.map((item) => {
+              const isActive = item.href.startsWith('#') 
+                ? location.pathname === '/' 
+                : location.pathname === item.href;
+              
+              return (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavClick(item.href)}
+                  className={`text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
+                    isActive 
+                      ? 'text-primary font-semibold border-b-2 border-primary' 
+                      : 'text-muted-foreground hover:text-primary'
+                  }`}
+                >
+                  {item.name}
+                </button>
+              );
+            })}
           </div>
 
           {/* Dropdowns & Mobile Menu */}
@@ -135,15 +145,25 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col space-y-3">
-              {navigation.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => handleNavClick(item.href)}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 text-left py-1"
-                >
-                  {item.name}
-                </button>
-              ))}
+              {navigation.map((item) => {
+                const isActive = item.href.startsWith('#') 
+                  ? location.pathname === '/' 
+                  : location.pathname === item.href;
+                
+                return (
+                  <button
+                    key={item.name}
+                    onClick={() => handleNavClick(item.href)}
+                    className={`text-sm font-medium transition-colors duration-200 text-left py-1 ${
+                      isActive 
+                        ? 'text-primary font-semibold' 
+                        : 'text-muted-foreground hover:text-primary'
+                    }`}
+                  >
+                    {item.name}
+                  </button>
+                );
+              })}
               
               {/* Mobile Sectors Section */}
               <div className="mt-4 pt-3 border-t border-border">

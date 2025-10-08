@@ -2,6 +2,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Youtube, Linkedin, ExternalLink, Clock, Play, Eye } from "lucide-react";
+import unicornBlueprintThumb from "@/assets/youtube-unicorn-blueprint.jpg";
+import franchiseModelThumb from "@/assets/youtube-franchise-model.jpg";
+import methodologiesThumb from "@/assets/youtube-methodologies.jpg";
 
 interface YouTubeVideo {
   id: string;
@@ -51,29 +54,29 @@ const SocialMediaUpdates = () => {
     {
       id: "1",
       title: "How to Create a Unicorn Blueprint in 15 Days | Sandipp Vijj",
-      thumbnail: "https://i.ytimg.com/vi/placeholder/mqdefault.jpg",
+      thumbnail: unicornBlueprintThumb,
       views: "32K",
       duration: "15:42",
       publishedAt: "3 days ago",
-      url: "https://www.youtube.com/@idea2unicorn/videos"
+      url: "https://www.youtube.com/@idea2unicorn"
     },
     {
       id: "2", 
       title: "Zero-Investment Franchise Model for Startups | Growth Strategies",
-      thumbnail: "https://i.ytimg.com/vi/placeholder/mqdefault.jpg",
+      thumbnail: franchiseModelThumb,
       views: "24K",
       duration: "12:28",
       publishedAt: "1 week ago",
-      url: "https://www.youtube.com/@idea2unicorn/videos"
+      url: "https://www.youtube.com/@idea2unicorn"
     },
     {
       id: "3",
       title: "10 Business Methodologies Every Entrepreneur Must Know",
-      thumbnail: "https://i.ytimg.com/vi/placeholder/mqdefault.jpg", 
+      thumbnail: methodologiesThumb, 
       views: "41K",
       duration: "18:55",
       publishedAt: "2 weeks ago",
-      url: "https://www.youtube.com/@idea2unicorn/videos"
+      url: "https://www.youtube.com/@idea2unicorn"
     }
   ];
 
@@ -100,45 +103,45 @@ const SocialMediaUpdates = () => {
             </div>
             <div className="space-y-4">
               {youtubeVideos.map((video) => (
-                <Card key={video.id} className="group hover:shadow-lg transition-all duration-300">
-                  <CardContent className="p-4">
-                    <div className="flex space-x-4">
-                      <div className="relative flex-shrink-0">
-                        <img
-                          src={video.thumbnail}
-                          alt={video.title}
-                          className="w-32 h-20 object-cover rounded-lg"
-                        />
-                        <div className="absolute inset-0 bg-black/20 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                          <Play className="h-6 w-6 text-white" />
-                        </div>
-                        <Badge className="absolute bottom-1 right-1 bg-black/80 text-white text-xs">
-                          {video.duration}
-                        </Badge>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                          {video.title}
-                        </h4>
-                        <div className="flex items-center space-x-4 mt-2 text-sm text-muted-foreground">
-                          <div className="flex items-center">
-                            <Eye className="h-3 w-3 mr-1" />
-                            {video.views}
+                <Card key={video.id} className="group hover:shadow-lg transition-all duration-300 cursor-pointer">
+                  <a href={video.url} target="_blank" rel="noopener noreferrer" className="block">
+                    <CardContent className="p-4">
+                      <div className="flex space-x-4">
+                        <div className="relative flex-shrink-0">
+                          <img
+                            src={video.thumbnail}
+                            alt={video.title}
+                            className="w-32 h-20 object-cover rounded-lg"
+                          />
+                          <div className="absolute inset-0 bg-black/20 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <Play className="h-8 w-8 text-white" />
                           </div>
-                          <div className="flex items-center">
-                            <Clock className="h-3 w-3 mr-1" />
-                            {video.publishedAt}
-                          </div>
+                          <Badge className="absolute bottom-1 right-1 bg-black/80 text-white text-xs">
+                            {video.duration}
+                          </Badge>
                         </div>
-                        <Button variant="ghost" size="sm" className="mt-2 p-0 h-auto" asChild>
-                          <a href={video.url} target="_blank" rel="noopener noreferrer">
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                            {video.title}
+                          </h4>
+                          <div className="flex items-center space-x-4 mt-2 text-sm text-muted-foreground">
+                            <div className="flex items-center">
+                              <Eye className="h-3 w-3 mr-1" />
+                              {video.views}
+                            </div>
+                            <div className="flex items-center">
+                              <Clock className="h-3 w-3 mr-1" />
+                              {video.publishedAt}
+                            </div>
+                          </div>
+                          <div className="mt-2 text-sm text-primary flex items-center">
                             <Youtube className="h-3 w-3 mr-1" />
                             View on YouTube
-                          </a>
-                        </Button>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
+                    </CardContent>
+                  </a>
                 </Card>
               ))}
             </div>
