@@ -58,7 +58,7 @@ const SocialMediaUpdates = () => {
       views: "32K",
       duration: "15:42",
       publishedAt: "3 days ago",
-      url: "https://www.youtube.com/@idea2unicorn"
+      url: "https://www.youtube.com/results?search_query=How+to+Create+a+Unicorn+Blueprint+Sandipp+Vijj"
     },
     {
       id: "2", 
@@ -67,7 +67,7 @@ const SocialMediaUpdates = () => {
       views: "24K",
       duration: "12:28",
       publishedAt: "1 week ago",
-      url: "https://www.youtube.com/@idea2unicorn"
+      url: "https://www.youtube.com/results?search_query=Zero+Investment+Franchise+Model+Startups"
     },
     {
       id: "3",
@@ -76,7 +76,7 @@ const SocialMediaUpdates = () => {
       views: "41K",
       duration: "18:55",
       publishedAt: "2 weeks ago",
-      url: "https://www.youtube.com/@idea2unicorn"
+      url: "https://www.youtube.com/results?search_query=10+Business+Methodologies+Entrepreneur"
     }
   ];
 
@@ -185,9 +185,9 @@ const SocialMediaUpdates = () => {
                 </a>
               </Button>
               <Button variant="outline" asChild>
-                <a href="https://www.youtube.com/@idea2unicorn" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.youtube.com/results?search_query=idea2unicorn+startup" target="_blank" rel="noopener noreferrer">
                   <Youtube className="h-4 w-4 mr-2" />
-                  Subscribe on YouTube
+                  Find on YouTube
                 </a>
               </Button>
             </div>
