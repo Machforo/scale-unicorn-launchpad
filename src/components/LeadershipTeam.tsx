@@ -10,9 +10,6 @@ import sameerNigamImage from "@/assets/sameer-nigam.jpg";
 import chandraPatniImage from "@/assets/chandra-patni.jpg";
 import dineshMakhijaImage from "@/assets/dinesh-makhija-new.jpg";
 import satyavirYadavImage from "@/assets/satyavir-yadav-new.jpg";
-import arpitSinghImage from "@/assets/arpit-singh.png";
-import drAtulMehtaImage from "@/assets/dr-atul-mehta.png";
-import sameerKarwalImage from "@/assets/sameer-karwal.png";
 
 const LeadershipTeam = () => {
   const founder = {
@@ -90,35 +87,6 @@ const LeadershipTeam = () => {
     }
   ];
 
-  const internationalBusinessPartners = [
-    {
-      name: "Arpit Singh",
-      role: "Principal Consultant",
-      title: "International Business & Partnerships",
-      expertise: "International Business",
-      description: "Leading international business expansion and strategic partnerships",
-      image: arpitSinghImage,
-      linkedin: "https://www.linkedin.com/in/arpitsinghyo/"
-    },
-    {
-      name: "Dr. Atul Mehta",
-      role: "Fintech Expert",
-      title: "Medical & Financial Technology Specialist",
-      expertise: "Fintech",
-      description: "Leading fintech innovation, digital financial solutions, and healthcare technology integration",
-      image: drAtulMehtaImage,
-      linkedin: "https://www.linkedin.com/in/atulmehta07/"
-    },
-    {
-      name: "Sameer Karwal",
-      role: "Business Development Advisor",
-      title: "Business Development Specialist", 
-      expertise: "Business Development",
-      description: "Strategic business development and growth acceleration expert",
-      image: sameerKarwalImage,
-      linkedin: "http://linkedin.com/in/sameerkarwal"
-    }
-  ];
 
   const PersonCard = ({ person, isFounder = false }: { person: any, isFounder?: boolean }) => (
     <div className={`bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-elegant transition-all duration-300 ${isFounder ? 'md:col-span-2 lg:col-span-1' : ''}`}>
@@ -189,23 +157,12 @@ const LeadershipTeam = () => {
           </div>
         </div>
 
-        {/* International Business and Partnerships */}
-        <div>
-          <h3 className="text-3xl font-bold text-foreground text-center mb-12">
-            International Business & Partnerships
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {internationalBusinessPartners.map((partner, index) => (
-              <PersonCard key={index} person={partner} />
-            ))}
-          </div>
-        </div>
 
         {/* Team Stats */}
         <div className="mt-16 bg-card border border-border rounded-lg p-8 shadow-card">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">12+</div>
+              <div className="text-3xl font-bold text-primary mb-2">9+</div>
               <div className="text-muted-foreground">Team Members</div>
             </div>
             <div>
