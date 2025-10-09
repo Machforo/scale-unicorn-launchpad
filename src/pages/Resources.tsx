@@ -46,7 +46,7 @@ const Resources = () => {
     {
       title: "One Word That Will Change Your Life Expanded Edition",
       author: "Jon Gordon, Dan Britton",
-      link: "https://www.amazon.in/One-Word-That-Will-Change-ebook/dp/B00BATL788",
+      link: "https://www.amazon.in/One-Word-That-Will-Change/dp/1119070996",
       image: oneWordImg
     },
     {
