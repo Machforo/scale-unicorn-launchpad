@@ -82,14 +82,53 @@ const BusinessVisioning = () => {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-foreground mb-4">5-Step Method</h2>
-          <ul className="space-y-3">
-            <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2"/>Visualize your vision using What, When, Where, Why & How</li>
-            <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2"/>Feedback to enhance your vision by 2–5x across Health, Wealth, Career, Venture, Charity, Convocation, etc.</li>
-            <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2"/>Ensure the enterprise and other life dimensions are crystal clear</li>
-            <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2"/>Share your vision to get clarity on what you will get and what you will not</li>
-            <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2"/>Sandipp will guide you with steps to overcome obstructions to your Business Vision</li>
-          </ul>
+          <h2 className="text-2xl font-bold text-foreground mb-4">Workshop Topics</h2>
+          <div className="space-y-6">
+            <div className="bg-card border border-border rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-foreground mb-3">Core Foundations</h3>
+              <ul className="space-y-2">
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>Purpose of life of entrepreneurs</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>Purpose of enterprise</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>Motivating entrepreneurs for the purpose</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>9 pillars of Success</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>The wheel of life</li>
+              </ul>
+            </div>
+
+            <div className="bg-card border border-border rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-foreground mb-3">5-Step Process</h3>
+              <ul className="space-y-2">
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>Idea - Conceptualize your vision</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>Planning - Strategic roadmap development</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>MVP1 - Build your minimum viable product</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>Launch - Market entry strategies</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>Global Launch - Scale internationally</li>
+              </ul>
+            </div>
+
+            <div className="bg-card border border-border rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-foreground mb-3">Law of Attraction & Manifestation</h3>
+              <ul className="space-y-2">
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>Why law of attraction not working for you?</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>How to make law of attraction work for you</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>Through purification and past life karma cleansing</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>Importance of charity/tithing: Karmic investment and paying off karmic debts</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>How to visualize and achieve your dream</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>Pathway to achieving unicorn status</li>
+              </ul>
+            </div>
+
+            <div className="bg-card border border-border rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-foreground mb-3">Vision Enhancement Method</h3>
+              <ul className="space-y-2">
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>Visualize your vision using What, When, Where, Why & How</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>Feedback to enhance your vision by 2–5x across Health, Wealth, Career, Venture, Charity, Convocation, etc.</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>Ensure the enterprise and other life dimensions are crystal clear</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>Share your vision to get clarity on what you will get and what you will not</li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0"/>Sandipp will guide you with steps to overcome obstructions to your Business Vision</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <section className="text-center">
