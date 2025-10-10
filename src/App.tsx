@@ -53,6 +53,7 @@ import PartnerUs from "./pages/PartnerUs";
 import Careers from "./pages/Careers";
 import Events from "./pages/Events";
 import About from "./pages/About";
+import GrowthStrategies from "./pages/GrowthStrategies";
 
 const queryClient = new QueryClient();
 
@@ -106,6 +107,7 @@ const App = () => (
           <Route path="/events" element={<Events />} />
           <Route path="/partner-us" element={<PartnerUs />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/growth-strategies" element={<GrowthStrategies />} />
           <Route path="/integration-demo" element={<IntegrationDemo />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
