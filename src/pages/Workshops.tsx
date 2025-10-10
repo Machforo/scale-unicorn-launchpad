@@ -13,35 +13,39 @@ const Workshops = () => {
   const workshops = [
     {
       id: "business-visioning",
-      title: "Business Visioning - Idea2Unicorn",
-      facilitator: "Sandipp Vijj",
-      duration: "5 Steps",
-      description: "Our proprietary Idea2Unicorn workshop using a 5-step visual method to transform your business vision across all spheres of life.",
-      route: "/workshops/business-visioning"
-    },
-    {
-      id: "dream-life",
-      title: "Dream Life Workshop",
+      title: "Business Visioning Workshop for Entrepreneurs",
       facilitator: "Sandipp Vijj",
       duration: "2 Days",
-      description: "Transform your vision into reality with our comprehensive dream activation program. Master emotional freedom tools and create a clear roadmap for your ideal life.",
-      route: "/workshops/dream-life"
+      description: "Comprehensive workshop covering purpose of life for entrepreneurs, 9 pillars of success, 5-step process (Idea→Planning→MVP1→Launch→Global Launch), law of attraction, visualization techniques, and pathway to achieving unicorn status.",
+      route: "/workshops/business-visioning",
+      featured: true
+    },
+    {
+      id: "growth-without-equity",
+      title: "Growth Without Diluting Equity in 24 Months",
+      facilitator: "Sam Kundu",
+      duration: "1 Day",
+      description: "Learn non-dilutive funding options, smart scaling and reinvestment strategies, revenue maximization techniques, and leveraging partnerships for growth.",
+      route: "/workshops/smart-growth",
+      featured: true
     },
     {
       id: "crossing-chasm",
       title: "Crossing the Chasm Strategy",
       facilitator: "Sandipp Vijj",
       duration: "1 Day",
-      description: "Navigate the critical transition from early adopters to mainstream market. Learn proven strategies to scale your startup across the innovation chasm.",
-      route: "/workshops/crossing-chasm"
+      description: "Master innovation diffusion curve, identify early majority, achieve product-market fit, overcome adoption barriers, and implement strategies for sustainable scaling.",
+      route: "/workshops/crossing-chasm",
+      featured: true
     },
     {
-      id: "smart-growth",
-      title: "Smart Growth Without Diluting Equity",
-      facilitator: "Sam Kundu",
-      duration: "3 Days",
-      description: "Revolutionary growth methodologies that preserve founder equity while achieving exponential scale. Perfect for startups ready to dominate their market.",
-      route: "/workshops/smart-growth"
+      id: "finance-non-finance",
+      title: "Finance for Non-Finance Executives",
+      facilitator: "CA Sahil Makkar",
+      duration: "1 Day",
+      description: "Understanding balance sheets, P&L, and cash flow, key performance indicators and ratios, budgeting and cost management, and financial planning for business growth.",
+      route: "/workshops/business-visioning",
+      featured: true
     },
     {
       id: "real-estate",
@@ -119,7 +123,12 @@ const Workshops = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               {workshops.map((workshop) => (
-                <div key={workshop.id} className="bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-lg transition-all duration-200 hover:scale-105">
+                <div key={workshop.id} className={`bg-card border rounded-lg p-6 shadow-card hover:shadow-lg transition-all duration-200 hover:scale-105 ${workshop.featured ? 'border-primary/50 bg-gradient-to-br from-primary/5 to-primary/10' : 'border-border'}`}>
+                  {workshop.featured && (
+                    <div className="inline-block bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                      Featured Workshop
+                    </div>
+                  )}
                   <div className="flex items-center mb-4">
                     <Calendar className="h-5 w-5 text-primary mr-2" />
                     <span className="text-sm text-muted-foreground">{workshop.duration}</span>
